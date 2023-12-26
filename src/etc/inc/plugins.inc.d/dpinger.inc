@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2020 Deciso B.V.
+ * Copyright (C) 2020 Reticen8 Technologies
  * Copyright (C) 2018 Martin Wasley <martin@team-rebellion.net>
  * Copyright (C) 2016-2023 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2008 Bill Marquette <bill.marquette@gmail.com>

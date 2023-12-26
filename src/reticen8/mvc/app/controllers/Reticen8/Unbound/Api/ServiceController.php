@@ -2,7 +2,7 @@
 
 /*
  * Copyright (C) 2019 Michael Muenz <m.muenz@gmail.com>
- * Copyright (C) 2020 Deciso B.V.
+ * Copyright (C) 2020 Reticen8 Technologies
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

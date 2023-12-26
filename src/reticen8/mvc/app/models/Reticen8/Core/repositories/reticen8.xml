@@ -14,7 +14,7 @@
         </mirror>
         <mirror has_subscription="true">
             <url>https://reticen8-update.deciso.com</url>
-            <description>Deciso (HTTPS, NL, Commercial)</description>
+            <description>Reticen8 (HTTPS, NL, Commercial)</description>
         </mirror>
         <mirror>
             <url>https://mirror.dns-root.de/reticen8</url>

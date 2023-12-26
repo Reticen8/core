@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2023 Deciso B.V.
+ * Copyright (C) 2023 Reticen8 Technologies
  * Copyright (C) 2015 Jos Schellevis <jos@reticen8.org>
  * All rights reserved.
  *

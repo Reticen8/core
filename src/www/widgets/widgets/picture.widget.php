@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2014 Deciso B.V.
+ * Copyright (C) 2014 Reticen8 Technologies
  * Copyright (C) 2009 Scott Ullrich <sullrich@gmail.com>
  *
  * Redistribution and use in source and binary forms, with or without

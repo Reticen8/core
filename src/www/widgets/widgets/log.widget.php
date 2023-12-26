@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2014 Deciso B.V.
+ * Copyright (C) 2014 Reticen8 Technologies
  * Copyright (C) 2007 Scott Dale
  * Copyright (C) 2009 Jim Pingle <jimp@pfsense.org>
  * Copyright (C) 2004-2005 T. Lechat <dev@lechat.org>

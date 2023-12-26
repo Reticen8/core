@@ -1,5 +1,5 @@
 /**
- *    Copyright (C) 2022 Deciso B.V.
+ *    Copyright (C) 2022 Reticen8 Technologies
  *
  *    All rights reserved.
  *

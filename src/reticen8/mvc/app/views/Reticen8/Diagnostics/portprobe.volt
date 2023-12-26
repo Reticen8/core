@@ -1,5 +1,5 @@
 {#
- # Copyright (c) 2023 Deciso B.V.
+ # Copyright (c) 2023 Reticen8 Technologies
  # All rights reserved.
  #
  # Redistribution and use in source and binary forms, with or withoutmodification,

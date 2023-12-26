@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Deciso B.V.
+ * Copyright (C) 2015 Reticen8 Technologies
  * Copyright (C) 2012 Marcello Coutinho
  * Copyright (C) 2012 Carlos Cesario <carloscesario@gmail.com>
  * Copyright (C) 2003-2004 Manuel Kasper <mk@neon1.net>

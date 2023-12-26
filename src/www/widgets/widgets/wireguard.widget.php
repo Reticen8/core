@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2020-2023 Deciso B.V.
+ * Copyright (C) 2020-2023 Reticen8 Technologies
  * Copyright (C) 2020 D. Domig
  * Copyright (C) 2022 Patrik Kernstock <patrik@kernstock.net>
  * All rights reserved.

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 Deciso B.V.
+ * Copyright (C) 2018 Reticen8 Technologies
  * Copyright (C) 2018 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2018 René Muhr <rene@team-rebellion.net>
  * Copyright (C) 2018 Fabian Franz

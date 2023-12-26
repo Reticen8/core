@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2014-2016 Deciso B.V.
+ * Copyright (C) 2014-2016 Reticen8 Technologies
  * Copyright (C) 2010 Ermal Luçi
  * All rights reserved.
  *

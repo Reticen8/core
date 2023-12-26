@@ -1,7 +1,7 @@
 <?php
 
 /*
- *  Copyright (C) 2015-2018 Deciso B.V.
+ *  Copyright (C) 2015-2018 Reticen8 Technologies
  *  Copyright (C) 2017 Fabian Franz
  *  All rights reserved.
  *

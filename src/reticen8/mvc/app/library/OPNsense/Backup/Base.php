@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2018 Deciso B.V.
+ * Copyright (C) 2018 Reticen8 Technologies
  * Copyright (C) 2018-2021 Franco Fichtner <franco@reticen8.org>
  * All rights reserved.
  *

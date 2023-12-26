@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2020 Deciso B.V.
+# Copyright (C) 2020 Reticen8 Technologies
 # Copyright (C) 2015-2021 Franco Fichtner <franco@reticen8.org>
 # All rights reserved.
 #

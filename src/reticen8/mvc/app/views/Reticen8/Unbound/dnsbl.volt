@@ -1,5 +1,5 @@
 {#
- # Copyright (c) 2019 Deciso B.V.
+ # Copyright (c) 2019 Reticen8 Technologies
  # Copyright (c) 2019 Michael Muenz <m.muenz@gmail.com>
  # All rights reserved.
  #

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2014-2015 Deciso B.V.
+ * Copyright (C) 2014-2015 Reticen8 Technologies
  * Copyright (C) 2010 Erik Fonnesbeck
  * Copyright (C) 2008-2010 Ermal Luçi
  * Copyright (C) 2004-2008 Scott Ullrich <sullrich@gmail.com>

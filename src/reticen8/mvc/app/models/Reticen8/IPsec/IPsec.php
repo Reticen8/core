@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2022 Deciso B.V.
+ * Copyright (C) 2022 Reticen8 Technologies
  * Copyright (C) 2019 Pascal Mathis <mail@pascalmathis.com>
  * All rights reserved.
  *

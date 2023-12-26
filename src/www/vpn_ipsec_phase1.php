@@ -2,7 +2,7 @@
 
 /*
  * Copyright (C) 2019 Pascal Mathis <mail@pascalmathis.com>
- * Copyright (C) 2014-2015 Deciso B.V.
+ * Copyright (C) 2014-2015 Reticen8 Technologies
  * Copyright (C) 2008 Shrew Soft Inc. <mgrooms@shrew.net>
  * Copyright (C) 2003-2005 Manuel Kasper <mk@neon1.net>
  * Copyright (C) 2014 Ermal Luçi

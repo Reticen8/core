@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2023 Deciso B.V.
+ * Copyright (C) 2023 Reticen8 Technologies
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -59,8 +59,8 @@ class BackupController extends ApiControllerBase
     {
         $result = [];
         $result['this'] = ['description' => gettext('This Firewall'), 'dirname' => '/conf/backup'];
-        if (class_exists('\Deciso\OPNcentral\Central')) {
-            $central = new \Deciso\OPNcentral\Central();
+        if (class_exists('\Reticen8\OPNcentral\Central')) {
+            $central = new \Reticen8\OPNcentral\Central();
             $central->setUserScope($this->getUserName());
             $ctrHosts = [];
             foreach ($central->hosts->host->getNodes() as $itemid => $item) {

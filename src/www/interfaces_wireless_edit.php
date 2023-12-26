@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2014-2015 Deciso B.V.
+ * Copyright (C) 2014-2015 Reticen8 Technologies
  * Copyright (C) 2010 Erik Fonnesbeck
  * All rights reserved.
  *

@@ -1,7 +1,7 @@
 <?php
 
 /*
-    Copyright (C) 2014 Deciso B.V.
+    Copyright (C) 2014 Reticen8 Technologies
     Copyright (c) 2007 Scott Dale
     Copyright (C) 2004-2005 T. Lechat <dev@lechat.org>
     Copyright (C) 2004-2005 Manuel Kasper <mk@neon1.net>

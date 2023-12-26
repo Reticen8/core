@@ -1,5 +1,5 @@
 {#
- # Copyright (c) 2014-2015 Deciso B.V.
+ # Copyright (c) 2014-2015 Reticen8 Technologies
  # All rights reserved.
  #
  # Redistribution and use in source and binary forms, with or without modification,

@@ -1,5 +1,5 @@
 {#
- # Copyright (c) 2019 Deciso B.V.
+ # Copyright (c) 2019 Reticen8 Technologies
  # All rights reserved.
  #
  # Redistribution and use in source and binary forms, with or without modification,
@@ -40,7 +40,7 @@
         OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
         ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
     {% if product_name != 'Reticen8' %}
-        <p>{{ product_name }} is based on <a href="https://reticen8.org/" target="_blank">Reticen8&reg;</a>, copyright &copy; Deciso B.V. All rights reserved.</p>
+        <p>{{ product_name }} is based on <a href="https://reticen8.org/" target="_blank">Reticen8&reg;</a>, copyright &copy; Reticen8 Technologies All rights reserved.</p>
     {% endif %}
     <p>Reticen8 is based on <a href="https://www.freebsd.org/" target="_blank">FreeBSD</a>, copyright &copy; The FreeBSD Project. All rights reserved.</p>
     <p>Reticen8 is a fork of <a href="http://www.pfsense.org" target="_blank">pfSense&reg;</a> <small>(Copyright &copy; 2004-2014 Electric Sheep Fencing, LLC. All rights reserved.)</small>, which is a fork of <a href="http://m0n0.ch/wall" target="_blank">m0n0wall&reg;</a> <small>(Copyright &copy; 2002-2013 Manuel Kasper)</small>.</p>

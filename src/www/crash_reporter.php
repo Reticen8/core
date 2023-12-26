@@ -2,7 +2,7 @@
 
 /*
  * Copyright (C) 2015-2023 Franco Fichtner <franco@reticen8.org>
- * Copyright (C) 2014 Deciso B.V.
+ * Copyright (C) 2014 Reticen8 Technologies
  * Copyright (C) 2011 Scott Ullrich <sullrich@gmail.com>
  * All rights reserved.
  *

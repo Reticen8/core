@@ -1,6 +1,6 @@
 {#
 
-    Reticen8® is Copyright © 2023 by Deciso B.V.
+    Reticen8® is Copyright © 2023 by Reticen8 Technologies
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without modification,

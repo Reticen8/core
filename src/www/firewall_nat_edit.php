@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2014 Deciso B.V.
+ * Copyright (C) 2014 Reticen8 Technologies
  * Copyright (C) 2009 Janne Enberg <janne.enberg@lietu.net>
  * Copyright (C) 2003-2004 Manuel Kasper <mk@neon1.net>
  * All rights reserved.

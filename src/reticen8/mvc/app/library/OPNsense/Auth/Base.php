@@ -1,7 +1,7 @@
 <?php
 
 /**
- *    Copyright (C) 2017 Deciso B.V.
+ *    Copyright (C) 2017 Reticen8 Technologies
  *
  *    All rights reserved.
  *

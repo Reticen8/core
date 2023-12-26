@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2016-2020 Deciso B.V.
+ * Copyright (C) 2016-2020 Reticen8 Technologies
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

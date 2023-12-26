@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2014-2023 Deciso B.V.
+ * Copyright (C) 2014-2023 Reticen8 Technologies
  * Copyright (C) 2010 Ermal Luçi
  * Copyright (C) 2007-2008 Scott Ullrich <sullrich@gmail.com>
  * Copyright (C) 2005-2006 Bill Marquette <bill.marquette@gmail.com>

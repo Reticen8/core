@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2016-2023 Deciso B.V.
+ * Copyright (C) 2016-2023 Reticen8 Technologies
  * Copyright (C) 2019 Pascal Mathis <mail@pascalmathis.com>
  * Copyright (C) 2008 Shrew Soft Inc. <mgrooms@shrew.net>
  * Copyright (C) 2008 Ermal Luçi

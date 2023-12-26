@@ -2,7 +2,7 @@
 
 /*
  * Copyright (C) 2016 IT-assistans Sverige AB
- * Copyright (C) 2016 Deciso B.V.
+ * Copyright (C) 2016 Reticen8 Technologies
  * Copyright (C) 2018 Fabian Franz
  * All rights reserved.
  *

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2016-2023 Deciso B.V.
+ * Copyright (C) 2016-2023 Reticen8 Technologies
  * Copyright (C) 2015-2022 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2008 Scott Ullrich <sullrich@gmail.com>
  * Copyright (C) 2006 Fernando Lemos

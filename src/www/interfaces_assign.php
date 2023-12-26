@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2014-2022 Deciso B.V.
+ * Copyright (C) 2014-2022 Reticen8 Technologies
  * Copyright (C) 2004 Jim McBeath
  * Copyright (C) 2003-2005 Manuel Kasper <mk@neon1.net>
  * All rights reserved.

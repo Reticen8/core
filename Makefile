@@ -116,7 +116,7 @@ CORE_PRODUCT?=		Reticen8
 CORE_REPOSITORY?=	${CORE_ABI}/latest
 CORE_WWW?=		https://reticen8.org/
 
-CORE_COPYRIGHT_HOLDER?=	Deciso B.V.
+CORE_COPYRIGHT_HOLDER?=	Reticen8 Technologies
 CORE_COPYRIGHT_WWW?=	https://www.deciso.com/
 CORE_COPYRIGHT_YEARS?=	2014-2023
 
