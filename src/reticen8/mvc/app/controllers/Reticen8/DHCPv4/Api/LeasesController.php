@@ -26,12 +26,12 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\DHCPv4\Api;
+namespace Reticen8\DHCPv4\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
+use Reticen8\Firewall\Util;
 
 class LeasesController extends ApiControllerBase
 {

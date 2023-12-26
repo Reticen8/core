@@ -26,18 +26,18 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec\Api;
+namespace Reticen8\IPsec\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
+use Reticen8\Base\ApiMutableModelControllerBase;
 
 /**
  * Class ManualSPD
- * @package OPNsense\IPsec\Api
+ * @package Reticen8\IPsec\Api
  */
 class ManualSPDController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'swanctl';
-    protected static $internalModelClass = 'OPNsense\IPsec\Swanctl';
+    protected static $internalModelClass = 'Reticen8\IPsec\Swanctl';
 
     public function searchAction()
     {

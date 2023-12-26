@@ -26,19 +26,19 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Diagnostics;
+namespace Reticen8\Diagnostics;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
  * Class TracerouteController
- * @package OPNsense\Diagnostics
+ * @package Reticen8\Diagnostics
  */
 class TracerouteController extends IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Diagnostics/traceroute');
+        $this->view->pick('Reticen8/Diagnostics/traceroute');
         $this->view->tracerouteForm = $this->getForm("traceroute");
     }
 }

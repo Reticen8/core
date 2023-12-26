@@ -26,12 +26,12 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces;
+namespace Reticen8\Interfaces;
 
 use Phalcon\Messages\Message;
-use OPNsense\Base\BaseModel;
-use OPNsense\Core\Config;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\BaseModel;
+use Reticen8\Core\Config;
+use Reticen8\Firewall\Util;
 
 class Vip extends BaseModel
 {

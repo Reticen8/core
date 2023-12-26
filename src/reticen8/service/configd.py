@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    Copyright (c) 2014-2019 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2014-2019 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -118,7 +118,7 @@ def run_watch():
 
     signal.signal(signal.SIGTERM, signal_handler)
     while True:
-        process = subprocess.Popen(['/usr/local/opnsense/service/configd.py', 'console'])
+        process = subprocess.Popen(['/usr/local/reticen8/service/configd.py', 'console'])
         # save created pid for signal_handler() to use
         current_child_pid = process.pid
         process.wait()

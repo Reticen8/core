@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Diagnostics;
+namespace Reticen8\Diagnostics;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
  * Class SystemController
- * @package OPNsense\Diagnostics
+ * @package Reticen8\Diagnostics
  */
 class SystemController extends IndexController
 {
@@ -43,7 +43,7 @@ class SystemController extends IndexController
     {
         return array_merge(parent::templateJSIncludes(), [
             '/ui/js/tree.jquery.min.js',
-            '/ui/js/opnsense-treeview.js'
+            '/ui/js/reticen8-treeview.js'
         ]);
     }
 
@@ -65,6 +65,6 @@ class SystemController extends IndexController
             ]
         ];
         $this->view->default_tab = "memory";
-        $this->view->pick('OPNsense/Diagnostics/treeview');
+        $this->view->pick('Reticen8/Diagnostics/treeview');
     }
 }

@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\System\Status;
+namespace Reticen8\System\Status;
 
-use OPNsense\System\AbstractStatus;
+use Reticen8\System\AbstractStatus;
 
 class FirewallStatus extends AbstractStatus
 {

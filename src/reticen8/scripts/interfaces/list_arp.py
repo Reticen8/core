@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
 """
-    Copyright (c) 2016-2019 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2016-2019 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -33,7 +33,7 @@ import os
 import sys
 import ujson
 import netaddr
-sys.path.insert(0, "/usr/local/opnsense/site-python")
+sys.path.insert(0, "/usr/local/reticen8/site-python")
 import watchers.dhcpd
 
 if __name__ == '__main__':

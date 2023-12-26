@@ -26,19 +26,19 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec\Api;
+namespace Reticen8\IPsec\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Config;
 
 /**
  * Class ConnectionsController
- * @package OPNsense\IPsec\Api
+ * @package Reticen8\IPsec\Api
  */
 class ConnectionsController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'swanctl';
-    protected static $internalModelClass = 'OPNsense\IPsec\Swanctl';
+    protected static $internalModelClass = 'Reticen8\IPsec\Swanctl';
 
     /**
      * @return null|function lambda to filter on provided connection uuid in GET['connection']

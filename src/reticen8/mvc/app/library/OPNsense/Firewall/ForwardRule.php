@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Firewall;
+namespace Reticen8\Firewall;
 
 /**
  * Class ForwardRule, (pf rdr type rule, optionally combined with nat rules for reflection)
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class ForwardRule extends Rule
 {
@@ -93,7 +93,7 @@ class ForwardRule extends Rule
      * preprocess internal rule data to detail level of actual ruleset
      * handles shortcuts, like inet46 and multiple interfaces
      * @return array
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     private function parseRdrRules()
     {
@@ -183,7 +183,7 @@ class ForwardRule extends Rule
     /**
      * output rule as string
      * @return string ruleset
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     public function __toString()
     {

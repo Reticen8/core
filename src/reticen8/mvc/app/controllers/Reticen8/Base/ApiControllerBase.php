@@ -26,16 +26,16 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base;
+namespace Reticen8\Base;
 
-use OPNsense\Core\ACL;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
-use OPNsense\Auth\AuthenticationFactory;
+use Reticen8\Core\ACL;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
+use Reticen8\Auth\AuthenticationFactory;
 
 /**
  * Class ApiControllerBase, inherit this class to implement API calls
- * @package OPNsense\Base
+ * @package Reticen8\Base
  */
 class ApiControllerBase extends ControllerRoot
 {

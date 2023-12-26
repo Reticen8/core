@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Auth;
+namespace Reticen8\Auth;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 /**
  * Class Local user database connector (using legacy xml structure).
- * @package OPNsense\Auth
+ * @package Reticen8\Auth
  */
 class Local extends Base implements IAuthConnector
 {

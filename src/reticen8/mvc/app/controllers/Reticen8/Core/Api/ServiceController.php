@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Core\Api;
+namespace Reticen8\Core\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
 
 /**
  * Class SessionsController
- * @package OPNsense\IPsec\Api
+ * @package Reticen8\IPsec\Api
  */
 class ServiceController extends ApiControllerBase
 {

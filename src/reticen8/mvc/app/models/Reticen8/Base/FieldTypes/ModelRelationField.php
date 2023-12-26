@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Phalcon\Filter\Validation\Validator\InclusionIn;
-use OPNsense\Base\Validators\CsvListValidator;
+use Reticen8\Phalcon\Filter\Validation\Validator\InclusionIn;
+use Reticen8\Base\Validators\CsvListValidator;
 
 /**
  * Class ModelRelationField defines a relation to another entity within the model, acts like a select item.
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class ModelRelationField extends BaseListField
 {

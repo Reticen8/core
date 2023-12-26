@@ -1,5 +1,5 @@
 <model>
-    <mount>//OPNsense/OpenVPN</mount>
+    <mount>//Reticen8/OpenVPN</mount>
     <version>1.0.0</version>
     <description>OpenVPN</description>
     <items>
@@ -246,7 +246,7 @@
                 <tls_key type="ModelRelationField">
                     <Model>
                         <host>
-                            <source>OPNsense.OpenVPN.OpenVPN</source>
+                            <source>Reticen8.OpenVPN.OpenVPN</source>
                             <items>StaticKeys.StaticKey</items>
                             <display>mode,description</display>
                             <display_format>[%s] %s</display_format>

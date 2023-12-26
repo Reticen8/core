@@ -1,5 +1,5 @@
 <model>
-    <mount>//OPNsense/captiveportal</mount>
+    <mount>//Reticen8/captiveportal</mount>
     <version>1.0.1</version>
     <description>Captive portal application model</description>
     <items>
@@ -82,7 +82,7 @@
                 <template type="ModelRelationField">
                     <Model>
                         <template>
-                            <source>OPNsense.Captiveportal.Captiveportal</source>
+                            <source>Reticen8.Captiveportal.Captiveportal</source>
                             <items>templates.template</items>
                             <display>name</display>
                         </template>

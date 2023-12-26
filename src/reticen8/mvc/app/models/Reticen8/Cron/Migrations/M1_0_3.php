@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Cron\Migrations;
+namespace Reticen8\Cron\Migrations;
 
-use OPNsense\Base\BaseModelMigration;
+use Reticen8\Base\BaseModelMigration;
 
 /**
  * migrate firmware jobs to a random delay action

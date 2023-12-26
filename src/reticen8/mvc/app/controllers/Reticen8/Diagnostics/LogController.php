@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Diagnostics;
+namespace Reticen8\Diagnostics;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
  * @inherit
@@ -37,7 +37,7 @@ class LogController extends IndexController
 {
     public function renderPage($module, $scope)
     {
-        $this->view->pick('OPNsense/Diagnostics/log');
+        $this->view->pick('Reticen8/Diagnostics/log');
         $this->view->module = htmlspecialchars($module, ENT_QUOTES | ENT_HTML401);
         $this->view->scope = htmlspecialchars($scope, ENT_QUOTES | ENT_HTML401);
         $this->view->service = '';

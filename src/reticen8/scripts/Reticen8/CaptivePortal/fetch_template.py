@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
 """
-    Copyright (c) 2015-2019 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2015-2019 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -35,10 +35,10 @@ import binascii
 import zipfile
 import base64
 from io import BytesIO
-from lib import OPNsenseConfig
+from lib import Reticen8Config
 
 response = dict()
-source_directory = '/usr/local/opnsense/scripts/OPNsense/CaptivePortal/htdocs_default'
+source_directory = '/usr/local/reticen8/scripts/Reticen8/CaptivePortal/htdocs_default'
 
 output_data = BytesIO()
 
@@ -49,7 +49,7 @@ with zipfile.ZipFile(output_data, mode='w', compression=zipfile.ZIP_DEFLATED) as
         # Search for user template, using fileid
         # In this case, we must use the config.xml to retrieve the latest content.
         # When using the generated config, the user experience will be a bit odd (old content after upload)
-        cnf = OPNsenseConfig()
+        cnf = Reticen8Config()
         template_content = cnf.get_template(sys.argv[1])
         if template_content is not None:
             try:

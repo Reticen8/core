@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2021 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2021 Franco Fichtner <franco@reticen8.org>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -29,8 +29,8 @@ LOCKFILE=/tmp/pkg_upgrade.progress
 : > ${LOCKFILE}
 
 echo "***GOT REQUEST TO RESYNC***" >> ${LOCKFILE}
-echo "Currently running $(opnsense-version) at $(date)" >> ${LOCKFILE}
+echo "Currently running $(reticen8-version) at $(date)" >> ${LOCKFILE}
 
-/usr/local/opnsense/scripts/firmware/register.php resync >> ${LOCKFILE} 2>&1
+/usr/local/reticen8/scripts/firmware/register.php resync >> ${LOCKFILE} 2>&1
 
 echo '***DONE***' >> ${LOCKFILE}

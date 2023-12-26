@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\Constraints;
+namespace Reticen8\Base\Constraints;
 
-use OPNsense\Base\FieldTypes\ArrayField;
-use OPNsense\Base\FieldTypes\ContainerField;
-use OPNsense\Base\FieldTypes\TextField;
+use Reticen8\Base\FieldTypes\ArrayField;
+use Reticen8\Base\FieldTypes\ContainerField;
+use Reticen8\Base\FieldTypes\TextField;
 
 class UniqueTestContainer extends ArrayField
 {
@@ -87,7 +87,7 @@ class UniqueTestContainer extends ArrayField
 
     public function validate()
     {
-        $validator = new \OPNsense\Base\Validation();
+        $validator = new \Reticen8\Base\Validation();
         foreach ($this->uniqueConstraints as $idx => $constraint) {
             $validator->add($idx, $constraint);
         }

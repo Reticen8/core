@@ -26,16 +26,16 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\CaptivePortal\Api;
+namespace Reticen8\CaptivePortal\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\Auth\AuthenticationFactory;
-use OPNsense\CaptivePortal\CaptivePortal;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Auth\AuthenticationFactory;
+use Reticen8\CaptivePortal\CaptivePortal;
 
 /**
  * Class AccessController
- * @package OPNsense\CaptivePortal
+ * @package Reticen8\CaptivePortal
  */
 class AccessController extends ApiControllerBase
 {
@@ -43,7 +43,7 @@ class AccessController extends ApiControllerBase
      * request client session data
      * @param string $zoneid captive portal zone
      * @return array
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     private function clientSession(string $zoneid)
     {
@@ -122,7 +122,7 @@ class AccessController extends ApiControllerBase
      * logon client to zone, must use post type of request
      * @param int|string $zoneid zone id number
      * @return array
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     public function logonAction($zoneid = 0)
     {
@@ -231,7 +231,7 @@ class AccessController extends ApiControllerBase
      * logoff client
      * @param int|string $zoneid zone id number
      * @return array
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     public function logoffAction($zoneid = 0)
     {
@@ -268,7 +268,7 @@ class AccessController extends ApiControllerBase
      * retrieve session info
      * @param int|string $zoneid zone id number
      * @return array
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     public function statusAction($zoneid = 0)
     {

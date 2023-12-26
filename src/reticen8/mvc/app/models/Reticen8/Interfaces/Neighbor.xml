@@ -1,5 +1,5 @@
 <model>
-    <mount>//OPNsense/Interfaces/neighbors</mount>
+    <mount>//Reticen8/Interfaces/neighbors</mount>
     <version>1.0.0</version>
     <description>Neighbor configuration</description>
     <items>

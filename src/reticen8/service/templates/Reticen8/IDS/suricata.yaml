@@ -12,7 +12,7 @@
 vars:
   # more specific is better for alert accuracy and performance
   address-groups:
-    HOME_NET: "[{{OPNsense.IDS.general.homenet}}]"
+    HOME_NET: "[{{Reticen8.IDS.general.homenet}}]"
     EXTERNAL_NET: "!$HOME_NET"
     HTTP_SERVERS: "$HOME_NET"
     SMTP_SERVERS: "$HOME_NET"
@@ -145,7 +145,7 @@ outputs:
 
       types:
         - alert:
-{% if not helpers.empty('OPNsense.IDS.general.LogPayload') %}
+{% if not helpers.empty('Reticen8.IDS.general.LogPayload') %}
              payload: yes
              payload-buffer-size: 100kb
              payload-printable: yes
@@ -298,7 +298,7 @@ outputs:
         # flowints.
         #- metadata
 
-{% if not helpers.empty('OPNsense.IDS.general.syslog_eve') %}
+{% if not helpers.empty('Reticen8.IDS.general.syslog_eve') %}
   # Extensible Event Format (nicknamed EVE) to syslog
   - eve-log:
       enabled: yes
@@ -308,7 +308,7 @@ outputs:
       level: Info
       types:
         - alert:
-{%     if not helpers.empty('OPNsense.IDS.general.LogPayload') %}
+{%     if not helpers.empty('Reticen8.IDS.general.LogPayload') %}
              payload: no
              payload-buffer-size: 4kb
              payload-printable: yes
@@ -440,7 +440,7 @@ outputs:
 
   # a line based alerts log similar to fast.log into syslog
   - syslog:
-      enabled: {% if helpers.empty('OPNsense.IDS.general.syslog') %}no{% else %}yes{% endif %}
+      enabled: {% if helpers.empty('Reticen8.IDS.general.syslog') %}no{% else %}yes{% endif %}
 
       # reported identity to syslog. If omitted the program name (usually
       # suricata) will be used.
@@ -706,7 +706,7 @@ pcap:
     # listening on the same interface.
     #threads: 16
     # set to no to disable promiscuous mode:
-    promisc: {% if not helpers.empty('OPNsense.IDS.general.promisc') %}yes{% else %}no{% endif %} #  promiscuous mode
+    promisc: {% if not helpers.empty('Reticen8.IDS.general.promisc') %}yes{% else %}no{% endif %} #  promiscuous mode
     # set snaplen, if not set it defaults to MTU if MTU can be known
     # via ioctl call and to full capture if not.
     #snaplen: 1518
@@ -1071,8 +1071,8 @@ runmode: workers
 # Preallocated size for packet. Default is 1514 which is the classical
 # size for pcap on ethernet. You should adjust this value to the highest
 # packet size (MTU + hardware header) on your system.
-{% if helpers.exists('OPNsense.IDS.general.defaultPacketSize') %}
-default-packet-size: {{OPNsense.IDS.general.defaultPacketSize|default('1514')}}
+{% if helpers.exists('Reticen8.IDS.general.defaultPacketSize') %}
+default-packet-size: {{Reticen8.IDS.general.defaultPacketSize|default('1514')}}
 {% endif %}
 
 
@@ -1331,7 +1331,7 @@ flow-timeouts:
 stream:
   memcap: 64mb
   checksum-validation: yes      # reject wrong csums
-  inline: {% if OPNsense.IDS.general.ips|default("0") == "1" %}true{% else %}auto{% endif %}
+  inline: {% if Reticen8.IDS.general.ips|default("0") == "1" %}true{% else %}auto{% endif %}
 
   reassembly:
     memcap: 256mb
@@ -1399,12 +1399,12 @@ decoder:
 # If the argument specified is 0, the engine uses an internally defined
 # default limit.  On not specifying a value, we use no limits on the recursion.
 detect:
-  profile: {% if helpers.exists('OPNsense.IDS.general.detect') %} {{ OPNsense.IDS.general.detect.Profile|default("medium")}} {% else %}medium{% endif %}
+  profile: {% if helpers.exists('Reticen8.IDS.general.detect') %} {{ Reticen8.IDS.general.detect.Profile|default("medium")}} {% else %}medium{% endif %}
 
   custom-values:
-    toclient-groups: {% if helpers.exists('OPNsense.IDS.general.detect') %} {{ OPNsense.IDS.general.detect.toclient_groups|default("3")}} {% else %}3{% endif %}
+    toclient-groups: {% if helpers.exists('Reticen8.IDS.general.detect') %} {{ Reticen8.IDS.general.detect.toclient_groups|default("3")}} {% else %}3{% endif %}
 
-    toserver-groups: {% if helpers.exists('OPNsense.IDS.general.detect') %} {{ OPNsense.IDS.general.detect.toserver_groups|default("25")}} {% else %}25{% endif %}
+    toserver-groups: {% if helpers.exists('Reticen8.IDS.general.detect') %} {{ Reticen8.IDS.general.detect.toserver_groups|default("25")}} {% else %}25{% endif %}
 
   sgh-mpm-context: auto
   inspection-recursion-limit: 3000
@@ -1456,7 +1456,7 @@ detect:
 # ruleset is small enough to fit in one's memory, in which case one can
 # use "full" with "ac".  Rest of the mpms can be run in "full" mode.
 
-mpm-algo: {% if helpers.exists('OPNsense.IDS.general') %} {{ OPNsense.IDS.general.MPMAlgo|default("ac")}} {% else %}ac{% endif %}
+mpm-algo: {% if helpers.exists('Reticen8.IDS.general') %} {{ Reticen8.IDS.general.MPMAlgo|default("ac")}} {% else %}ac{% endif %}
 
 # Select the matching algorithm you want to use for single-pattern searches.
 #
@@ -1691,7 +1691,7 @@ netmap:
     copy-mode: ips
     #copy-iface: eth3
     # Set to yes to disable promiscuous mode
-    disable-promisc: {% if helpers.empty('OPNsense.IDS.general.promisc') %}yes{% else %}no{% endif %} #  promiscuous mode
+    disable-promisc: {% if helpers.empty('Reticen8.IDS.general.promisc') %}yes{% else %}no{% endif %} #  promiscuous mode
     # Choose checksum verification mode for the interface. At the moment
     # of the capture, some packets may be with an invalid checksum due to
     # offloading to the network card of the checksum computation.
@@ -1705,8 +1705,8 @@ netmap:
     # BPF filter to apply to this interface. The pcap filter syntax apply here.
     #bpf-filter: port 80 or udp
 
-  {% if helpers.exists('OPNsense.IDS.general.interfaces') %}
-    {% for intfName in OPNsense.IDS.general.interfaces.split(',') %}
+  {% if helpers.exists('Reticen8.IDS.general.interfaces') %}
+    {% for intfName in Reticen8.IDS.general.interfaces.split(',') %}
 
   - interface: {{helpers.physical_interface(intfName)}}
     copy-iface: {{helpers.physical_interface(intfName)}}^
@@ -1814,7 +1814,7 @@ napatech:
 ## file configuration".
 ##
 
-default-rule-path: /usr/local/etc/suricata/opnsense.rules
+default-rule-path: /usr/local/etc/suricata/reticen8.rules
 
 rule-files:
   - suricata.rules
@@ -1834,7 +1834,7 @@ reference-config-file: /usr/local/etc/suricata/reference.config
 # Includes.  Files included here will be handled as if they were
 # inlined in this configuration file.
 
-# include installed rules list (generated by OPNsense install rules script)
+# include installed rules list (generated by Reticen8 install rules script)
 include: installed_rules.yaml
 
 # include custom file (may be persistently modified)

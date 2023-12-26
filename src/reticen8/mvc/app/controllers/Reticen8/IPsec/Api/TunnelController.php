@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec\Api;
+namespace Reticen8\IPsec\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Config;
 
 /**
  * Class TunnelController
- * @package OPNsense\IPsec\Api
+ * @package Reticen8\IPsec\Api
  */
 class TunnelController extends ApiControllerBase
 {

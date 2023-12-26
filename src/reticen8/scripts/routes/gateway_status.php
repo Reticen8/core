@@ -35,7 +35,7 @@ require_once 'plugins.inc.d/dpinger.inc';
 $result = [];
 $gateways_status = dpinger_status();
 
-foreach ((new \OPNsense\Routing\Gateways())->gatewaysIndexedByName() as $gname => $gw) {
+foreach ((new \Reticen8\Routing\Gateways())->gatewaysIndexedByName() as $gname => $gw) {
     $gatewayItem = ['name' => $gname];
     $gatewayItem['address'] = !empty($gw['gateway']) ? $gw['gateway'] : '~';
     if (!empty($gateways_status[$gname])) {

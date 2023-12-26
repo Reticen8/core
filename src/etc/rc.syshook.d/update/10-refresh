@@ -5,7 +5,7 @@
 
 daemon /bin/sh -s << EOF
 # remove our stale pyc files not handled by pkg
-find /usr/local/opnsense -type f -name "*.pyc" -delete
+find /usr/local/reticen8 -type f -name "*.pyc" -delete
 
 for DIR in /boot /usr/libexec/bsdinstall /usr/local; do
 	# remove spurious files from pkg

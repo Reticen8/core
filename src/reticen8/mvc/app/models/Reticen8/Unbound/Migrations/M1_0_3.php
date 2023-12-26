@@ -26,10 +26,10 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound\Migrations;
+namespace Reticen8\Unbound\Migrations;
 
-use OPNsense\Base\BaseModelMigration;
-use OPNsense\Core\Config;
+use Reticen8\Base\BaseModelMigration;
+use Reticen8\Core\Config;
 
 class M1_0_3 extends BaseModelMigration
 {
@@ -86,7 +86,7 @@ class M1_0_3 extends BaseModelMigration
         }
 
         foreach (['privatedomain', 'insecuredomain'] as $misc_node) {
-            $node_value = (string)$config->OPNsense->unboundplus->miscellaneous->$misc_node;
+            $node_value = (string)$config->Reticen8->unboundplus->miscellaneous->$misc_node;
             if (!empty($node_value)) {
                 $legacy_config[$misc_node] = $node_value;
             }

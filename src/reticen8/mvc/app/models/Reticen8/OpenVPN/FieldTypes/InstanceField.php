@@ -26,10 +26,10 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN\FieldTypes;
+namespace Reticen8\OpenVPN\FieldTypes;
 
-use OPNsense\Base\FieldTypes\ArrayField;
-use OPNsense\Base\FieldTypes\TextField;
+use Reticen8\Base\FieldTypes\ArrayField;
+use Reticen8\Base\FieldTypes\TextField;
 
 class InstanceField extends ArrayField
 {

@@ -26,17 +26,17 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Core;
+namespace Reticen8\Core;
 
 /**
  * Class BackupController
- * @package OPNsense\Core
+ * @package Reticen8\Core
  */
-class BackupController extends \OPNsense\Base\IndexController
+class BackupController extends \Reticen8\Base\IndexController
 {
     public function historyAction($selected_host = null)
     {
         $this->view->selected_host = $selected_host;
-        $this->view->pick('OPNsense/Core/backup_history');
+        $this->view->pick('Reticen8/Core/backup_history');
     }
 }

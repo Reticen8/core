@@ -1,5 +1,5 @@
 <model>
-    <mount>//OPNsense/Gateways</mount>
+    <mount>//Reticen8/Gateways</mount>
     <description>Gateways configuration</description>
     <version>1.0.0</version>
     <items>

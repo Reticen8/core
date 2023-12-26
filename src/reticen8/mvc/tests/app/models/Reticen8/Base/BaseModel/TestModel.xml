@@ -1,7 +1,7 @@
 <model>
-    <mount>//tests/OPNsense/TestModel</mount>
+    <mount>//tests/Reticen8/TestModel</mount>
     <version>1.0.0</version>
-    <description>OPNsense RecursiveModel test</description>
+    <description>Reticen8 RecursiveModel test</description>
     <items>
         <!-- container -->
         <general>

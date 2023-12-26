@@ -28,13 +28,13 @@
  *
  */
 
-namespace tests\OPNsense\Base\FieldTypes;
+namespace tests\Reticen8\Base\FieldTypes;
 
 // @CodingStandardsIgnoreStart
 require_once 'Field_Framework_TestCase.php';
 // @CodingStandardsIgnoreEnd
 
-use OPNsense\Base\FieldTypes\ProtocolField;
+use Reticen8\Base\FieldTypes\ProtocolField;
 
 class ProtocolFieldTest extends Field_Framework_TestCase
 {
@@ -43,14 +43,14 @@ class ProtocolFieldTest extends Field_Framework_TestCase
      */
     public function testCanBeCreated()
     {
-        $this->assertInstanceOf('\OPNsense\Base\FieldTypes\ProtocolField', new ProtocolField());
+        $this->assertInstanceOf('\Reticen8\Base\FieldTypes\ProtocolField', new ProtocolField());
     }
 
     /**
      */
     public function testRequiredEmpty()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("PresenceOf");
         $field = new ProtocolField();
         $field->eventPostLoading();

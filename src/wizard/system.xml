@@ -2,7 +2,7 @@
 <wizard>
     <copyright><![CDATA[
 /*
-    Copyright (C) 2015-2017 Franco Fichtner <franco@opnsense.org>
+    Copyright (C) 2015-2017 Franco Fichtner <franco@reticen8.org>
     Copyright (C) 2014 Deciso B.V.
     Copyright (C) 2004-2005 Scott Ullrich <sullrich@gmail.com>
     All rights reserved.
@@ -114,19 +114,19 @@
                 <name>Enable Resolver</name>
                 <type>checkbox</type>
                 <value>yes</value>
-                <bindstofield>OPNsense->unboundplus->general->enabled</bindstofield>
+                <bindstofield>Reticen8->unboundplus->general->enabled</bindstofield>
             </field>
             <field>
                 <name>Enable DNSSEC Support</name>
                 <type>checkbox</type>
                 <value></value>
-                <bindstofield>OPNsense->unboundplus->general->dnssec</bindstofield>
+                <bindstofield>Reticen8->unboundplus->general->dnssec</bindstofield>
             </field>
             <field>
                 <name>Harden DNSSEC data</name>
                 <type>checkbox</type>
                 <value></value>
-                <bindstofield>OPNsense->unboundplus->advanced->dnssecstripped</bindstofield>
+                <bindstofield>Reticen8->unboundplus->advanced->dnssecstripped</bindstofield>
             </field>
             <field>
                 <name>Next</name>
@@ -420,7 +420,7 @@ if (!empty($input_errors)) {
             </field>
         </fields>
         <stepbeforeformdisplay><![CDATA[
-foreach ((new \OPNsense\Routing\Gateways())->gatewayIterator() as $gw) {
+foreach ((new \Reticen8\Routing\Gateways())->gatewayIterator() as $gw) {
     if (empty($config['wizardtemp']['wangateway']) && $gw['name'] == 'WAN_GW') {
         $config['wizardtemp']['wangateway'] = $gw['gateway'];
     }
@@ -607,7 +607,7 @@ $config['system']['domain'] = $config['wizardtemp']['system']['domain'];
 
 $found = false;
 $defaultgw_found = false;
-$gateways = new \OPNsense\Routing\Gateways();
+$gateways = new \Reticen8\Routing\Gateways();
 foreach ($gateways->gatewayIterator() as $gw) {
     if (!empty($gw['defaultgw'])) {
         $defaultgw_found = true;
@@ -632,7 +632,7 @@ if (!$found) {
     $gateways->createOrUpdateGateway($newgw);
 }
 
-$config = OPNsense\Core\Config::getInstance()->toArray(listtags());
+$config = Reticen8\Core\Config::getInstance()->toArray(listtags());
 
 unset($config['wizardtemp']);
 write_config();

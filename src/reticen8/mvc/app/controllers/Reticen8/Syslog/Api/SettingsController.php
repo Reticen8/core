@@ -26,22 +26,22 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Syslog\Api;
+namespace Reticen8\Syslog\Api;
 
-use OPNsense\Phalcon\Filter\Filter;
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
-use OPNsense\Base\UIModelGrid;
+use Reticen8\Phalcon\Filter\Filter;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
+use Reticen8\Base\UIModelGrid;
 
 /**
  * Class SettingsController Handles settings related API actions for the Syslog module
- * @package OPNsense\IDS
+ * @package Reticen8\IDS
  */
 class SettingsController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'syslog';
-    protected static $internalModelClass = '\OPNsense\Syslog\Syslog';
+    protected static $internalModelClass = '\Reticen8\Syslog\Syslog';
 
     /**
      * Search syslog destinations
@@ -83,7 +83,7 @@ class SettingsController extends ApiMutableModelControllerBase
     /**
      * Add new destination and set with attributes from post
      * @return array save result + validation output
-     * @throws \OPNsense\Base\ModelException when not bound to model
+     * @throws \Reticen8\Base\ModelException when not bound to model
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      */
     public function addDestinationAction()

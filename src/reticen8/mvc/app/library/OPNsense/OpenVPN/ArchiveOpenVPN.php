@@ -26,7 +26,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN;
+namespace Reticen8\OpenVPN;
 
 class ArchiveOpenVPN extends PlainOpenVPN
 {

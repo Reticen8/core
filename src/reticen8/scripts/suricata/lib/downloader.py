@@ -1,5 +1,5 @@
 """
-    Copyright (c) 2015-2018 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2015-2018 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -170,7 +170,7 @@ class Downloader(object):
         if os.path.isfile(target_filename):
             with open(target_filename, 'r') as f_in:
                 line = f_in.readline()
-                if line.find("#@opnsense_download_hash:") == 0:
+                if line.find("#@reticen8_download_hash:") == 0:
                     return line.split(':')[1].strip()
         return None
 
@@ -189,7 +189,7 @@ class Downloader(object):
             try:
                 target_filename = '%s/%s' % (self._target_dir, filename)
                 if version:
-                    save_data = "#@opnsense_download_hash:%s\n" % version
+                    save_data = "#@reticen8_download_hash:%s\n" % version
                 else:
                     save_data = ""
                 save_data += self._unpack(

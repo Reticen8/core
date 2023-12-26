@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Phalcon\Filter\Validation\Validator\Email;
+use Reticen8\Phalcon\Filter\Validation\Validator\Email;
 
 /**
  * Class EmailField
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class EmailField extends BaseField
 {

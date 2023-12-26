@@ -28,14 +28,14 @@
  *
  */
 
-namespace OPNsense\CaptivePortal\Api;
+namespace Reticen8\CaptivePortal\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Auth\AuthenticationFactory;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Auth\AuthenticationFactory;
 
 /**
  * Class VoucherController
- * @package OPNsense\CaptivePortal
+ * @package Reticen8\CaptivePortal
  */
 class VoucherController extends ApiControllerBase
 {

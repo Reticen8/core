@@ -1,6 +1,6 @@
 <?php
 
-namespace OPNsense\Phalcon\Filter\Validation;
+namespace Reticen8\Phalcon\Filter\Validation;
 
 use Phalcon\Filter\Validation\Exception as PhalconException;
 use Phalcon\Validation\Exception as PhalconException4;

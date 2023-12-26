@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2015-2023 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2015-2023 Franco Fichtner <franco@reticen8.org>
 # Copyright (C) 2014 Deciso B.V.
 # All rights reserved.
 #
@@ -37,10 +37,10 @@ rm -f ${PIPEFILE}
 mkfifo ${PIPEFILE}
 
 echo "***GOT REQUEST TO UPDATE***" >> ${LOCKFILE}
-echo "Currently running $(opnsense-version) at $(date)" >> ${LOCKFILE}
+echo "Currently running $(reticen8-version) at $(date)" >> ${LOCKFILE}
 
 # figure out if we are crossing ABIs
-if [ "$(opnsense-version -a)" != "$(opnsense-version -x)" ]; then
+if [ "$(reticen8-version -a)" != "$(reticen8-version -x)" ]; then
 	DO_FORCE="-f"
 fi
 
@@ -55,21 +55,21 @@ ALWAYS_REBOOT=$(/usr/local/sbin/pluginctl -g system.firmware.reboot)
 PKGS_HASH=$(pkg query %n-%v 2> /dev/null | sha256)
 
 # upgrade all packages if possible
-(opnsense-update ${DO_FORCE} -pt "opnsense${SUFFIX}" 2>&1) | ${TEE} ${LOCKFILE}
+(reticen8-update ${DO_FORCE} -pt "reticen8${SUFFIX}" 2>&1) | ${TEE} ${LOCKFILE}
 
 # restart the web server
 (/usr/local/etc/rc.restart_webgui 2>&1) | ${TEE} ${LOCKFILE}
 
 # run plugin resolver if requested
 if [ "${CMD}" = "sync" ]; then
-	. /usr/local/opnsense/scripts/firmware/sync.subr.sh
+	. /usr/local/reticen8/scripts/firmware/sync.subr.sh
 fi
 
 # if we can update base, we'll do that as well
 ${TEE} ${LOCKFILE} < ${PIPEFILE} &
-if opnsense-update ${DO_FORCE} -bk -c > ${PIPEFILE} 2>&1; then
+if reticen8-update ${DO_FORCE} -bk -c > ${PIPEFILE} 2>&1; then
 	${TEE} ${LOCKFILE} < ${PIPEFILE} &
-	if opnsense-update ${DO_FORCE} -bk > ${PIPEFILE} 2>&1; then
+	if reticen8-update ${DO_FORCE} -bk > ${PIPEFILE} 2>&1; then
 		echo '***REBOOT***' >> ${LOCKFILE}
 		sleep 5
 		/usr/local/etc/rc.reboot

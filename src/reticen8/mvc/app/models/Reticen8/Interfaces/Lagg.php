@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces;
+namespace Reticen8\Interfaces;
 
-use OPNsense\Base\BaseModel;
+use Reticen8\Base\BaseModel;
 use Phalcon\Messages\Message;
 
 /**
  * Class Lagg
- * @package OPNsense\Interfaces
+ * @package Reticen8\Interfaces
  */
 class Lagg extends BaseModel
 {

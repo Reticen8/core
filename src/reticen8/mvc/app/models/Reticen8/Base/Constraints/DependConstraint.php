@@ -28,12 +28,12 @@
  *
  */
 
-namespace OPNsense\Base\Constraints;
+namespace Reticen8\Base\Constraints;
 
 /**
  * Class DependConstraint, add a constraint to this field stating dependency of another field
  * (if this field is empty then the referred field should be empty too)
- * @package OPNsense\Base\Constraints
+ * @package Reticen8\Base\Constraints
  */
 class DependConstraint extends BaseConstraint
 {

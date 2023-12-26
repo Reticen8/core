@@ -1,5 +1,5 @@
 """
-    Copyright (c) 2023 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2023 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -37,13 +37,13 @@ class AuthGroup(BaseContentParser):
     def _update(cls):
         cls._auth_db = {}
         try:
-            params = ['/usr/local/opnsense/scripts/auth/list_group_members.php']
+            params = ['/usr/local/reticen8/scripts/auth/list_group_members.php']
             group_members = ujson.loads(subprocess.run(params, capture_output=True, text=True).stdout.strip())
         except (ValueError, FileNotFoundError):
             syslog.syslog(syslog.LOG_ERR, 'error fetching group members (%s)' % " ".join(params))
             return
         try:
-            params = ['/usr/local/opnsense/scripts/openvpn/ovpn_status.py', '--options', 'server']
+            params = ['/usr/local/reticen8/scripts/openvpn/ovpn_status.py', '--options', 'server']
             ovpn_status = ujson.loads(subprocess.run(params, capture_output=True,text=True).stdout.strip())
         except (ValueError, FileNotFoundError):
             syslog.syslog(syslog.LOG_ERR, 'error fetching openvpn clients (%s)' % " ".join(params))

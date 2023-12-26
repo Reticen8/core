@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2015 Jos Schellevis <jos@opnsense.org>
+ * Copyright (C) 2015 Jos Schellevis <jos@reticen8.org>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -26,18 +26,18 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Diagnostics;
+namespace Reticen8\Diagnostics;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
  * Class SystemhealthController
- * @package OPNsense\Diagnostics
+ * @package Reticen8\Diagnostics
  */
 class SystemhealthController extends IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Diagnostics/health');
+        $this->view->pick('Reticen8/Diagnostics/health');
     }
 }

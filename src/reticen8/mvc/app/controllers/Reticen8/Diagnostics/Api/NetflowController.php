@@ -28,16 +28,16 @@
  *
  */
 
-namespace OPNsense\Diagnostics\Api;
+namespace Reticen8\Diagnostics\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Diagnostics\Netflow;
-use OPNsense\Core\Config;
-use OPNsense\Core\Backend;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Diagnostics\Netflow;
+use Reticen8\Core\Config;
+use Reticen8\Core\Backend;
 
 /**
  * Class NetflowController
- * @package OPNsense\Netflow
+ * @package Reticen8\Netflow
  */
 class NetflowController extends ApiControllerBase
 {
@@ -125,7 +125,7 @@ class NetflowController extends ApiControllerBase
 
             // reconfigure netflow
             $backend = new Backend();
-            $backend->configdRun('template reload OPNsense/Netflow');
+            $backend->configdRun('template reload Reticen8/Netflow');
             // restart netflow, by calling stop (which will always stop the collectors) and start
             // (which will only start if there are collectors configured)
             $backend->configdRun("netflow stop");

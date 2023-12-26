@@ -1,5 +1,5 @@
 """
-    Copyright (c) 2015-2020 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2015-2020 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -111,7 +111,7 @@ class RuleCache(object):
                             local_change['action'] = configured_policies[policy_match]['__target_action__']
                         rule_updates[rule['metadata']['sid']] = local_change
 
-        # parse OPNsense rule config (XXX: migrate to policy)
+        # parse Reticen8 rule config (XXX: migrate to policy)
         rule_config_fn = ('%s../rules.config' % rule_source_directory)
         if os.path.exists(rule_config_fn):
             cnf = ConfigParser()

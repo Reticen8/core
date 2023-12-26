@@ -28,18 +28,18 @@
  *
  */
 
-namespace OPNsense\CaptivePortal\Api;
+namespace Reticen8\CaptivePortal\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\CaptivePortal\CaptivePortal;
-use OPNsense\Core\Config;
-use OPNsense\Base\UIModelGrid;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\CaptivePortal\CaptivePortal;
+use Reticen8\Core\Config;
+use Reticen8\Base\UIModelGrid;
 use Phalcon\Filter\FilterFactory;
 
 /**
  * Class ServiceController
- * @package OPNsense\CaptivePortal
+ * @package Reticen8\CaptivePortal
  */
 class ServiceController extends ApiControllerBase
 {
@@ -54,11 +54,11 @@ class ServiceController extends ApiControllerBase
 
             $backend = new Backend();
             // the ipfw rules need to know about all the zones, so we need to reload ipfw for the portal to work
-            $backend->configdRun('template reload OPNsense/IPFW');
+            $backend->configdRun('template reload Reticen8/IPFW');
             $bckresult = trim($backend->configdRun("ipfw reload"));
             if ($bckresult == "OK") {
                 // generate captive portal config
-                $bckresult = trim($backend->configdRun('template reload OPNsense/Captiveportal'));
+                $bckresult = trim($backend->configdRun('template reload Reticen8/Captiveportal'));
                 if ($bckresult == "OK") {
                     $mdlCP = new CaptivePortal();
                     if ($mdlCP->isEnabled()) {

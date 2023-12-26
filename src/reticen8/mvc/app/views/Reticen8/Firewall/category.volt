@@ -24,7 +24,7 @@
  # POSSIBILITY OF SUCH DAMAGE.
  #}
 
-{% set theme_name = ui_theme|default('opnsense') %}
+{% set theme_name = ui_theme|default('reticen8') %}
 <link rel="stylesheet" type="text/css" href="{{ cache_safe(theme_file_or_default('/css/pick-a-color-1.2.3.min.css', theme_name)) }}">
 <script src="{{ cache_safe('/ui/js/pick-a-color-1.2.3.min.js') }}"></script>
 <script src="{{ cache_safe('/ui/js/tinycolor-1.4.1.min.js') }}"></script>

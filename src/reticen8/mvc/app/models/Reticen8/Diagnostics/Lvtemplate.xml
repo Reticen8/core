@@ -1,5 +1,5 @@
 <model>
-    <mount>//OPNsense/Firewall/Lvtemplate</mount>
+    <mount>//Reticen8/Firewall/Lvtemplate</mount>
     <version>0.0.1</version>
     <description>Firewall Live View filter templates</description>
     <items>

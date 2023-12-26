@@ -40,7 +40,7 @@ function get_vhid_status()
 {
     $vhids = [];
     $uuids = [];
-    foreach ((new OPNsense\Interfaces\Vip())->vip->iterateItems() as $id => $item) {
+    foreach ((new Reticen8\Interfaces\Vip())->vip->iterateItems() as $id => $item) {
         if ($item->mode == 'carp') {
             $uuids[(string)$item->vhid] =  $id;
         }
@@ -84,13 +84,13 @@ function wg_start($server, $fhandle, $ifcfgflag = 'up')
          * Add routes for all configured peers, wg-quick seems to parse 'wg show wgX allowed-ips' for this,
          * but this should logically congtain the same networks.
          *
-         * XXX: For some reason these routes look a bit off, not very well integrated into OPNsense.
+         * XXX: For some reason these routes look a bit off, not very well integrated into Reticen8.
          *      In the long run it might make sense to have some sort of pluggable model facility
          *      where these (and maybe other) static routes hook into.
          **/
         $peers = explode(',', $server->peers);
         $routes_to_add = ['inet' => [], 'inet6' => []];
-        foreach ((new OPNsense\Wireguard\Client())->clients->client->iterateItems() as $key => $client) {
+        foreach ((new Reticen8\Wireguard\Client())->clients->client->iterateItems() as $key => $client) {
             if (empty((string)$client->enabled) || !in_array($key, $peers)) {
                 continue;
             }
@@ -196,9 +196,9 @@ if (isset($opts['h']) || empty($args) || !in_array($args[0], ['start', 'stop', '
     $action = $args[0];
 
     $server_devs = [];
-    if (!empty((string)(new OPNsense\Wireguard\General())->enabled)) {
+    if (!empty((string)(new Reticen8\Wireguard\General())->enabled)) {
         $vhids = get_vhid_status();
-        foreach ((new OPNsense\Wireguard\Server())->servers->server->iterateItems() as $key => $node) {
+        foreach ((new Reticen8\Wireguard\Server())->servers->server->iterateItems() as $key => $node) {
             $carp_depend_on = (string)$node->carp_depend_on;
             if (empty((string)$node->enabled)) {
                 continue;

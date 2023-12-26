@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Kea\Api;
+namespace Reticen8\Kea\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Config;
 
 class Dhcpv4Controller extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'dhcpv4';
-    protected static $internalModelClass = 'OPNsense\Kea\KeaDhcpv4';
+    protected static $internalModelClass = 'Reticen8\Kea\KeaDhcpv4';
 
     /**
      * @inheritdoc

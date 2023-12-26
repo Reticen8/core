@@ -1,7 +1,7 @@
 <model>
     <mount>:memory:</mount>
     <version>1.0.0</version>
-    <description>OPNsense Traceroute Diagnostics</description>
+    <description>Reticen8 Traceroute Diagnostics</description>
     <items>
         <settings>
             <hostname type="HostnameField">

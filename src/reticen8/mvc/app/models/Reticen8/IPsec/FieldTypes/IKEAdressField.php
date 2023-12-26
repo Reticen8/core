@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec\FieldTypes;
+namespace Reticen8\IPsec\FieldTypes;
 
-use OPNsense\Base\FieldTypes\BaseField;
-use OPNsense\Base\Validators\CallbackValidator;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\FieldTypes\BaseField;
+use Reticen8\Base\Validators\CallbackValidator;
+use Reticen8\Firewall\Util;
 
 /**
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class IKEAdressField extends BaseField
 {

@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound\FieldTypes;
+namespace Reticen8\Unbound\FieldTypes;
 
-use OPNsense\Base\FieldTypes\BaseListField;
-use OPNsense\Core\Config;
+use Reticen8\Base\FieldTypes\BaseListField;
+use Reticen8\Core\Config;
 
 /**
  * Class UnboundDomainField
- * @package OPNsense\Unbound\FieldTypes
+ * @package Reticen8\Unbound\FieldTypes
  */
 class UnboundInterfaceField extends BaseListField
 {

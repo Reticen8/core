@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Base\Validators\NetworkValidator;
-use OPNsense\Base\Validators\HostValidator;
+use Reticen8\Base\Validators\NetworkValidator;
+use Reticen8\Base\Validators\HostValidator;
 
 /**
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class HostnameField extends BaseField
 {

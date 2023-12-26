@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Franco Fichtner <franco@opnsense.org>
+# Copyright (c) 2023 Franco Fichtner <franco@reticen8.org>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -25,7 +25,7 @@
 
 CORE_ABI?=	23.7
 CORE_MESSAGE?=	Carry on my wayward son
-CORE_NAME?=	opnsense-devel
+CORE_NAME?=	reticen8-devel
 # adjust src/root/boot/lua/logo-hourglass.lua.in accordingly:
 CORE_NICKNAME?=	Not Yet
 CORE_TYPE?=	development

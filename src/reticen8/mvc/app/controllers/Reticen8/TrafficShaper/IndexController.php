@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\TrafficShaper;
+namespace Reticen8\TrafficShaper;
 
 /**
  * Class IndexController
- * @package OPNsense\TrafficShaper
+ * @package Reticen8\TrafficShaper
  */
-class IndexController extends \OPNsense\Base\IndexController
+class IndexController extends \Reticen8\Base\IndexController
 {
     /**
      * traffic shaper index
@@ -47,6 +47,6 @@ class IndexController extends \OPNsense\Base\IndexController
         $this->view->formDialogQueue = $this->getForm("dialogQueue");
         $this->view->formDialogRule = $this->getForm("dialogRule");
         // choose template
-        $this->view->pick('OPNsense/TrafficShaper/index');
+        $this->view->pick('Reticen8/TrafficShaper/index');
     }
 }

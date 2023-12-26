@@ -25,7 +25,7 @@
  *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
- * User interface shared components, requires opnsense.js for supporting functions.
+ * User interface shared components, requires reticen8.js for supporting functions.
  */
 
  /**
@@ -149,7 +149,7 @@ function mapDataToFormUI(data_get_map, server_params) {
  */
 function updateServiceStatusUI(status)
 {
-    let status_html = '<span class="label label-opnsense label-opnsense-sm ';
+    let status_html = '<span class="label label-reticen8 label-reticen8-sm ';
 
     if (status === "running") {
         status_html += 'label-success';
@@ -174,7 +174,7 @@ function updateServiceControlUI(serviceName)
     }
 
     ajaxCall("/api/" + serviceName + "/service/status", {}, function(data) {
-        let status_html = '<span class="label label-opnsense label-opnsense-sm ';
+        let status_html = '<span class="label label-reticen8 label-reticen8-sm ';
         let status_icon = '';
         let buttons = '';
 
@@ -211,9 +211,9 @@ function updateServiceControlUI(serviceName)
         const commands = ["start", "restart", "stop"];
         commands.forEach(function(command) {
             $("#" + command + "Service").click(function(){
-                $('#OPNsenseStdWaitDialog').modal('show');
+                $('#Reticen8StdWaitDialog').modal('show');
                 ajaxCall("/api/" + serviceName + "/service/" + command, {},function() {
-                    $('#OPNsenseStdWaitDialog').modal('hide');
+                    $('#Reticen8StdWaitDialog').modal('hide');
                     ajaxCall("/api/" + serviceName + "/service/status", {}, function() {
                         updateServiceControlUI(serviceName);
                     });

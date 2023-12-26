@@ -28,19 +28,19 @@
  *
  */
 
-namespace OPNsense\CaptivePortal;
+namespace Reticen8\CaptivePortal;
 
 /**
  * Class IndexController
- * @package OPNsense\CaptivePortal
+ * @package Reticen8\CaptivePortal
  */
-class IndexController extends \OPNsense\Base\IndexController
+class IndexController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
         // link rule dialog
         $this->view->formDialogZone = $this->getForm("dialogZone");
         // choose template
-        $this->view->pick('OPNsense/CaptivePortal/index');
+        $this->view->pick('Reticen8/CaptivePortal/index');
     }
 }

@@ -2,7 +2,7 @@
 <?php
 
 /*
- * Copyright (C) 2017-2021 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2017-2021 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2003-2004 Manuel Kasper <mk@neon1.net>
  * All rights reserved.
  *
@@ -178,7 +178,7 @@ $ifaceassigned = "";
 
 function next_unused_gateway_name($interface)
 {
-    $gateways = iterator_to_array((new \OPNsense\Routing\Gateways())->gatewayIterator());
+    $gateways = iterator_to_array((new \Reticen8\Routing\Gateways())->gatewayIterator());
 
     $new_name = strtoupper($interface) . '_GW';
 
@@ -208,7 +208,7 @@ function add_gateway_to_config($interface, $gatewayip, $inet_type, $is_in_subnet
 
     $label_IPvX = $inet_type == 'inet6' ? 'IPv6' : 'IPv4';
 
-    $gw = new \OPNsense\Routing\Gateways();
+    $gw = new \Reticen8\Routing\Gateways();
     $gateways = iterator_to_array($gw->gatewayIterator());
 
     $is_default = true;
@@ -292,7 +292,7 @@ function add_gateway_to_config($interface, $gatewayip, $inet_type, $is_in_subnet
      * Serialize back to global config, capturing the changes made here.
      * write_config() will take care of writing the global config to disk later on
      */
-    $config = OPNsense\Core\Config::getInstance()->toArray(listtags());
+    $config = Reticen8\Core\Config::getInstance()->toArray(listtags());
 
     return array($new_name, $nameserver);
 }

@@ -26,10 +26,10 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces;
+namespace Reticen8\Interfaces;
 
 use Phalcon\Messages\Message;
-use OPNsense\Base\BaseModel;
+use Reticen8\Base\BaseModel;
 
 class VxLan extends BaseModel
 {

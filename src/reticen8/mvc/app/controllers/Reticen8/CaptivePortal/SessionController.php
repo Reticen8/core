@@ -28,17 +28,17 @@
  *
  */
 
-namespace OPNsense\CaptivePortal;
+namespace Reticen8\CaptivePortal;
 
 /**
  * Class SessionController
- * @package OPNsense\CaptivePortal
+ * @package Reticen8\CaptivePortal
  */
-class SessionController extends \OPNsense\Base\IndexController
+class SessionController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
         // choose template
-        $this->view->pick('OPNsense/CaptivePortal/clients');
+        $this->view->pick('Reticen8/CaptivePortal/clients');
     }
 }

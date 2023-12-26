@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Backup;
+namespace Reticen8\Backup;
 
 /**
 * Class BackupFactory
-* @package OPNsense\Backup
+* @package Reticen8\Backup
 */
 class BackupFactory
 {
@@ -49,7 +49,7 @@ class BackupFactory
             try {
                 $reflClass = new \ReflectionClass("{$vendor}\\{$module}\\{$classname}");
                 if (
-                    $reflClass->implementsInterface('OPNsense\\Backup\\IBackupProvider')
+                    $reflClass->implementsInterface('Reticen8\\Backup\\IBackupProvider')
                         && !$reflClass->isInterface()
                 ) {
                     $providers[$classname] = array(

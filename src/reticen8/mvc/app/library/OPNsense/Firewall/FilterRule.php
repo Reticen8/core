@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Firewall;
+namespace Reticen8\Firewall;
 
 /**
  * Class FilterRule
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class FilterRule extends Rule
 {

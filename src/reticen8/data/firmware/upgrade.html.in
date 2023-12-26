@@ -1,4 +1,4 @@
-<p>OPNsense %%CORE_SERIES%% "<em>%%CORE_NICKNAME%%</em>" has reached its end
+<p>Reticen8 %%CORE_SERIES%% "<em>%%CORE_NICKNAME%%</em>" has reached its end
 of life. As such it will not receive any more updates, but the upgrade to the
 new %%CORE_NEXT%% series is seamless and can be performed right here from the
 web GUI.</p>
@@ -11,5 +11,5 @@ typing "%%UPGRADE_RELEASE%%" when prompted.</p>
 <p>Make sure to read the migration notes and account for possible breaking changes.</p>
 <p>Please backup your configuration, preview the new version via live image or
 in a virtual machine. Create snapshots. If all else fails, report back
-<a href="https://forum.opnsense.org/" target="_blank">in the forums</a> for
+<a href="https://forum.reticen8.org/" target="_blank">in the forums</a> for
 assistance.</p>

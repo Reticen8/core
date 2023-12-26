@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound;
+namespace Reticen8\Unbound;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 class AclController extends IndexController
 {
@@ -36,6 +36,6 @@ class AclController extends IndexController
     {
         $this->view->aclForm = $this->getForm('acl');
         $this->view->formDialogAcl = $this->getForm('dialogAcl');
-        $this->view->pick('OPNsense/Unbound/acl');
+        $this->view->pick('Reticen8/Unbound/acl');
     }
 }

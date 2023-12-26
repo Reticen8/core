@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2015-2023 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2015-2023 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2004-2008 Scott Ullrich <sullrich@gmail.com>
  * Copyright (C) 2008-2009 Ermal Luçi
  * Copyright (C) 2005 Espen Johansen
@@ -570,7 +570,7 @@ function _interfaces_gif_configure($gif)
     legacy_interface_destroy($gif['gifif']);
     legacy_interface_create($gif['gifif']);
 
-    $gateways = new \OPNsense\Routing\Gateways();
+    $gateways = new \Reticen8\Routing\Gateways();
     $interface = explode('_vip', $gif['if'])[0];
 
     if (is_ipaddrv4($gif['remote-addr'])) {
@@ -943,7 +943,7 @@ function interface_ppps_configure($interface)
     }
 
     // mpd5 modem chat script expected in the same directory as the mpd_xxx.conf files
-    @copy('/usr/local/opnsense/scripts/interfaces/mpd.script', '/var/etc/mpd.script');
+    @copy('/usr/local/reticen8/scripts/interfaces/mpd.script', '/var/etc/mpd.script');
 
     if (isset($config['ppps']['ppp'])) {
         foreach ($config['ppps']['ppp'] as $pppid => $ppp) {
@@ -1062,8 +1062,8 @@ EOD;
         $mpdconf .= "  set iface enable tcpmssfix\n";
     }
 
-    $mpdconf .= "  set iface up-script /usr/local/opnsense/scripts/interfaces/ppp-linkup.sh\n";
-    $mpdconf .= "  set iface down-script /usr/local/opnsense/scripts/interfaces/ppp-linkdown.sh\n";
+    $mpdconf .= "  set iface up-script /usr/local/reticen8/scripts/interfaces/ppp-linkup.sh\n";
+    $mpdconf .= "  set iface down-script /usr/local/reticen8/scripts/interfaces/ppp-linkdown.sh\n";
     if ($ppp['type'] == "ppp") {
         if (is_ipaddr($ppp['localip'])) {
             $localip = $ppp['localip'];
@@ -1234,7 +1234,7 @@ EOD;
     );
 
     /* appease netgraph by setting the correct node name */
-    shell_safe('/usr/sbin/daemon -f /usr/local/opnsense/scripts/interfaces/ppp-rename.sh %s %s %s', [$interface, $ifcfg['if'], $ppp['type']]);
+    shell_safe('/usr/sbin/daemon -f /usr/local/reticen8/scripts/interfaces/ppp-rename.sh %s %s %s', [$interface, $ifcfg['if'], $ppp['type']]);
 
     /* wait for up to 10 seconds for the interface to appear (ppp(oe)) */
     $i = 0;
@@ -2572,7 +2572,7 @@ function interface_6rd_configure($interface, $wancfg, $update = false)
     mwexecf('/sbin/ifconfig %s stfv4net %s/%s', array($stfiface, $ip4address, $wancfg['prefix-6rd-v4plen']));
     mwexecf('/usr/local/sbin/ifctl -i %s -6rd -a %s', [$stfiface, $rd6brgw]);
 
-    $gateways = new \OPNsense\Routing\Gateways();
+    $gateways = new \Reticen8\Routing\Gateways();
     $ip4gateway = $gateways->getInterfaceGateway($interface, 'inet');
     system_host_route($wancfg['gateway-6rd'], $ip4gateway);
 
@@ -2658,7 +2658,7 @@ function interface_6to4_configure($interface, $wancfg, $update = false)
     mwexecf('/sbin/ifconfig %s inet6 %s prefixlen 16', array($stfiface, $stflan));
     mwexecf('/usr/local/sbin/ifctl -i %s -6rd -a %s', [$stfiface, $stfbrgw]);
 
-    $gateways = new \OPNsense\Routing\Gateways();
+    $gateways = new \Reticen8\Routing\Gateways();
     $ip4gateway = $gateways->getInterfaceGateway($interface, 'inet');
     system_host_route('192.88.99.1', $ip4gateway);
 
@@ -2691,7 +2691,7 @@ function interface_dhcpv6_configure($interface, $wancfg)
         array(
             '/var/run/rtsold.pid',
             '/var/etc/rtsold_script.sh',
-            '/usr/local/opnsense/scripts/interfaces/rtsold_resolvconf.sh',
+            '/usr/local/reticen8/scripts/interfaces/rtsold_resolvconf.sh',
         )
     );
 
@@ -3126,7 +3126,7 @@ interface "{$wanif}" {
   select-timeout 0;
   initial-interval 1;
   {$dhclientconf_hostname}
-  script "/usr/local/opnsense/scripts/interfaces/dhclient-script";
+  script "/usr/local/reticen8/scripts/interfaces/dhclient-script";
 
 EOD;
 
@@ -3241,7 +3241,7 @@ function DHCP_Config_File_Advanced($interface, $wancfg, $wanif)
     $dhclientconf .= "{$request_options}";
     $dhclientconf .= "{$required_options}";
     $dhclientconf .= "{$option_modifiers}";
-    $dhclientconf .= "\n\tscript \"/usr/local/opnsense/scripts/interfaces/dhclient-script\";\n";
+    $dhclientconf .= "\n\tscript \"/usr/local/reticen8/scripts/interfaces/dhclient-script\";\n";
     if (empty($wancfg['dhcphonourmtu'])) {
         $dhclientconf .= "\tsupersede interface-mtu 0;\n";
     }
@@ -3887,7 +3887,7 @@ function interfaces_neighbors_configure($device = null, $ifconfig_details = null
     }
 
     $current_neightbors = [];
-    foreach ((new \OPNsense\Interfaces\Neighbor())->neighbor->iterateItems() as $key => $node) {
+    foreach ((new \Reticen8\Interfaces\Neighbor())->neighbor->iterateItems() as $key => $node) {
         $found = empty($if);    /* unfiltered when no $if provided */
         foreach ($subnets as $subnet) {
             $found = ip_in_subnet((string)$node->ipaddress, $subnet);
@@ -3907,7 +3907,7 @@ function interfaces_neighbors_configure($device = null, $ifconfig_details = null
     }
 
     /* persist accounted addresses, without a cleanup that would be all seen since last cleanup */
-    $fobj = new \OPNsense\Core\FileObject('/tmp/interfaces_neighbors.json', 'a+');
+    $fobj = new \Reticen8\Core\FileObject('/tmp/interfaces_neighbors.json', 'a+');
     $current = $fobj->readJson() ?? [];
     $fobj->truncate(0)->writeJson(
         !empty($device) ? array_unique(array_merge($current_neightbors, $current)) : $current_neightbors
@@ -3933,7 +3933,7 @@ function get_interfaces_info($include_unlinked = false)
 
     $all_intf_details = legacy_interfaces_details();
     $all_intf_stats = legacy_interface_stats();
-    $gateways = new \OPNsense\Routing\Gateways();
+    $gateways = new \Reticen8\Routing\Gateways();
     $ifup = legacy_interface_listget('up');
     $result = [];
     $interfaces = legacy_config_get_interfaces(['virtual' => false]);
@@ -4077,7 +4077,7 @@ function get_interfaces_info($include_unlinked = false)
         }
 
         if (file_exists("/var/run/{$link_type}_{$ifdescr}.pid")) {
-            $sec = intval(shell_safe('/usr/local/opnsense/scripts/interfaces/ppp-uptime.sh %s', $ifinfo['if']));
+            $sec = intval(shell_safe('/usr/local/reticen8/scripts/interfaces/ppp-uptime.sh %s', $ifinfo['if']));
             if ($sec) {
                 $ifinfo['ppp_uptime'] = convert_seconds_to_hms($sec);
             }

@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Auth;
+namespace Reticen8\Auth;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 /**
  * RFC 6238 TOTP: Time-Based One-Time Password Authenticator + LDAP
- * @package OPNsense\Auth
+ * @package Reticen8\Auth
  */
 class LDAPTOTP extends LDAP
 {

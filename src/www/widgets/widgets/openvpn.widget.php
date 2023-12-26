@@ -54,7 +54,7 @@ function openvpn_config()
         }
     }
 
-    foreach ((new OPNsense\OpenVPN\OpenVPN())->Instances->Instance->iterateItems() as $key => $node) {
+    foreach ((new Reticen8\OpenVPN\OpenVPN())->Instances->Instance->iterateItems() as $key => $node) {
         if (!empty((string)$node->enabled)) {
             $section = "openvpn-{$node->role}";
             $default_port = ($section == 'openvpn-server') ? 1194 : '';

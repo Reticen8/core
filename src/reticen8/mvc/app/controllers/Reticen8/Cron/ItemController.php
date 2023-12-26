@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\Cron;
+namespace Reticen8\Cron;
 
 /**
  * Class ItemController
- * @package OPNsense\Cron
+ * @package Reticen8\Cron
  */
-class ItemController extends \OPNsense\Base\IndexController
+class ItemController extends \Reticen8\Base\IndexController
 {
     /**
      * open cron form with selected item
@@ -46,6 +46,6 @@ class ItemController extends \OPNsense\Base\IndexController
         $this->view->selected_uuid = htmlspecialchars($uuid, ENT_QUOTES | ENT_HTML401);
         // include dialog form definitions
         $this->view->formDialogEdit = $this->getForm("dialogEdit");
-        $this->view->pick('OPNsense/Cron/index');
+        $this->view->pick('Reticen8/Cron/index');
     }
 }

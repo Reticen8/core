@@ -28,11 +28,11 @@
  *
  */
 
-namespace OPNsense\Diagnostics\FieldTypes;
+namespace Reticen8\Diagnostics\FieldTypes;
 
-use OPNsense\Base\FieldTypes\BaseListField;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
+use Reticen8\Base\FieldTypes\BaseListField;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
 
 class InterfaceField extends BaseListField
 {

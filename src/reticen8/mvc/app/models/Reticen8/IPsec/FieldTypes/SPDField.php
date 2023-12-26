@@ -28,12 +28,12 @@
  *
  */
 
-namespace OPNsense\IPsec\FieldTypes;
+namespace Reticen8\IPsec\FieldTypes;
 
-use OPNsense\Base\FieldTypes\ArrayField;
-use OPNsense\Base\FieldTypes\TextField;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
+use Reticen8\Base\FieldTypes\ArrayField;
+use Reticen8\Base\FieldTypes\TextField;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
 
 class SPDField extends ArrayField
 {

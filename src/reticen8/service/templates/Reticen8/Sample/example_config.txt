@@ -1,7 +1,7 @@
-{% extends "/OPNsense/Sample/example_parent.txt" %}
+{% extends "/Reticen8/Sample/example_parent.txt" %}
 {% block content %}
 
-For demonstration purposes this template is based upon another template in the OPNsense/Sample module.
+For demonstration purposes this template is based upon another template in the Reticen8/Sample module.
 The block named "content" is replaced with this data
 
 In the +TARGETS file, the name of the output is describes as elements of the config data, because we will receive

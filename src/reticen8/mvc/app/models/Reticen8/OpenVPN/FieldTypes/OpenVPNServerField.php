@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN\FieldTypes;
+namespace Reticen8\OpenVPN\FieldTypes;
 
-use OPNsense\Base\FieldTypes\BaseListField;
-use OPNsense\Core\Config;
+use Reticen8\Base\FieldTypes\BaseListField;
+use Reticen8\Core\Config;
 
 /**
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class OpenVPNServerField extends BaseListField
 {

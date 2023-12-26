@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces\Api;
+namespace Reticen8\Interfaces\Api;
 
-use OPNsense\Core\Backend;
-use OPNsense\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Base\ApiMutableModelControllerBase;
 
 class VxlanSettingsController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'vxlan';
-    protected static $internalModelClass = 'OPNsense\Interfaces\VxLan';
+    protected static $internalModelClass = 'Reticen8\Interfaces\VxLan';
 
     public function searchItemAction()
     {

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2015-2017 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2015-2017 Franco Fichtner <franco@reticen8.org>
 # Copyright (C) 2014 Deciso B.V.
 # All rights reserved.
 #
@@ -31,14 +31,14 @@ PACKAGE=${1}
 : > ${LOCKFILE}
 
 echo "***GOT REQUEST TO LOCK***" >> ${LOCKFILE}
-echo "Currently running $(opnsense-version) at $(date)" >> ${LOCKFILE}
+echo "Currently running $(reticen8-version) at $(date)" >> ${LOCKFILE}
 
 if [ "${PACKAGE}" = "base" ]; then
 	echo "Locking base set" >> ${LOCKFILE}
-	opnsense-update -bL >> ${LOCKFILE} 2>&1
+	reticen8-update -bL >> ${LOCKFILE} 2>&1
 elif [ "${PACKAGE}" = "kernel" ]; then
 	echo "Locking kernel set" >> ${LOCKFILE}
-	opnsense-update -kL >> ${LOCKFILE} 2>&1
+	reticen8-update -kL >> ${LOCKFILE} 2>&1
 else
 	pkg lock -y ${PACKAGE} >> ${LOCKFILE} 2>&1
 fi

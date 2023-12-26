@@ -26,12 +26,12 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\TrafficShaper;
+namespace Reticen8\TrafficShaper;
 
 /**
  * {@inheritdoc}
  */
-class ServiceController extends \OPNsense\Base\IndexController
+class ServiceController extends \Reticen8\Base\IndexController
 {
     /**
      * traffic shaper statistics
@@ -40,6 +40,6 @@ class ServiceController extends \OPNsense\Base\IndexController
     public function statisticsAction()
     {
         // choose template
-        $this->view->pick('OPNsense/TrafficShaper/statistics');
+        $this->view->pick('Reticen8/TrafficShaper/statistics');
     }
 }

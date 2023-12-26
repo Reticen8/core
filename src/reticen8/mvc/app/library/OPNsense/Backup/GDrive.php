@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Backup;
+namespace Reticen8\Backup;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 /**
  * Class google drive backup
- * @package OPNsense\Backup
+ * @package Reticen8\Backup
  */
 class Gdrive extends Base implements IBackupProvider
 {
@@ -64,7 +64,7 @@ class Gdrive extends Base implements IBackupProvider
             "help" => sprintf(
                 gettext('You need a private key in p12 format to use Google Drive, ' .
                 'instructions on how to acquire one can be found %shere%s.'),
-                '<a href="https://docs.opnsense.org/manual/how-tos/cloud_backup.html" target="_blank">',
+                '<a href="https://docs.reticen8.org/manual/how-tos/cloud_backup.html" target="_blank">',
                 '</a>'
             ),
             "value" => null

@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN;
+namespace Reticen8\OpenVPN;
 
-use OPNsense\Base\IndexController as BaseIndexController;
+use Reticen8\Base\IndexController as BaseIndexController;
 
 /**
  * Class StatusController
- * @package OPNsense\OpenVPN
+ * @package Reticen8\OpenVPN
  */
 class StatusController extends BaseIndexController
 {
@@ -42,6 +42,6 @@ class StatusController extends BaseIndexController
      */
     public function indexAction()
     {
-        $this->view->pick('OPNsense/OpenVPN/status');
+        $this->view->pick('Reticen8/OpenVPN/status');
     }
 }

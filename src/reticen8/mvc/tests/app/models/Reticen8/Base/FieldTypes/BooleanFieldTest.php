@@ -28,13 +28,13 @@
  *
  */
 
-namespace tests\OPNsense\Base\FieldTypes;
+namespace tests\Reticen8\Base\FieldTypes;
 
 // @CodingStandardsIgnoreStart
 require_once 'Field_Framework_TestCase.php';
 // @CodingStandardsIgnoreEnd
 
-use OPNsense\Base\FieldTypes\BooleanField;
+use Reticen8\Base\FieldTypes\BooleanField;
 
 class BooleanFieldTest extends Field_Framework_TestCase
 {
@@ -43,14 +43,14 @@ class BooleanFieldTest extends Field_Framework_TestCase
      */
     public function testCanBeCreated()
     {
-        $this->assertInstanceOf('\OPNsense\Base\FieldTypes\BooleanField', new BooleanField());
+        $this->assertInstanceOf('\Reticen8\Base\FieldTypes\BooleanField', new BooleanField());
     }
 
     /**
      */
     public function testShouldNotBeANumber()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("Regex");
         $field = new BooleanField();
         $field->setValue("90");
@@ -61,7 +61,7 @@ class BooleanFieldTest extends Field_Framework_TestCase
      */
     public function testShouldNotBeAString()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("Regex");
         $field = new BooleanField();
         $field->setValue("xx");
@@ -73,7 +73,7 @@ class BooleanFieldTest extends Field_Framework_TestCase
      */
     public function testRequiredEmpty()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("PresenceOf");
         $field = new BooleanField();
         $field->setRequired("Y");

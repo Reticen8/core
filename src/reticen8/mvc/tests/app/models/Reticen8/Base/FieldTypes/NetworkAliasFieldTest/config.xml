@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<opnsense>
+<reticen8>
     <interfaces>
         <wan>
             <if>if001</if>
@@ -26,7 +26,7 @@
             <virtual>1</virtual>
         </enc0>
     </interfaces>
-    <OPNsense>
+    <Reticen8>
         <Firewall>
             <Alias version="1.0.0">
                 <aliases>
@@ -94,5 +94,5 @@
                 </aliases>
             </Alias>
         </Firewall>
-    </OPNsense>
-</opnsense>
+    </Reticen8>
+</reticen8>

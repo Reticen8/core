@@ -32,14 +32,14 @@ function core_services()
 
     $services = array();
 
-    if (isset($config['OPNsense']['captiveportal']['zones']['zone'])) {
+    if (isset($config['Reticen8']['captiveportal']['zones']['zone'])) {
         $enabled = false;
-        if (!empty($config['OPNsense']['captiveportal']['zones']['zone']['enabled'])) {
+        if (!empty($config['Reticen8']['captiveportal']['zones']['zone']['enabled'])) {
             // single zone and enabled
             $enabled = true;
         } else {
             // possible more zones, traverse items
-            foreach ($config['OPNsense']['captiveportal']['zones']['zone'] as $zone) {
+            foreach ($config['Reticen8']['captiveportal']['zones']['zone'] as $zone) {
                 if (!empty($zone['enabled'])) {
                     $enabled = true;
                 }
@@ -327,7 +327,7 @@ function core_cron()
         );
     }
 
-    foreach ((new OPNsense\Backup\BackupFactory())->listProviders() as $classname => $provider) {
+    foreach ((new Reticen8\Backup\BackupFactory())->listProviders() as $classname => $provider) {
         if ($provider['handle']->isEnabled()) {
             $jobs[]['autocron'] = array('/usr/local/sbin/configctl -d system remote backup 3600', 0, 1);
             break;
@@ -426,7 +426,7 @@ function core_xmlrpc_sync()
     $result[] = array(
         'description' => gettext('Static Routes'),
         'help' => gettext('Synchronize the Static Route configuration and Gateways to the other HA host.'),
-        'section' => 'staticroutes,gateways,OPNsense.Gateways',
+        'section' => 'staticroutes,gateways,Reticen8.Gateways',
         'id' => 'staticroutes',
         'services' => ["routing", "dpinger"],
     );
@@ -438,13 +438,13 @@ function core_xmlrpc_sync()
     );
     $result[] = array(
         'description' => gettext('Syslog'),
-        'section' => 'syslog,OPNsense.Syslog',
+        'section' => 'syslog,Reticen8.Syslog',
         'id' => 'syslog',
         'services' => ["syslogd"],
     );
     $result[] = array(
         'description' => gettext('Cron'),
-        'section' => 'OPNsense.cron',
+        'section' => 'Reticen8.cron',
         'id' => 'cron',
         'services' => ["cron"],
     );

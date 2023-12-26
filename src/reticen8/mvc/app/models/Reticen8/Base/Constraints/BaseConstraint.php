@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\Constraints;
+namespace Reticen8\Base\Constraints;
 
-use OPNsense\Base\BaseValidator;
+use Reticen8\Base\BaseValidator;
 use Phalcon\Messages\Message;
 
 abstract class BaseConstraint extends BaseValidator
@@ -41,7 +41,7 @@ abstract class BaseConstraint extends BaseValidator
     public function isEmpty($node)
     {
         $node_class = get_class($node);
-        if ($node_class == "OPNsense\Base\FieldTypes\BooleanField") {
+        if ($node_class == "Reticen8\Base\FieldTypes\BooleanField") {
             return empty((string)$node);
         } elseif (empty((string)$node) || (string)$node == "0") {
             return true;

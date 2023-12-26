@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec;
+namespace Reticen8\IPsec;
 
-class ConnectionsController extends \OPNsense\Base\IndexController
+class ConnectionsController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/IPsec/connections');
+        $this->view->pick('Reticen8/IPsec/connections');
         $this->view->formDialogConnection = $this->getForm('dialogConnection');
         $this->view->formDialogLocal = $this->getForm('dialogLocal');
         $this->view->formDialogRemote = $this->getForm('dialogRemote');

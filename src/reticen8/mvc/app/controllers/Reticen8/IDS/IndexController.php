@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\IDS;
+namespace Reticen8\IDS;
 
 /**
  * Class IndexController
- * @package OPNsense\IDS
+ * @package Reticen8\IDS
  */
-class IndexController extends \OPNsense\Base\IndexController
+class IndexController extends \Reticen8\Base\IndexController
 {
     /**
      * default ids index page
@@ -51,6 +51,6 @@ class IndexController extends \OPNsense\Base\IndexController
         // link fingerprint dialog
         $this->view->formDialogUserDefined = $this->getForm("dialogUserDefined");
         // choose template
-        $this->view->pick('OPNsense/IDS/index');
+        $this->view->pick('Reticen8/IDS/index');
     }
 }

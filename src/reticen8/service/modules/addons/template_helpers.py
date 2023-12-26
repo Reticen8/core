@@ -1,5 +1,5 @@
 """
-    Copyright (c) 2015-2023 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2015-2023 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -196,7 +196,7 @@ class Helpers(object):
         result = list()
         template_path = os.path.realpath("%s/../../templates/" % os.path.dirname(__file__))
         for sfilename in glob.glob("%s/%s" % (template_path, pathname)):
-            # only allowed to list templates within the template scope (default  /usr/local/opnsense/service/templates)
+            # only allowed to list templates within the template scope (default  /usr/local/reticen8/service/templates)
             if os.path.realpath(sfilename).startswith(template_path):
                 result.append(sfilename[len(template_path):].lstrip('/'))
 

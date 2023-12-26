@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN;
+namespace Reticen8\OpenVPN;
 
-use OPNsense\Base\BaseModel;
+use Reticen8\Base\BaseModel;
 
 /**
  * Class Export
- * @package OPNsense\OpenVPN
+ * @package Reticen8\OpenVPN
  */
 class Export extends BaseModel
 {

@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 /**
  * Class LegacyLinkField field, read only referral to a config item in the legacy configuration.
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class LegacyLinkField extends BaseField
 {

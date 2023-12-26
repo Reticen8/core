@@ -179,7 +179,7 @@ $(document).ready(function() {
             <input type="hidden" id="action" name="action" value="" />
             <div class="tab-content content-box col-xs-12 __mb">
               <div class="table-responsive">
-                <table class="table table-striped opnsense_standard_table_form">
+                <table class="table table-striped reticen8_standard_table_form">
                   <tr>
                     <td style="width:22%"><strong><?=gettext("Local Logging Options");?></strong></td>
                     <td style="width:78%; text-align:right">
@@ -266,7 +266,7 @@ $(document).ready(function() {
             </div>
             <div class="tab-content content-box col-xs-12">
               <div class="table-responsive">
-                <table class="table table-striped opnsense_standard_table_form">
+                <table class="table table-striped reticen8_standard_table_form">
                   <tr>
                     <td style="width:22%"></td>
                     <td style="width:78%"><input name="Submit" type="submit" class="btn btn-primary" value="<?=html_safe(gettext('Save')); ?>"/>

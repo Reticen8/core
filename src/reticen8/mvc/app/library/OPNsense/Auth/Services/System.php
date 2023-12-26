@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Auth\Services;
+namespace Reticen8\Auth\Services;
 
-use OPNsense\Core\Config;
-use OPNsense\Auth\IService;
+use Reticen8\Core\Config;
+use Reticen8\Auth\IService;
 
 /**
  * System / console service
- * @package OPNsense\Auth
+ * @package Reticen8\Auth
  */
 class System implements IService
 {
@@ -49,7 +49,7 @@ class System implements IService
     {
         return [
             'login',
-            'opnsenselogin',
+            'reticen8login',
             'sshd',
             'su',
             'sudo',

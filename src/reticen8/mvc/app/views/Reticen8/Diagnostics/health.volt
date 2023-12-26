@@ -1,7 +1,7 @@
 <!--
 /*
 *    Copyright (C) 2023 Deciso B.V.
-*    Copyright (C) 2015 Jos Schellevis <jos@opnsense.org>
+*    Copyright (C) 2015 Jos Schellevis <jos@reticen8.org>
 *    All rights reserved.
 *
 *    Redistribution and use in source and binary forms, with or without
@@ -35,7 +35,7 @@
 </style>
 
 <!-- nvd3 -->
-<link rel="stylesheet" type="text/css" href="{{ cache_safe(theme_file_or_default('/css/nv.d3.css', ui_theme|default('opnsense'))) }}" />
+<link rel="stylesheet" type="text/css" href="{{ cache_safe(theme_file_or_default('/css/nv.d3.css', ui_theme|default('reticen8'))) }}" />
 
 <!-- d3 -->
 <script src="{{ cache_safe('/ui/js/d3.min.js') }}"></script>

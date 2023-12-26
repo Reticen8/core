@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Diagnostics;
+namespace Reticen8\Diagnostics;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
  * Class InterfaceController
- * @package OPNsense\Diagnostics
+ * @package Reticen8\Diagnostics
  */
 class InterfaceController extends IndexController
 {
@@ -43,7 +43,7 @@ class InterfaceController extends IndexController
     {
         return array_merge(parent::templateJSIncludes(), [
             '/ui/js/tree.jquery.min.js',
-            '/ui/js/opnsense-treeview.js'
+            '/ui/js/reticen8-treeview.js'
         ]);
     }
 
@@ -60,7 +60,7 @@ class InterfaceController extends IndexController
      */
     public function arpAction()
     {
-        $this->view->pick('OPNsense/Diagnostics/arp');
+        $this->view->pick('Reticen8/Diagnostics/arp');
     }
 
     /**
@@ -68,7 +68,7 @@ class InterfaceController extends IndexController
      */
     public function ndpAction()
     {
-        $this->view->pick('OPNsense/Diagnostics/ndp');
+        $this->view->pick('Reticen8/Diagnostics/ndp');
     }
 
     /**
@@ -76,7 +76,7 @@ class InterfaceController extends IndexController
      */
     public function routesAction()
     {
-        $this->view->pick('OPNsense/Diagnostics/routes');
+        $this->view->pick('Reticen8/Diagnostics/routes');
     }
 
     /**
@@ -84,7 +84,7 @@ class InterfaceController extends IndexController
      */
     public function vipAction()
     {
-        $this->view->pick('OPNsense/Diagnostics/vip');
+        $this->view->pick('Reticen8/Diagnostics/vip');
     }
 
     /**
@@ -125,6 +125,6 @@ class InterfaceController extends IndexController
             ]
         ];
         $this->view->default_tab = "interfaces";
-        $this->view->pick('OPNsense/Diagnostics/treeview');
+        $this->view->pick('Reticen8/Diagnostics/treeview');
     }
 }

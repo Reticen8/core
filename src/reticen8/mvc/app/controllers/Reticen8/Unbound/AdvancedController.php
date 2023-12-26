@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound;
+namespace Reticen8\Unbound;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 class AdvancedController extends IndexController
 {
     public function indexAction()
     {
         $this->view->advancedForm = $this->getForm('advanced');
-        $this->view->pick('OPNsense/Unbound/advanced');
+        $this->view->pick('Reticen8/Unbound/advanced');
     }
 }

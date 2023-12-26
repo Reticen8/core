@@ -1,5 +1,5 @@
 <model>
-    <mount>//OPNsense/Interfaces/loopbacks</mount>
+    <mount>//Reticen8/Interfaces/loopbacks</mount>
     <version>1.0.0</version>
     <description>Loopback configuration</description>
     <items>

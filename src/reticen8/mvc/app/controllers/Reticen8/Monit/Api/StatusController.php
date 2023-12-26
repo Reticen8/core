@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Monit\Api;
+namespace Reticen8\Monit\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Monit\Monit;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Monit\Monit;
 
 /**
  * Class StatusController
- * @package OPNsense\Monit
+ * @package Reticen8\Monit
  */
 class StatusController extends ApiControllerBase
 {

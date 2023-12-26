@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\Auth;
+namespace Reticen8\Auth;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 /**
  * Class API key/secret database connector (connect to legacy xml structure).
- * @package OPNsense\Auth
+ * @package Reticen8\Auth
  */
 class API extends Base implements IAuthConnector
 {

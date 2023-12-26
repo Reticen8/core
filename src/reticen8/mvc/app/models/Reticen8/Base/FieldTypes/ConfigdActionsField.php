@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Core\Backend;
+use Reticen8\Core\Backend;
 
 /**
  * Class ConfigdActionsField list configurable configd actions
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class ConfigdActionsField extends BaseListField
 {

@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Core;
+namespace Reticen8\Core;
 
-use OPNsense\Base\BaseModel;
+use Reticen8\Base\BaseModel;
 use Phalcon\Messages\Message;
 
 /**
  * Class Firmware
- * @package OPNsense\Core
+ * @package Reticen8\Core
  */
 class Firmware extends BaseModel
 {

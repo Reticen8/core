@@ -1,5 +1,5 @@
 <model>
-    <mount>//OPNsense/Kea/dhcp4</mount>
+    <mount>//Reticen8/Kea/dhcp4</mount>
     <version>0.0.1</version>
     <description>Kea DHCPv4 configuration</description>
     <items>
@@ -71,7 +71,7 @@
                 <subnet type="ModelRelationField">
                     <Model>
                         <subnets>
-                            <source>OPNsense.Kea.KeaDhcpv4</source>
+                            <source>Reticen8.Kea.KeaDhcpv4</source>
                             <items>subnets.subnet4</items>
                             <display>subnet</display>
                         </subnets>

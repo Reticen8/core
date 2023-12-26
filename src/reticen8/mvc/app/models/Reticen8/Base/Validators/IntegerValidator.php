@@ -28,14 +28,14 @@
  *
  */
 
-namespace OPNsense\Base\Validators;
+namespace Reticen8\Base\Validators;
 
-use OPNsense\Base\BaseValidator;
+use Reticen8\Base\BaseValidator;
 use Phalcon\Messages\Message;
 
 /**
  * Class IntegerValidator
- * @package OPNsense\Base\Validators
+ * @package Reticen8\Base\Validators
  */
 class IntegerValidator extends BaseValidator
 {

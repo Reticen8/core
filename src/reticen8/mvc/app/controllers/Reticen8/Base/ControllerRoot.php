@@ -26,19 +26,19 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base;
+namespace Reticen8\Base;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 use Phalcon\Mvc\Controller;
-use OPNsense\Phalcon\Logger\Logger;
+use Reticen8\Phalcon\Logger\Logger;
 use Phalcon\Logger\Adapter\Syslog;
 use Phalcon\Logger\Formatter\Line;
 use Phalcon\Translate\InterpolatorFactory;
-use OPNsense\Core\ACL;
+use Reticen8\Core\ACL;
 
 /**
- * Class ControllerRoot wrap shared OPNsense controller features (auth, logging)
- * @package OPNsense\Base
+ * Class ControllerRoot wrap shared Reticen8 controller features (auth, logging)
+ * @package Reticen8\Base
  */
 class ControllerRoot extends Controller
 {
@@ -95,12 +95,12 @@ class ControllerRoot extends Controller
         $interpolator = new InterpolatorFactory();
         $this->translator = new ViewTranslator($interpolator, [
             'directory' => '/usr/local/share/locale',
-            'defaultDomain' => 'OPNsense',
+            'defaultDomain' => 'Reticen8',
             'locale' => [$locale],
         ]);
 
         /* somehow this is not done by Phalcon */
-        bind_textdomain_codeset('OPNsense', $locale);
+        bind_textdomain_codeset('Reticen8', $locale);
         putenv('LANG=' . $locale);
     }
 

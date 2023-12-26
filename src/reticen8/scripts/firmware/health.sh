@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2017-2023 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2017-2023 Franco Fichtner <franco@reticen8.org>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -26,7 +26,7 @@
 
 LOCKFILE="/tmp/pkg_upgrade.progress"
 MTREE="mtree -e -p /"
-PRODUCT="OPNsense"
+PRODUCT="Reticen8"
 TEE="/usr/bin/tee -a"
 TMPFILE=/tmp/pkg_check.exclude
 
@@ -63,13 +63,13 @@ for PATTERN in ${MTREE_PATTERNS}; do
 "
 done
 
-VERSION=$(opnsense-update -v)
+VERSION=$(reticen8-update -v)
 
 set_check()
 {
 	SET=${1}
 
-	VER=$(opnsense-version -v ${SET})
+	VER=$(reticen8-version -v ${SET})
 
 	echo ">>> Check installed ${SET} version" | ${TEE} ${LOCKFILE}
 
@@ -81,7 +81,7 @@ set_check()
 		echo "Version ${VER} is correct." | ${TEE} ${LOCKFILE}
 	fi
 
-	FILE=/usr/local/opnsense/version/${SET}.mtree
+	FILE=/usr/local/reticen8/version/${SET}.mtree
 
 	if [ ! -f ${FILE} ]; then
 		echo "Cannot verify ${SET}: missing ${FILE}" | ${TEE} ${LOCKFILE}
@@ -90,7 +90,7 @@ set_check()
 
 	if [ ! -f ${FILE}.sig ]; then
 		echo "Unverified consistency check for ${SET}: missing ${FILE}.sig" | ${TEE} ${LOCKFILE}
-	elif ! opnsense-verify -q ${FILE}; then
+	elif ! reticen8-verify -q ${FILE}; then
 		echo "Unverified consistency check for ${SET}: invalid ${FILE}.sig" | ${TEE} ${LOCKFILE}
 	fi
 
@@ -123,7 +123,7 @@ core_check()
 {
 	echo ">>> Check for core packages consistency" | ${TEE} ${LOCKFILE}
 
-	CORE=$(opnsense-version -n)
+	CORE=$(reticen8-version -n)
 	PROGRESS=
 
 	if [ -z "$(pkg query %n ${CORE})" ]; then
@@ -215,7 +215,7 @@ EOF
 }
 
 echo "***GOT REQUEST TO AUDIT HEALTH***" >> ${LOCKFILE}
-echo "Currently running $(opnsense-version) at $(date)" >> ${LOCKFILE}
+echo "Currently running $(reticen8-version) at $(date)" >> ${LOCKFILE}
 
 echo ">>> Root file system: $(mount | awk '$3 == "/" { print $1 }')" | ${TEE} ${LOCKFILE}
 
@@ -223,7 +223,7 @@ set_check kernel
 set_check base
 
 echo ">>> Check installed repositories" | ${TEE} ${LOCKFILE}
-(opnsense-verify -l 2>&1) | ${TEE} ${LOCKFILE}
+(reticen8-verify -l 2>&1) | ${TEE} ${LOCKFILE}
 
 echo ">>> Check installed plugins" | ${TEE} ${LOCKFILE}
 PLUGINS=$(pkg query -g '%n %v' 'os-*' 2>&1)

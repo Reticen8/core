@@ -26,10 +26,10 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Core;
+namespace Reticen8\Core;
 
 use Phalcon\Di\FactoryDefault;
-use OPNsense\Phalcon\Logger\Logger;
+use Reticen8\Phalcon\Logger\Logger;
 use Phalcon\Logger\Adapter\Syslog;
 use Phalcon\Logger\Formatter\Line;
 
@@ -452,8 +452,8 @@ class Config extends Singleton
         // reformat XML (pretty print)
         $dom = new \DOMDocument('1.0');
 
-        // make sure our root element is always called "opnsense"
-        $root = $dom->createElement('opnsense');
+        // make sure our root element is always called "reticen8"
+        $root = $dom->createElement('reticen8');
         $dom->appendChild($root);
 
         foreach ($this->simplexml as $node) {

@@ -26,12 +26,12 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Kea;
+namespace Reticen8\Kea;
 
-use OPNsense\Base\BaseModel;
-use OPNsense\Core\Config;
-use OPNsense\Core\Backend;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\BaseModel;
+use Reticen8\Core\Config;
+use Reticen8\Core\Backend;
+use Reticen8\Firewall\Util;
 
 class KeaDhcpv4 extends BaseModel
 {

@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec\FieldTypes;
+namespace Reticen8\IPsec\FieldTypes;
 
-use OPNsense\Base\FieldTypes\ArrayField;
-use OPNsense\Base\FieldTypes\TextField;
-use OPNsense\Core\Backend;
+use Reticen8\Base\FieldTypes\ArrayField;
+use Reticen8\Base\FieldTypes\TextField;
+use Reticen8\Core\Backend;
 
 class VTIField extends ArrayField
 {

@@ -26,10 +26,10 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Routing\FieldTypes;
+namespace Reticen8\Routing\FieldTypes;
 
-use OPNsense\Base\FieldTypes\ArrayField;
-use OPNsense\Base\FieldTypes\TextField;
+use Reticen8\Base\FieldTypes\ArrayField;
+use Reticen8\Base\FieldTypes\TextField;
 
 class GatewayField extends ArrayField
 {
@@ -54,7 +54,7 @@ class GatewayField extends ArrayField
     public function calculateCurrent($node)
     {
         foreach ($this->getDpingerDefaults() as $property => $default) {
-            if (!is_a($node->getParentNode(), 'OPNsense\Routing\FieldTypes\GatewayField')) {
+            if (!is_a($node->getParentNode(), 'Reticen8\Routing\FieldTypes\GatewayField')) {
                 continue;
             }
             $targetfield = sprintf("current_%s", $property);

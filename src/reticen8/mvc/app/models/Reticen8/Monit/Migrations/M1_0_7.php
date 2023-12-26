@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Monit\Migrations;
+namespace Reticen8\Monit\Migrations;
 
-use OPNsense\Base\BaseModelMigration;
+use Reticen8\Base\BaseModelMigration;
 
 class M1_0_7 extends BaseModelMigration
 {
@@ -65,7 +65,7 @@ class M1_0_7 extends BaseModelMigration
                 'enabled' => '0',
                 'type' => 'custom',
                 'name' => 'gateway_alert',
-                'path' => '/usr/local/opnsense/scripts/OPNsense/Monit/gateway_alert',
+                'path' => '/usr/local/reticen8/scripts/Reticen8/Monit/gateway_alert',
                 'tests' => $defaultTests['NonZeroStatus']['uuid']
             ]
         ];

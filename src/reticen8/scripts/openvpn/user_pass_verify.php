@@ -92,7 +92,7 @@ function do_auth($common_name, $serverid, $method, $auth_file)
             }
         }
     }
-    $a_server = $serverid !== null ? (new OPNsense\OpenVPN\OpenVPN())->getInstanceById($serverid, 'server') : null;
+    $a_server = $serverid !== null ? (new Reticen8\OpenVPN\OpenVPN())->getInstanceById($serverid, 'server') : null;
     if ($a_server == null) {
         return "OpenVPN '$serverid' was not found. Denying authentication for user {$username}";
     } elseif (!empty($a_server['strictusercn']) && $username != $common_name) {
@@ -114,7 +114,7 @@ function do_auth($common_name, $serverid, $method, $auth_file)
         putenv("LDAPTLS_REQCERT=never");
     }
     // perform the actual authentication
-    $authFactory = new OPNsense\Auth\AuthenticationFactory();
+    $authFactory = new Reticen8\Auth\AuthenticationFactory();
     foreach (explode(',', $a_server['authmode']) as $authName) {
         $authenticator = $authFactory->get($authName);
         if ($authenticator) {
@@ -125,7 +125,7 @@ function do_auth($common_name, $serverid, $method, $auth_file)
                     LOG_NOTICE,
                     "Locate overwrite for '{$common_name}' using server '{$serverid}' (vpnid: {$a_server['vpnid']})"
                 );
-                $cso = (new OPNsense\OpenVPN\OpenVPN())->getOverwrite($serverid, $common_name);
+                $cso = (new Reticen8\OpenVPN\OpenVPN())->getOverwrite($serverid, $common_name);
                 if (empty($cso)) {
                     $cso = array("common_name" => $common_name);
                 }

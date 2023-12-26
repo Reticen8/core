@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Base\Validators\CallbackValidator;
+use Reticen8\Base\Validators\CallbackValidator;
 
 /**
  * Class MacAddressField

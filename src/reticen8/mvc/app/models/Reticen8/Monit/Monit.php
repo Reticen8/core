@@ -27,14 +27,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Monit;
+namespace Reticen8\Monit;
 
 use Phalcon\Messages\Message;
-use OPNsense\Base\BaseModel;
+use Reticen8\Base\BaseModel;
 
 /**
  * Class Monit
- * @package OPNsense\Monit
+ * @package Reticen8\Monit
  */
 class Monit extends BaseModel
 {

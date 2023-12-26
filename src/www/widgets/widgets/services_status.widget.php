@@ -73,9 +73,9 @@ if (isset($_POST['servicestatusfilter'])) {
                         $item.find('td:eq(0)').text(value.name);
                         $item.find('td:eq(1)').text(value.description);
                         if (value.running) {
-                            $item.find('td:eq(2)').html('<span class="label label-opnsense label-opnsense-xs label-success pull-right" title="<?= gettext('Running') ?>"><i class="fa fa-play fa-fw"></i></span>');
+                            $item.find('td:eq(2)').html('<span class="label label-reticen8 label-reticen8-xs label-success pull-right" title="<?= gettext('Running') ?>"><i class="fa fa-play fa-fw"></i></span>');
                         } else {
-                            $item.find('td:eq(2)').html('<span class="label label-opnsense label-opnsense-xs label-danger pull-right" title="<?= gettext('Stopped') ?>"><i class="fa fa-stop fa-fw"></i></span>');
+                            $item.find('td:eq(2)').html('<span class="label label-reticen8 label-reticen8-xs label-danger pull-right" title="<?= gettext('Stopped') ?>"><i class="fa fa-stop fa-fw"></i></span>');
                         }
                         if (value.locked) {
                             $item.find('td:eq(3)').html(control_services('restart', value.id, "<?= gettext('Restart') ?>", 'repeat'));
@@ -95,7 +95,7 @@ if (isset($_POST['servicestatusfilter'])) {
                     $('.srv_status_act2').click(function (event) {
                         event.preventDefault();
                         let url = '/api/core/service/' + $(this).data('service_action') + '/' + $(this).data('service');
-                        $("#OPNsenseStdWaitDialog").modal('show');
+                        $("#Reticen8StdWaitDialog").modal('show');
                         $.post(url, {}, function (data) {
                             // refresh page after service action via server
                             location.reload(true);

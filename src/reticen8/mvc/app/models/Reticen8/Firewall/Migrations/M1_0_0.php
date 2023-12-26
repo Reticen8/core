@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\Firewall\Migrations;
+namespace Reticen8\Firewall\Migrations;
 
-use OPNsense\Core\Config;
-use OPNsense\Base\BaseModelMigration;
-use OPNsense\Firewall\Alias;
-use OPNsense\Firewall\Category;
-use OPNsense\Firewall\Group;
+use Reticen8\Core\Config;
+use Reticen8\Base\BaseModelMigration;
+use Reticen8\Firewall\Alias;
+use Reticen8\Firewall\Category;
+use Reticen8\Firewall\Group;
 
 class M1_0_0 extends BaseModelMigration
 {
@@ -92,7 +92,7 @@ class M1_0_0 extends BaseModelMigration
                     }
                 }
             }
-            \OPNsense\Firewall\Util::attachAliasObject($model);
+            \Reticen8\Firewall\Util::attachAliasObject($model);
         } elseif ($model instanceof Category) {
             $model->sync();
         } elseif ($model instanceof Group) {

@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Routing\Migrations;
+namespace Reticen8\Routing\Migrations;
 
 use Phalcon\Logger\Logger;
 use Phalcon\Logger\Adapter\Syslog;
 use Phalcon\Logger\Formatter\Line;
 use Phalcon\Messages\Messages;
-use OPNsense\Base\BaseModelMigration;
-use OPNsense\Core\Config;
-use OPNsense\Routing\Gateways;
+use Reticen8\Base\BaseModelMigration;
+use Reticen8\Core\Config;
+use Reticen8\Routing\Gateways;
 
 class M1_0_0 extends BaseModelMigration
 {

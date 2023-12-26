@@ -26,16 +26,16 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace tests\OPNsense\Base\FieldTypes;
+namespace tests\Reticen8\Base\FieldTypes;
 
 // @CodingStandardsIgnoreStart
 require_once 'Field_Framework_TestCase.php';
 require_once __DIR__ . '/../BaseModel/TestModel.php';
 // @CodingStandardsIgnoreEnd
 
-use OPNsense\Base\FieldTypes\ModelRelationField;
+use Reticen8\Base\FieldTypes\ModelRelationField;
 use Phalcon\Di\FactoryDefault;
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 class ModelRelationFieldTest extends Field_Framework_TestCase
 {
@@ -50,7 +50,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
      */
     public function testCanBeCreated()
     {
-        $this->assertInstanceOf('\OPNsense\Base\FieldTypes\ModelRelationField', new ModelRelationField());
+        $this->assertInstanceOf('\Reticen8\Base\FieldTypes\ModelRelationField', new ModelRelationField());
     }
 
     /**
@@ -61,7 +61,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field = new ModelRelationField();
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -79,14 +79,14 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field = new ModelRelationField();
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
         ));
         $field->eventPostLoading();
         $field->setValue("5ea2a35c-b02b-485a-912b-d077e639bf9f,60e1bc02-6817-4940-bbd3-61d0cf439a8a");
-        $this->assertEquals($this->validate($field), ['OPNsense\Phalcon\Filter\Validation\Validator\InclusionIn']);
+        $this->assertEquals($this->validate($field), ['Reticen8\Phalcon\Filter\Validation\Validator\InclusionIn']);
     }
 
     /**
@@ -97,7 +97,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field = new ModelRelationField();
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -116,14 +116,14 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setRequired("Y");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
         ));
         $field->eventPostLoading();
         $field->setValue("");
-        $this->assertEquals($this->validate($field), ['OPNsense\Phalcon\Filter\Validation\Validator\PresenceOf']);
+        $this->assertEquals($this->validate($field), ['Reticen8\Phalcon\Filter\Validation\Validator\PresenceOf']);
     }
 
     /**
@@ -135,7 +135,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setMultiple("Y");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -156,7 +156,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setBlankDesc("No selection.");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -177,7 +177,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setBlankDesc("No selection.");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -198,7 +198,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setBlankDesc("No selection.");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -219,7 +219,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setBlankDesc("No selection.");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -241,7 +241,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setBlankDesc("");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -260,14 +260,14 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field = new ModelRelationField();
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
         ));
         $field->eventPostLoading();
         $field->setValue("XX5ea2a35c-b02b-485a-912b-d077e639bf9f");
-        $this->assertEquals($this->validate($field), ['OPNsense\Phalcon\Filter\Validation\Validator\InclusionIn']);
+        $this->assertEquals($this->validate($field), ['Reticen8\Phalcon\Filter\Validation\Validator\InclusionIn']);
     }
 
     /**
@@ -279,7 +279,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setMultiple("Y");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -298,7 +298,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setMultiple("Y");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -317,14 +317,14 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setMultiple("N");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
         ));
         $field->eventPostLoading();
         $field->setValue("4d0e2835-7a19-4a19-8c23-e12383827594,5ea2a35c-b02b-485a-912b-d077e639bf9f");
-        $this->assertEquals($this->validate($field), ['OPNsense\Phalcon\Filter\Validation\Validator\InclusionIn']);
+        $this->assertEquals($this->validate($field), ['Reticen8\Phalcon\Filter\Validation\Validator\InclusionIn']);
     }
 
     /**
@@ -336,7 +336,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setMultiple("Y");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -363,7 +363,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field = new ModelRelationField();
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -391,7 +391,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setMultiple("Y");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -421,7 +421,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setMultiple("Y");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -462,7 +462,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setMultiple("Y");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -500,7 +500,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setMultiple("Y");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )
@@ -539,7 +539,7 @@ class ModelRelationFieldTest extends Field_Framework_TestCase
         $field->setMultiple("Y");
         $field->setModel(array(
             "item" => array(
-                "source" => "tests.OPNsense.Base.BaseModel.TestModel",
+                "source" => "tests.Reticen8.Base.BaseModel.TestModel",
                 "items" => "simpleList.items",
                 "display" => "number"
             )

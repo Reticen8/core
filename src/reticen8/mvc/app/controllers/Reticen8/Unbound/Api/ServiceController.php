@@ -27,15 +27,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound\Api;
+namespace Reticen8\Unbound\Api;
 
-use OPNsense\Base\ApiMutableServiceControllerBase;
-use OPNsense\Core\Backend;
+use Reticen8\Base\ApiMutableServiceControllerBase;
+use Reticen8\Core\Backend;
 
 class ServiceController extends ApiMutableServiceControllerBase
 {
-    protected static $internalServiceClass = '\OPNsense\Unbound\Unbound';
-    protected static $internalServiceTemplate = 'OPNsense/Unbound/*';
+    protected static $internalServiceClass = '\Reticen8\Unbound\Unbound';
+    protected static $internalServiceTemplate = 'Reticen8/Unbound/*';
     protected static $internalServiceEnabled = 'general.enabled';
     protected static $internalServiceName = 'unbound';
 

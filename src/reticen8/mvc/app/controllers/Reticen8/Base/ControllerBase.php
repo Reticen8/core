@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base;
+namespace Reticen8\Base;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 /**
- * Class ControllerBase implements core controller for OPNsense framework
- * @package OPNsense\Base
+ * Class ControllerBase implements core controller for Reticen8 framework
+ * @package Reticen8\Base
  */
 class ControllerBase extends ControllerRoot
 {
@@ -57,12 +57,12 @@ class ControllerBase extends ControllerRoot
           '/ui/js/jquery.bootgrid.js',
           // Bootstrap type ahead
           '/ui/js/bootstrap3-typeahead.min.js',
-          // OPNsense standard toolkit
-          '/ui/js/opnsense.js',
-          '/ui/js/opnsense_theme.js',
-          '/ui/js/opnsense_ui.js',
-          '/ui/js/opnsense_bootgrid_plugin.js',
-          '/ui/js/opnsense_status.js',
+          // Reticen8 standard toolkit
+          '/ui/js/reticen8.js',
+          '/ui/js/reticen8_theme.js',
+          '/ui/js/reticen8_ui.js',
+          '/ui/js/reticen8_bootgrid_plugin.js',
+          '/ui/js/reticen8_status.js',
           // bootstrap script
           '/ui/js/bootstrap.min.js',
           '/ui/js/bootstrap-select.min.js',
@@ -185,7 +185,7 @@ class ControllerBase extends ControllerRoot
         // only handle input validation on first request.
         if (!$dispatcher->wasForwarded()) {
             // Authentication
-            // - use authentication of legacy OPNsense.
+            // - use authentication of legacy Reticen8.
             if (!$this->doAuth()) {
                 return false;
             }
@@ -239,8 +239,8 @@ class ControllerBase extends ControllerRoot
         if (
             $cnf->object()->theme->count() > 0 && !empty($cnf->object()->theme) &&
             (
-                is_dir('/usr/local/opnsense/www/themes/' . (string)$cnf->object()->theme) ||
-                !is_dir('/usr/local/opnsense/www/themes')
+                is_dir('/usr/local/reticen8/www/themes/' . (string)$cnf->object()->theme) ||
+                !is_dir('/usr/local/reticen8/www/themes')
             )
         ) {
             $this->view->ui_theme = $cnf->object()->theme;
@@ -273,7 +273,7 @@ class ControllerBase extends ControllerRoot
         }
 
         // append ACL object to view
-        $this->view->acl = new \OPNsense\Core\ACL();
+        $this->view->acl = new \Reticen8\Core\ACL();
 
         // Javascript includes
         $this->view->javascript_files = $this->templateJSIncludes();

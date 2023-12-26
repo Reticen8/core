@@ -26,17 +26,17 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec;
+namespace Reticen8\IPsec;
 
 /**
  * Class SpdController
- * @package OPNsense\IPsec
+ * @package Reticen8\IPsec
  */
-class SpdController extends \OPNsense\Base\IndexController
+class SpdController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/IPsec/spd');
+        $this->view->pick('Reticen8/IPsec/spd');
         $this->view->formDialogSPD = $this->getForm('dialogSPD');
     }
 }

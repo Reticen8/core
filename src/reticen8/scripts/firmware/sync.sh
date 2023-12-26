@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Copyright (C) 2020 Deciso B.V.
-# Copyright (C) 2015-2021 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2015-2021 Franco Fichtner <franco@reticen8.org>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -30,8 +30,8 @@ LOCKFILE=/tmp/pkg_upgrade.progress
 : > ${LOCKFILE}
 
 echo "***GOT REQUEST TO SYNC***" >> ${LOCKFILE}
-echo "Currently running $(opnsense-version) at $(date)" >> ${LOCKFILE}
+echo "Currently running $(reticen8-version) at $(date)" >> ${LOCKFILE}
 
-. /usr/local/opnsense/scripts/firmware/sync.subr.sh > /dev/null
+. /usr/local/reticen8/scripts/firmware/sync.subr.sh > /dev/null
 
 echo '***DONE***' >> ${LOCKFILE}

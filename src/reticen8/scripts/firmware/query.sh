@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2017-2023 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2017-2023 Franco Fichtner <franco@reticen8.org>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -26,28 +26,28 @@
 
 LIC="BSD2CLAUSE"
 OS="FreeBSD"
-REPO="OPNsense"
+REPO="Reticen8"
 SEP="|||"
 
 case "${1}" in
 local)
 	read BN BV BS << EOF
-$(opnsense-version -nvs base)
+$(reticen8-version -nvs base)
 EOF
 
 	read KN KV KS << EOF
-$(opnsense-version -nvs kernel)
+$(reticen8-version -nvs kernel)
 EOF
 
 	BL=0
 	KL=0
 
-	opnsense-update -Tb || BL=1
-	opnsense-update -Tk || KL=1
+	reticen8-update -Tb || BL=1
+	reticen8-update -Tk || KL=1
 
 cat << EOF
-${BN}${SEP}${BV}${SEP}${OS} userland set${SEP}${BS}${SEP}${BL}${SEP}0${SEP}${LIC}${SEP}${REPO}${SEP}opnsense/base
-${KN}${SEP}${KV}${SEP}${OS} kernel set${SEP}${KS}${SEP}${KL}${SEP}0${SEP}${LIC}${SEP}${REPO}${SEP}opnsense/kernel
+${BN}${SEP}${BV}${SEP}${OS} userland set${SEP}${BS}${SEP}${BL}${SEP}0${SEP}${LIC}${SEP}${REPO}${SEP}reticen8/base
+${KN}${SEP}${KV}${SEP}${OS} kernel set${SEP}${KS}${SEP}${KL}${SEP}0${SEP}${LIC}${SEP}${REPO}${SEP}reticen8/kernel
 EOF
 
 	pkg query "%n|||%v|||%c|||%sh|||%k|||%a|||%L|||%R|||%o"

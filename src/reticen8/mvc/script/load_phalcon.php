@@ -29,9 +29,9 @@
 use Phalcon\Di\FactoryDefault;
 
 $di = new FactoryDefault();
-$phalcon_config = include("/usr/local/opnsense/mvc/app/config/config.php");
+$phalcon_config = include("/usr/local/reticen8/mvc/app/config/config.php");
 
-$loader = new OPNsense\Phalcon\Autoload\Loader();
+$loader = new Reticen8\Phalcon\Autoload\Loader();
 $loader->setDirectories(
     array(
         $phalcon_config->application->controllersDir,

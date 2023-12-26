@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Trust;
+namespace Reticen8\Trust;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 /**
  * Wrapper around legacy trust store
- * @package OPNsense\Trust
+ * @package Reticen8\Trust
  */
 class Store
 {

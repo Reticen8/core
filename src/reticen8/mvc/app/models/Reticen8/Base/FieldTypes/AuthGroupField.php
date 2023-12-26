@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 class AuthGroupField extends BaseListField
 {

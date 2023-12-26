@@ -26,10 +26,10 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Firewall\FieldTypes;
+namespace Reticen8\Firewall\FieldTypes;
 
-use OPNsense\Base\FieldTypes\BaseListField;
-use OPNsense\Core\Config;
+use Reticen8\Base\FieldTypes\BaseListField;
+use Reticen8\Core\Config;
 
 class InterfaceField extends BaseListField
 {

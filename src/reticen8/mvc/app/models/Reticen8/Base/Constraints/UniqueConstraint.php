@@ -28,11 +28,11 @@
  *
  */
 
-namespace OPNsense\Base\Constraints;
+namespace Reticen8\Base\Constraints;
 
 /**
  * Class UniqueConstraint, add a unique constraint to this field and optional additional fields.
- * @package OPNsense\Base\Constraints
+ * @package Reticen8\Base\Constraints
  */
 class UniqueConstraint extends BaseConstraint
 {

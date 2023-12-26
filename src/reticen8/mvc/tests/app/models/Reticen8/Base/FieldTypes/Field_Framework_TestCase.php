@@ -26,11 +26,11 @@
  *    POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace tests\OPNsense\Base\FieldTypes;
+namespace tests\Reticen8\Base\FieldTypes;
 
 /**
  * Class Field_Framework_TestCase
- * @package tests\OPNsense\Base\FieldTypes
+ * @package tests\Reticen8\Base\FieldTypes
  */
 class Field_Framework_TestCase extends \PHPUnit\Framework\TestCase
 {
@@ -41,7 +41,7 @@ class Field_Framework_TestCase extends \PHPUnit\Framework\TestCase
      */
     public function validateThrow($field)
     {
-        $validation = new \OPNsense\Base\Validation();
+        $validation = new \Reticen8\Base\Validation();
         foreach ($field->getValidators() as $validator) {
             $validation->add("testfield", $validator);
         }
@@ -49,7 +49,7 @@ class Field_Framework_TestCase extends \PHPUnit\Framework\TestCase
         $messages = $validation->validate(array("testfield" => (string)$field));
         if (count($messages)) {
             foreach ($messages as $message) {
-                throw new \OPNsense\Phalcon\Filter\Validation\Exception($message->getType());
+                throw new \Reticen8\Phalcon\Filter\Validation\Exception($message->getType());
             }
         }
         return;
@@ -63,7 +63,7 @@ class Field_Framework_TestCase extends \PHPUnit\Framework\TestCase
     public function validate($field)
     {
         $result = array();
-        $validation = new \OPNsense\Base\Validation();
+        $validation = new \Reticen8\Base\Validation();
         foreach ($field->getValidators() as $validator) {
             $validation->add("testfield", $validator);
         }

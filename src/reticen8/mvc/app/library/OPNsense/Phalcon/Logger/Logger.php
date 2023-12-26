@@ -1,6 +1,6 @@
 <?php
 
-namespace OPNsense\Phalcon\Logger;
+namespace Reticen8\Phalcon\Logger;
 
 use Phalcon\Logger\Logger as PhalconLogger;
 use Phalcon\Logger as PhalconLogger4;

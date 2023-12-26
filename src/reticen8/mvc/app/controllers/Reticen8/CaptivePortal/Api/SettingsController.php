@@ -28,18 +28,18 @@
  *
  */
 
-namespace OPNsense\CaptivePortal\Api;
+namespace Reticen8\CaptivePortal\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
+use Reticen8\Base\ApiMutableModelControllerBase;
 
 /**
  * Class SettingsController Handles settings related API actions for Captive Portal
- * @package OPNsense\TrafficShaper
+ * @package Reticen8\TrafficShaper
  */
 class SettingsController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'zone';
-    protected static $internalModelClass = '\OPNsense\CaptivePortal\CaptivePortal';
+    protected static $internalModelClass = '\Reticen8\CaptivePortal\CaptivePortal';
 
     /**
      * retrieve zone settings or return defaults

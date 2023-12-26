@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\Menu;
+namespace Reticen8\Base\Menu;
 
 /**
  * Class MenuItem
- * @package OPNsense\Core\Menu
+ * @package Reticen8\Core\Menu
  */
 class MenuItem
 {

@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces;
+namespace Reticen8\Interfaces;
 
-class VxLanController extends \OPNsense\Base\IndexController
+class VxLanController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Interface/vxlan');
+        $this->view->pick('Reticen8/Interface/vxlan');
         $this->view->formDialogVxlan = $this->getForm("dialogVxlan");
     }
 }

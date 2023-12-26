@@ -2,7 +2,7 @@
 
 /*
  * Copyright (C) 2023 Deciso B.V.
- * Copyright (C) 2015 Jos Schellevis <jos@opnsense.org>
+ * Copyright (C) 2015 Jos Schellevis <jos@reticen8.org>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -27,15 +27,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Diagnostics\Api;
+namespace Reticen8\Diagnostics\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
 
 /**
  * Class SystemhealthController
- * @package OPNsense\SystemHealth
+ * @package Reticen8\SystemHealth
  */
 class SystemhealthController extends ApiControllerBase
 {

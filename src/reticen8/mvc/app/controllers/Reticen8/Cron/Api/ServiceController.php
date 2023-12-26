@@ -28,14 +28,14 @@
  *
  */
 
-namespace OPNsense\Cron\Api;
+namespace Reticen8\Cron\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Backend;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Backend;
 
 /**
  * Class ServiceController
- * @package OPNsense\Cron
+ * @package Reticen8\Cron
  */
 class ServiceController extends ApiControllerBase
 {

@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Firewall\Api;
+namespace Reticen8\Firewall\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\Firewall\Alias;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Firewall\Alias;
+use Reticen8\Core\Config;
 
 /**
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class AliasUtilController extends ApiControllerBase
 {
@@ -208,7 +208,7 @@ class AliasUtilController extends ApiControllerBase
                     $this->getModel()->serializeToConfig();
                     Config::getInstance()->save();
                     // flush to disk,
-                    (new Backend())->configdRun('template reload OPNsense/Filter');
+                    (new Backend())->configdRun('template reload Reticen8/Filter');
                 }
             }
 
@@ -248,7 +248,7 @@ class AliasUtilController extends ApiControllerBase
                     $this->getModel()->serializeToConfig();
                     Config::getInstance()->save();
                     // flush to disk,
-                    (new Backend())->configdRun('template reload OPNsense/Filter');
+                    (new Backend())->configdRun('template reload Reticen8/Filter');
                 }
             }
             if ($cnfAlias !== null) {

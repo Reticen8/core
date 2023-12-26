@@ -1,5 +1,5 @@
 <model>
-    <mount>//OPNsense/Syslog</mount>
+    <mount>//Reticen8/Syslog</mount>
     <version>1.0.1</version>
     <items>
         <general>

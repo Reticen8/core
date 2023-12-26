@@ -26,16 +26,16 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec;
+namespace Reticen8\IPsec;
 
 use Phalcon\Messages\Message;
-use OPNsense\Base\BaseModel;
-use OPNsense\Core\Config;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\BaseModel;
+use Reticen8\Core\Config;
+use Reticen8\Firewall\Util;
 
 /**
  * Class Swanctl
- * @package OPNsense\IPsec
+ * @package Reticen8\IPsec
  */
 class Swanctl extends BaseModel
 {
@@ -197,11 +197,11 @@ class Swanctl extends BaseModel
                             $pool_names[$node_uuid] = (string)$attr;
                         }
                         continue;
-                    } elseif (is_a($attr, 'OPNsense\Base\FieldTypes\AuthGroupField')) {
+                    } elseif (is_a($attr, 'Reticen8\Base\FieldTypes\AuthGroupField')) {
                         $thisnode[$attr_name] = $this->gidToNames((string)$attr);
-                    } elseif (is_a($attr, 'OPNsense\Base\FieldTypes\BooleanField')) {
+                    } elseif (is_a($attr, 'Reticen8\Base\FieldTypes\BooleanField')) {
                         $thisnode[$attr_name] = (string)$attr == '1' ? 'yes' : 'no';
-                    } elseif (is_a($attr, 'OPNsense\Base\FieldTypes\CertificateField')) {
+                    } elseif (is_a($attr, 'Reticen8\Base\FieldTypes\CertificateField')) {
                         $tmp = [];
                         foreach (explode(',', (string)$attr) as $item) {
                             $tmp[] = $item . '.crt';
@@ -231,7 +231,7 @@ class Swanctl extends BaseModel
                         if (!isset($data['connections'][$parent]['children'])) {
                             $data['connections'][$parent]['children'] = [];
                         }
-                        $thisnode['updown'] = '/usr/local/opnsense/scripts/ipsec/updown_event.py --connection_child ';
+                        $thisnode['updown'] = '/usr/local/reticen8/scripts/ipsec/updown_event.py --connection_child ';
                         $thisnode['updown'] .= $node_uuid;
 
                         $data['connections'][$parent]['children'][$node_uuid] = $thisnode;

@@ -28,21 +28,21 @@
  *
  */
 
-namespace OPNsense\Firewall\Api;
+namespace Reticen8\Firewall\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Base\UserException;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
-use OPNsense\Firewall\Category;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Base\UserException;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
+use Reticen8\Firewall\Category;
 
 /**
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class AliasController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'alias';
-    protected static $internalModelClass = 'OPNsense\Firewall\Alias';
+    protected static $internalModelClass = 'Reticen8\Firewall\Alias';
 
     /**
      * search aliases
@@ -158,7 +158,7 @@ class AliasController extends ApiMutableModelControllerBase
     /**
      * Add new alias and set with attributes from post
      * @return array save result + validation output
-     * @throws \OPNsense\Base\ModelException when not bound to model
+     * @throws \Reticen8\Base\ModelException when not bound to model
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      * @throws \ReflectionException when not bound to model
      */
@@ -212,7 +212,7 @@ class AliasController extends ApiMutableModelControllerBase
      * @return array save status
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      * @throws \ReflectionException when not bound to model
-     * @throws \OPNsense\Base\UserException when unable to delete
+     * @throws \Reticen8\Base\UserException when unable to delete
      */
     public function delItemAction($uuid)
     {
@@ -226,7 +226,7 @@ class AliasController extends ApiMutableModelControllerBase
                     $message .= htmlspecialchars(sprintf("\n[%s] %s", $key, $value), ENT_NOQUOTES | ENT_HTML401);
                 }
                 $message = sprintf(gettext("Cannot delete alias. Currently in use by %s"), $message);
-                throw new \OPNsense\Base\UserException($message, gettext("Alias in use"));
+                throw new \Reticen8\Base\UserException($message, gettext("Alias in use"));
             }
         }
         return $this->delBase("aliases.alias", $uuid);
@@ -258,7 +258,7 @@ class AliasController extends ApiMutableModelControllerBase
             ]
         ];
 
-        foreach (explode("\n", file_get_contents('/usr/local/opnsense/contrib/tzdata/iso3166.tab')) as $line) {
+        foreach (explode("\n", file_get_contents('/usr/local/reticen8/contrib/tzdata/iso3166.tab')) as $line) {
             $line = trim($line);
             if (strlen($line) > 3 && substr($line, 0, 1) != '#') {
                 $result[substr($line, 0, 2)] = array(
@@ -267,7 +267,7 @@ class AliasController extends ApiMutableModelControllerBase
                 );
             }
         }
-        foreach (explode("\n", file_get_contents('/usr/local/opnsense/contrib/tzdata/zone.tab')) as $line) {
+        foreach (explode("\n", file_get_contents('/usr/local/reticen8/contrib/tzdata/zone.tab')) as $line) {
             if (strlen($line) > 0 && substr($line, 0, 1) == '#') {
                 continue;
             }
@@ -334,7 +334,7 @@ class AliasController extends ApiMutableModelControllerBase
     {
         if ($this->request->isPost()) {
             $backend = new Backend();
-            $backend->configdRun('template reload OPNsense/Filter');
+            $backend->configdRun('template reload Reticen8/Filter');
             $backend->configdRun("filter reload skip_alias");
             $bckresult = json_decode($backend->configdRun("filter refresh_aliases"), true);
             if (!empty($bckresult['messages'])) {
@@ -419,7 +419,7 @@ class AliasController extends ApiMutableModelControllerBase
                     }
                 }
                 // attach this alias to util class, to avoid recursion issues (aliases used in aliases).
-                \OPNsense\Firewall\Util::attachAliasObject($this->getModel());
+                \Reticen8\Firewall\Util::attachAliasObject($this->getModel());
 
                 // perform validation, record details.
                 foreach ($this->getModel()->performValidation() as $msg) {
@@ -471,7 +471,7 @@ class AliasController extends ApiMutableModelControllerBase
             if (isset($cnf->system->firmware) && !empty($cnf->system->firmware->mirror)) {
                 // XXX: we might add some attribute in firmware to store subscription status, since we now only store uri
                 $result[static::$internalModelName]['geoip']['subscription'] =
-                    strpos($cnf->system->firmware->mirror, 'opnsense-update.deciso.com') !== false;
+                    strpos($cnf->system->firmware->mirror, 'reticen8-update.deciso.com') !== false;
             }
 
             $result[static::$internalModelName]['geoip']['address_count'] = 0;

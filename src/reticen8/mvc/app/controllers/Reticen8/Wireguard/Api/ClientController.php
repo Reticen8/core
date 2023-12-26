@@ -27,16 +27,16 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Wireguard\Api;
+namespace Reticen8\Wireguard\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Config;
-use OPNsense\Wireguard\Server;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Config;
+use Reticen8\Wireguard\Server;
 
 class ClientController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'client';
-    protected static $internalModelClass = '\OPNsense\Wireguard\Client';
+    protected static $internalModelClass = '\Reticen8\Wireguard\Client';
 
     public function searchClientAction()
     {

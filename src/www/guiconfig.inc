@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2014-2021 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2014-2021 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2014 Deciso B.V.
  * Copyright (C) 2010 Ermal Luçi
  * Copyright (C) 2005-2006 Colin Smith <ethethlay@gmail.com>
@@ -53,9 +53,9 @@ function get_current_theme()
 {
     global $config;
 
-    $theme = 'opnsense';
+    $theme = 'reticen8';
 
-    if (isset($config['theme']) && is_dir('/usr/local/opnsense/www/themes/' . $config['theme'])) {
+    if (isset($config['theme']) && is_dir('/usr/local/reticen8/www/themes/' . $config['theme'])) {
         $theme = $config['theme'];
     }
 
@@ -81,7 +81,7 @@ function get_themed_filename($url)
         "/"
     );
     foreach ($search_pattern as $pattern) {
-        $filename = "/usr/local/opnsense/www{$pattern}{$url}";
+        $filename = "/usr/local/reticen8/www{$pattern}{$url}";
         if (file_exists($filename)) {
             return str_replace("//", "/", "/ui{$pattern}{$url}");
         }
@@ -499,9 +499,9 @@ function service_control_icon($service, $xs = false)
     $output = '';
 
     if (service_status($service)) {
-        $output .= '<span class="label label-opnsense label-opnsense-%s label-success"><i class="fa fa-play fa-fw"></i></span>' . PHP_EOL;
+        $output .= '<span class="label label-reticen8 label-reticen8-%s label-success"><i class="fa fa-play fa-fw"></i></span>' . PHP_EOL;
     } else {
-        $output .= '<span class="label label-opnsense label-opnsense-%s label-danger"><i class="fa fa-stop fa-fw"></i></span>' . PHP_EOL;
+        $output .= '<span class="label label-reticen8 label-reticen8-%s label-danger"><i class="fa fa-stop fa-fw"></i></span>' . PHP_EOL;
     }
 
     return sprintf($output, $xs ? 'xs' : 'sm');

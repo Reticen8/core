@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (c) 2017-2021 Franco Fichtner <franco@opnsense.org>
+# Copyright (c) 2017-2021 Franco Fichtner <franco@reticen8.org>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -29,7 +29,7 @@ PLUGIN=${1}
 RETURN="0"
 
 # Return "1" if the plugin is installed (stable or development).
-if opnsense-version -c "${PLUGIN}"; then
+if reticen8-version -c "${PLUGIN}"; then
 	RETURN="1"
 fi
 

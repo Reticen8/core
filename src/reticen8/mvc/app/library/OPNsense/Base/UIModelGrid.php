@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base;
+namespace Reticen8\Base;
 
 /**
  * Class UIModelGrid Grid control support functions
- * @package OPNsense\Base
+ * @package Reticen8\Base
  */
 class UIModelGrid
 {

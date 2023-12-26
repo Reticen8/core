@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Phalcon\Filter\Validation\Validator\InclusionIn;
-use OPNsense\Firewall\Alias;
+use Reticen8\Phalcon\Filter\Validation\Validator\InclusionIn;
+use Reticen8\Firewall\Alias;
 
 /**
  * Class PortField field type for ports, includes validation for services in /etc/services or valid number ranges.
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class PortField extends BaseListField
 {

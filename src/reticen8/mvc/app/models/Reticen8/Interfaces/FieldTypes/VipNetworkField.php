@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces\FieldTypes;
+namespace Reticen8\Interfaces\FieldTypes;
 
-use OPNsense\Base\FieldTypes\TextField;
-use OPNsense\Base\Validators\CallbackValidator;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\FieldTypes\TextField;
+use Reticen8\Base\Validators\CallbackValidator;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
+use Reticen8\Firewall\Util;
 
 class VipNetworkField extends TextField
 {

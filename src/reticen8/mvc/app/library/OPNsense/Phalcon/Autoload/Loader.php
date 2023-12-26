@@ -1,6 +1,6 @@
 <?php
 
-namespace OPNsense\Phalcon\Autoload;
+namespace Reticen8\Phalcon\Autoload;
 
 use Phalcon\Autoload\Loader as PhalconLoader;
 use Phalcon\Loader as PhalconLoader4;

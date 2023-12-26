@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
 """
-    Copyright (c) 2015-2019 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2015-2019 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -34,7 +34,7 @@ import syslog
 import traceback
 import subprocess
 import sqlite3
-sys.path.insert(0, "/usr/local/opnsense/site-python")
+sys.path.insert(0, "/usr/local/reticen8/site-python")
 from lib import Config
 from lib.db import DB
 from lib.arp import ARP
@@ -224,7 +224,7 @@ def main():
             # process accounting messages (uses php script, for reuse of Auth classes)
             try:
                 subprocess.run(
-                    ['/usr/local/opnsense/scripts/OPNsense/CaptivePortal/process_accounting_messages.php'],
+                    ['/usr/local/reticen8/scripts/Reticen8/CaptivePortal/process_accounting_messages.php'],
                     capture_output=True
                 )
             except OSError:

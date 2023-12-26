@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2014-2023 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2014-2023 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2010 Ermal Luçi
  * Copyright (C) 2005-2006 Colin Smith <ethethlay@gmail.com>
  * Copyright (C) 2003-2004 Manuel Kasper <mk@neon1.net>
@@ -1229,7 +1229,7 @@ EOD;
         $dhcpdconf .= dhcpd_zones($ddns_zones);
     }
 
-    foreach (glob('/usr/local/etc/dhcpd.opnsense.d/*.conf') as $file) {
+    foreach (glob('/usr/local/etc/dhcpd.reticen8.d/*.conf') as $file) {
         $dhcpdconf .= "\n\n# including custom file {$file}\n" . file_get_contents($file);
     }
 
@@ -1237,7 +1237,7 @@ EOD;
     @touch('/var/dhcpd/var/db/dhcpd.leases');
 
     if (count($dhcpdifs) > 0) {
-        mwexec('/usr/local/opnsense/scripts/dhcp/cleanup_leases4.php -m');
+        mwexec('/usr/local/reticen8/scripts/dhcp/cleanup_leases4.php -m');
         mwexec('/usr/local/sbin/dhcpd -user dhcpd -group dhcpd -chroot /var/dhcpd -cf /etc/dhcpd.conf -pf /var/run/dhcpd.pid ' . join(' ', $dhcpdifs));
     }
 
@@ -1607,7 +1607,7 @@ EOD;
         $dhcpdv6conf .= "\nddns-update-style none;\n";
     }
 
-    foreach (glob('/usr/local/etc/dhcpd6.opnsense.d/*.conf') as $file) {
+    foreach (glob('/usr/local/etc/dhcpd6.reticen8.d/*.conf') as $file) {
         $dhcpdv6conf .= "\n\n# including custom file {$file}\n" . file_get_contents($file);
     }
 
@@ -1616,7 +1616,7 @@ EOD;
 
     if (count($dhcpdv6ifs) > 0) {
         mwexec('/usr/local/sbin/dhcpd -6 -user dhcpd -group dhcpd -chroot /var/dhcpd -cf /etc/dhcpdv6.conf -pf /var/run/dhcpdv6.pid ' . join(' ', $dhcpdv6ifs));
-        mwexecf('/usr/sbin/daemon -f -p %s %s', ['/var/run/dhcpleases6.pid', '/usr/local/opnsense/scripts/dhcp/prefixes.sh']);
+        mwexecf('/usr/sbin/daemon -f -p %s %s', ['/var/run/dhcpleases6.pid', '/usr/local/reticen8/scripts/dhcp/prefixes.sh']);
     }
 
     service_log("done.\n", $verbose);
@@ -1651,7 +1651,7 @@ function dhcpd_dhcrelay4_configure($verbose = false)
 
     $iflist = get_configured_interface_with_descr();
     $ifconfig_details = legacy_interfaces_details();
-    $a_gateways = (new \OPNsense\Routing\Gateways())->gatewaysIndexedByName();
+    $a_gateways = (new \Reticen8\Routing\Gateways())->gatewaysIndexedByName();
     $dhcifaces = explode(",", $dhcrelaycfg['interface']);
     foreach ($dhcifaces as $dhcrelayif) {
         if (isset($iflist[$dhcrelayif]) && get_interface_ip($dhcrelayif, $ifconfig_details)) {
@@ -1762,7 +1762,7 @@ function dhcpd_dhcrelay6_configure($verbose = false)
 
     $iflist = get_configured_interface_with_descr();
     $ifconfig_details = legacy_interfaces_details();
-    $a_gateways = (new \OPNsense\Routing\Gateways())->gatewaysIndexedByName();
+    $a_gateways = (new \Reticen8\Routing\Gateways())->gatewaysIndexedByName();
     $dhcifaces = explode(",", $dhcrelaycfg['interface']);
     foreach ($dhcifaces as $dhcrelayif) {
         if (isset($iflist[$dhcrelayif]) && get_interface_ipv6($dhcrelayif, $ifconfig_details)) {

@@ -1,6 +1,6 @@
 <?php
 
-namespace OPNsense\Phalcon\Config;
+namespace Reticen8\Phalcon\Config;
 
 use Phalcon\Config\Config as PhalconConfig;
 use Phalcon\Config as PhalconConfig4;

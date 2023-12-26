@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2015-2021 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2015-2021 Franco Fichtner <franco@reticen8.org>
 # Copyright (C) 2014 Deciso B.V.
 # All rights reserved.
 #
@@ -34,14 +34,14 @@ rm -f ${PIPEFILE}
 mkfifo ${PIPEFILE}
 
 echo "***GOT REQUEST TO UPGRADE***" >> ${LOCKFILE}
-echo "Currently running $(opnsense-version) at $(date)" >> ${LOCKFILE}
+echo "Currently running $(reticen8-version) at $(date)" >> ${LOCKFILE}
 
 ${TEE} ${LOCKFILE} < ${PIPEFILE} &
-if opnsense-update -u > ${PIPEFILE} 2>&1; then
+if reticen8-update -u > ${PIPEFILE} 2>&1; then
 	${TEE} ${LOCKFILE} < ${PIPEFILE} &
 	if /usr/local/etc/rc.syshook upgrade > ${PIPEFILE} 2>&1; then
 		${TEE} ${LOCKFILE} < ${PIPEFILE} &
-		if opnsense-update -K > ${PIPEFILE} 2>&1; then
+		if reticen8-update -K > ${PIPEFILE} 2>&1; then
 			echo '***REBOOT***' >> ${LOCKFILE}
 			sleep 5
 			/usr/local/etc/rc.reboot
@@ -49,7 +49,7 @@ if opnsense-update -u > ${PIPEFILE} 2>&1; then
 	fi
 
 	# abort pending upgrades
-	opnsense-update -e >> ${LOCKFILE} 2>&1
+	reticen8-update -e >> ${LOCKFILE} 2>&1
 fi
 
 echo '***DONE***' >> ${LOCKFILE}

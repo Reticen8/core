@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Phalcon\Filter\Validation\Validator\InclusionIn;
-use OPNsense\Base\Validators\CsvListValidator;
+use Reticen8\Phalcon\Filter\Validation\Validator\InclusionIn;
+use Reticen8\Base\Validators\CsvListValidator;
 
 /**
  * Class BaseListField
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 abstract class BaseListField extends BaseField
 {

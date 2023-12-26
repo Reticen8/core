@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound;
+namespace Reticen8\Unbound;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
  * Class IndexController
@@ -37,6 +37,6 @@ class StatsController extends IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Unbound/stats');
+        $this->view->pick('Reticen8/Unbound/stats');
     }
 }

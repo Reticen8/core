@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Auth;
+namespace Reticen8\Auth;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 /**
  * Class AuthenticationFactory
- * @package OPNsense\Auth
+ * @package Reticen8\Auth
  */
 class AuthenticationFactory
 {
@@ -76,7 +76,7 @@ class AuthenticationFactory
             $module = $pathParts[count($pathParts) - 2];
             $classname = explode('.php', $pathParts[count($pathParts) - 1])[0];
             $reflClass = new \ReflectionClass("{$vendor}\\{$module}\\{$classname}");
-            if ($reflClass->implementsInterface('OPNsense\\Auth\\IAuthConnector')) {
+            if ($reflClass->implementsInterface('Reticen8\\Auth\\IAuthConnector')) {
                 if ($reflClass->hasMethod('getType')) {
                     $connectorType = $reflClass->getMethod('getType')->invoke(null);
                     $connector = array();
@@ -158,8 +158,8 @@ class AuthenticationFactory
         $srv_name = strtolower(str_replace(array('-', '_'), '', $service_name));
         foreach (glob(__DIR__ . "/Services/*.php") as $filename) {
             $srv_found = basename($filename, '.php');
-            $reflClass = new \ReflectionClass("OPNsense\\Auth\\Services\\{$srv_found}");
-            if ($reflClass->implementsInterface('OPNsense\\Auth\\IService')) {
+            $reflClass = new \ReflectionClass("Reticen8\\Auth\\Services\\{$srv_found}");
+            if ($reflClass->implementsInterface('Reticen8\\Auth\\IService')) {
                 // stash aliases
                 foreach ($reflClass->getMethod('aliases')->invoke(null) as $alias) {
                     $aliases[$alias] = $reflClass;

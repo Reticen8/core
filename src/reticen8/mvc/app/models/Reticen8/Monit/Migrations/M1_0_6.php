@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Monit\Migrations;
+namespace Reticen8\Monit\Migrations;
 
-use OPNsense\Base\BaseModelMigration;
+use Reticen8\Base\BaseModelMigration;
 
 class M1_0_6 extends BaseModelMigration
 {
@@ -60,7 +60,7 @@ class M1_0_6 extends BaseModelMigration
 
         $defaultServices = array(
             array("enabled" => "0", "type" => "custom", "name" => "carp_status_change",
-                  "path" => "/usr/local/opnsense/scripts/OPNsense/Monit/carp_status",
+                  "path" => "/usr/local/reticen8/scripts/Reticen8/Monit/carp_status",
                   "tests" => $defaultTests['ChangedStatus']['uuid']
                 )
         );

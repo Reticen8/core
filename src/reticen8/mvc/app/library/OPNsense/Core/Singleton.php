@@ -28,7 +28,7 @@
  *
  */
 
-namespace OPNsense\Core;
+namespace Reticen8\Core;
 
 /**
  * Class Singleton provides singleton pattern, be careful with usage.

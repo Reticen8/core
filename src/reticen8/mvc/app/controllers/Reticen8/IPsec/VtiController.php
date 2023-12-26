@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec;
+namespace Reticen8\IPsec;
 
-class VtiController extends \OPNsense\Base\IndexController
+class VtiController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/IPsec/vti');
+        $this->view->pick('Reticen8/IPsec/vti');
         $this->view->formDialogVTI = $this->getForm('dialogVTI');
     }
 }

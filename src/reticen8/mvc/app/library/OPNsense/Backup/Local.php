@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2018 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2018 Franco Fichtner <franco@reticen8.org>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Backup;
+namespace Reticen8\Backup;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 /**
  * Class local backup
- * @package OPNsense\Backup
+ * @package Reticen8\Backup
  */
 class Local extends Base
 {

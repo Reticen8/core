@@ -26,10 +26,10 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound\Migrations;
+namespace Reticen8\Unbound\Migrations;
 
-use OPNsense\Base\BaseModelMigration;
-use OPNsense\Core\Config;
+use Reticen8\Base\BaseModelMigration;
+use Reticen8\Core\Config;
 
 class M1_0_5 extends BaseModelMigration
 {

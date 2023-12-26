@@ -1,6 +1,6 @@
 <?php
 
-namespace OPNsense\Phalcon\Filter;
+namespace Reticen8\Phalcon\Filter;
 
 use Phalcon\Filter\Filter as PhalconFilter;
 use Phalcon\Filter as PhalconFilter4;

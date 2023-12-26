@@ -28,13 +28,13 @@
  *
  */
 
-namespace tests\OPNsense\Base\FieldTypes;
+namespace tests\Reticen8\Base\FieldTypes;
 
 // @CodingStandardsIgnoreStart
 require_once 'Field_Framework_TestCase.php';
 // @CodingStandardsIgnoreEnd
 
-use OPNsense\Base\FieldTypes\IntegerField;
+use Reticen8\Base\FieldTypes\IntegerField;
 
 class IntegerFieldTest extends Field_Framework_TestCase
 {
@@ -43,14 +43,14 @@ class IntegerFieldTest extends Field_Framework_TestCase
      */
     public function testCanBeCreated()
     {
-        $this->assertInstanceOf('\OPNsense\Base\FieldTypes\IntegerField', new IntegerField());
+        $this->assertInstanceOf('\Reticen8\Base\FieldTypes\IntegerField', new IntegerField());
     }
 
     /**
      */
     public function testValueLargerThenMax()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("MinMaxValidator");
         $field = new IntegerField();
         $field->setMaximumValue(100);
@@ -64,7 +64,7 @@ class IntegerFieldTest extends Field_Framework_TestCase
      */
     public function testValueSmallerThenMin()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("MinMaxValidator");
         $field = new IntegerField();
         $field->setMaximumValue(100);
@@ -104,7 +104,7 @@ class IntegerFieldTest extends Field_Framework_TestCase
      */
     public function testRequiredEmpty()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("PresenceOf");
         $field = new IntegerField();
         $field->setRequired("Y");

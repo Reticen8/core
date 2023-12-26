@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2050-2020 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2050-2020 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2015 Deciso B.V.
  * All rights reserved.
  *
@@ -27,14 +27,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\Menu;
+namespace Reticen8\Base\Menu;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 use Phalcon\Di\FactoryDefault;
 
 /**
  * Class MenuSystem
- * @package OPNsense\Base\Menu
+ * @package Reticen8\Base\Menu
  */
 class MenuSystem
 {
@@ -178,7 +178,7 @@ class MenuSystem
     public function __construct()
     {
         // set cache location
-        $this->menuCacheFilename = sys_get_temp_dir() . "/opnsense_menu_cache.xml";
+        $this->menuCacheFilename = sys_get_temp_dir() . "/reticen8_menu_cache.xml";
 
         // load menu xml's
         $menuxml = null;

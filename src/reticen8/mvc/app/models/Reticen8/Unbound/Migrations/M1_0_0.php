@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound\Migrations;
+namespace Reticen8\Unbound\Migrations;
 
-use OPNsense\Base\BaseModelMigration;
-use OPNsense\Base\FieldTypes\BooleanField;
-use OPNsense\Base\FieldTypes\NetworkField;
-use OPNsense\Base\FieldTypes\PortField;
-use OPNsense\Core\Config;
+use Reticen8\Base\BaseModelMigration;
+use Reticen8\Base\FieldTypes\BooleanField;
+use Reticen8\Base\FieldTypes\NetworkField;
+use Reticen8\Base\FieldTypes\PortField;
+use Reticen8\Core\Config;
 
 class M1_0_0 extends BaseModelMigration
 {
@@ -44,11 +44,11 @@ class M1_0_0 extends BaseModelMigration
     {
         $config = Config::getInstance()->object();
 
-        if (empty($config->OPNsense->unboundplus)) {
+        if (empty($config->Reticen8->unboundplus)) {
             return;
         }
 
-        $mdlNode = $config->OPNsense->unboundplus;
+        $mdlNode = $config->Reticen8->unboundplus;
 
         foreach (['dnsbl', 'miscellaneous'] as $strip) {
             if (!empty($mdlNode->$strip)) {

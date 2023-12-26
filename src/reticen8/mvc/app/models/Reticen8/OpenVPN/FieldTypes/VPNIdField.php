@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN\FieldTypes;
+namespace Reticen8\OpenVPN\FieldTypes;
 
-use OPNsense\Base\Validators\CallbackValidator;
-use OPNsense\Base\FieldTypes\IntegerField;
+use Reticen8\Base\Validators\CallbackValidator;
+use Reticen8\Base\FieldTypes\IntegerField;
 
 /**
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class VPNIdField extends IntegerField
 {

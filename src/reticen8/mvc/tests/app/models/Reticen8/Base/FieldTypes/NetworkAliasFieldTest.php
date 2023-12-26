@@ -28,15 +28,15 @@
  *
  */
 
-namespace tests\OPNsense\Base\FieldTypes;
+namespace tests\Reticen8\Base\FieldTypes;
 
 // @CodingStandardsIgnoreStart
 require_once 'Field_Framework_TestCase.php';
 // @CodingStandardsIgnoreEnd
 
-use OPNsense\Base\FieldTypes\NetworkAliasField;
+use Reticen8\Base\FieldTypes\NetworkAliasField;
 use Phalcon\Di\FactoryDefault;
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 class NetworkAliasFieldTest extends Field_Framework_TestCase
 {
@@ -45,7 +45,7 @@ class NetworkAliasFieldTest extends Field_Framework_TestCase
      */
     public function testCanBeCreated()
     {
-        $this->assertInstanceOf('\OPNsense\Base\FieldTypes\NetworkAliasField', new NetworkAliasField());
+        $this->assertInstanceOf('\Reticen8\Base\FieldTypes\NetworkAliasField', new NetworkAliasField());
         // switch config to test set for this type
         FactoryDefault::getDefault()->get('config')->globals->config_path = __DIR__ . '/NetworkAliasFieldTest/';
         Config::getInstance()->forceReload();

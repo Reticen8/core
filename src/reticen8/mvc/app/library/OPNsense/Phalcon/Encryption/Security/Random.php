@@ -1,6 +1,6 @@
 <?php
 
-namespace OPNsense\Phalcon\Encryption\Security;
+namespace Reticen8\Phalcon\Encryption\Security;
 
 use Phalcon\Encryption\Security\Random as PhalconRandom;
 use Phalcon\Security\Random as PhalconRandom4;

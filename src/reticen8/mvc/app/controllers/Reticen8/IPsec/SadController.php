@@ -26,16 +26,16 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec;
+namespace Reticen8\IPsec;
 
 /**
  * Class SadController
- * @package OPNsense\IPsec
+ * @package Reticen8\IPsec
  */
-class SadController extends \OPNsense\Base\IndexController
+class SadController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/IPsec/sad');
+        $this->view->pick('Reticen8/IPsec/sad');
     }
 }

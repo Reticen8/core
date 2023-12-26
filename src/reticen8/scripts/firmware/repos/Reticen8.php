@@ -2,7 +2,7 @@
 <?php
 
 /*
- * Copyright (C) 2023 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2023 Franco Fichtner <franco@reticen8.org>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -30,12 +30,12 @@
 require_once('util.inc');
 require_once('script/load_phalcon.php');
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 $config = Config::getInstance()->object();
 
 /* calculate the effective ABI */
-$args = [ exec_safe('-A %s', shell_safe('opnsense-version -x')) ];
+$args = [ exec_safe('-A %s', shell_safe('reticen8-version -x')) ];
 $url_sub = '';
 
 if (!empty($config->system->firmware->subscription)) {
@@ -46,7 +46,7 @@ if (!empty($config->system->firmware->subscription)) {
     $url_sub = '/' . $config->system->firmware->subscription;
 } else {
     /* clear the license file when no subscription key is set */
-    @unlink('/usr/local/opnsense/version/core.license');
+    @unlink('/usr/local/reticen8/version/core.license');
 }
 
 if (!empty($config->system->firmware->mirror)) {
@@ -58,4 +58,4 @@ if (!empty($config->system->firmware->flavour)) {
 }
 
 /* rewrite the config via the defaults and possible arguments */
-shell_safe('/usr/local/sbin/opnsense-update -sd ' . join(' ', $args));
+shell_safe('/usr/local/sbin/reticen8-update -sd ' . join(' ', $args));

@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound;
+namespace Reticen8\Unbound;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 class OverridesController extends IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Unbound/overrides');
+        $this->view->pick('Reticen8/Unbound/overrides');
         $this->view->formDialogHostOverride = $this->getForm("dialogHostOverride");
         $this->view->formDialogHostAlias = $this->getForm("dialogHostAlias");
         $this->view->formDialogDomainOverride = $this->getForm("dialogDomainOverride");

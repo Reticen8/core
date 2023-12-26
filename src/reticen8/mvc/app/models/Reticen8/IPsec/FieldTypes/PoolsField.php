@@ -26,12 +26,12 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec\FieldTypes;
+namespace Reticen8\IPsec\FieldTypes;
 
-use OPNsense\Base\FieldTypes\BaseListField;
+use Reticen8\Base\FieldTypes\BaseListField;
 
 /**
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class PoolsField extends BaseListField
 {

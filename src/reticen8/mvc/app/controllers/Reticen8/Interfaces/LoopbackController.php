@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces;
+namespace Reticen8\Interfaces;
 
-class LoopbackController extends \OPNsense\Base\IndexController
+class LoopbackController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Interface/loopback');
+        $this->view->pick('Reticen8/Interface/loopback');
         $this->view->formDialogLoopback = $this->getForm("dialogLoopback");
     }
 }

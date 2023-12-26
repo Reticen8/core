@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
 """
-    Copyright (c) 2017-2019 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2017-2019 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -36,13 +36,13 @@ from hashlib import md5
 import argparse
 import ujson
 import subprocess
-sys.path.insert(0, "/usr/local/opnsense/site-python")
+sys.path.insert(0, "/usr/local/reticen8/site-python")
 from log_helper import reverse_log_reader
 from params import update_params
 
 
 # define log layouts, every endpoint contains all options
-# source : https://github.com/opnsense/ports/blob/master/opnsense/filterlog/files/description.txt
+# source : https://github.com/reticen8/ports/blob/master/reticen8/filterlog/files/description.txt
 fields_general = 'rulenr,subrulenr,anchorname,rid,interface,reason,action,dir,ipversion'.split(',')
 
 fields_ipv4 = fields_general + 'tos,ecn,ttl,id,offset,ipflags,protonum,protoname,length,src,dst'.split(',')

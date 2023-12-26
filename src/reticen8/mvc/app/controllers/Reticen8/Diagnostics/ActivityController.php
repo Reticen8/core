@@ -26,18 +26,18 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Diagnostics;
+namespace Reticen8\Diagnostics;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
  * Class ActivityController
- * @package OPNsense\Diagnostics
+ * @package Reticen8\Diagnostics
  */
 class ActivityController extends IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Diagnostics/systemactivity');
+        $this->view->pick('Reticen8/Diagnostics/systemactivity');
     }
 }

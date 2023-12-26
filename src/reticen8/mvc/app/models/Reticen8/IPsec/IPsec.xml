@@ -1,7 +1,7 @@
 <model>
-    <mount>//OPNsense/IPsec</mount>
+    <mount>//Reticen8/IPsec</mount>
     <version>1.0.1</version>
-    <description>OPNsense IPsec</description>
+    <description>Reticen8 IPsec</description>
     <items>
         <general>
             <enabled type="LegacyLinkField">

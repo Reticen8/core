@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (c) 2016-2023 Franco Fichtner <franco@opnsense.org>
+# Copyright (c) 2016-2023 Franco Fichtner <franco@reticen8.org>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -27,7 +27,7 @@
 
 set -e
 
-DESTDIR="/usr/local/opnsense/changelog"
+DESTDIR="/usr/local/reticen8/changelog"
 FETCH="fetch -qT 5"
 
 changelog_remove()
@@ -48,7 +48,7 @@ changelog_checksum()
 
 changelog_url()
 {
-	echo "$(opnsense-update -X)/sets/changelog.txz"
+	echo "$(reticen8-update -X)/sets/changelog.txz"
 }
 
 changelog_fetch()
@@ -60,7 +60,7 @@ changelog_fetch()
 	${FETCH} -mo ${DESTDIR}/changelog.txz "${URL}"
 	${FETCH} -o ${DESTDIR}/changelog.txz.sig "${URL}.sig"
 
-	opnsense-verify -q ${DESTDIR}/changelog.txz
+	reticen8-verify -q ${DESTDIR}/changelog.txz
 
 	changelog_remove
 

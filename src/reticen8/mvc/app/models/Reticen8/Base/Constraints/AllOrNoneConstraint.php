@@ -28,11 +28,11 @@
  *
  */
 
-namespace OPNsense\Base\Constraints;
+namespace Reticen8\Base\Constraints;
 
 /**
  * Class AllOrNoneConstraint all selected fields (at the same level) should contain data or none of them.
- * @package OPNsense\Base\Constraints
+ * @package Reticen8\Base\Constraints
  */
 class AllOrNoneConstraint extends BaseConstraint
 {

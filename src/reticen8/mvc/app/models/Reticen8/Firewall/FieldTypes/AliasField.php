@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\Firewall\FieldTypes;
+namespace Reticen8\Firewall\FieldTypes;
 
-use OPNsense\Base\FieldTypes\ArrayField;
-use OPNsense\Base\FieldTypes\TextField;
-use OPNsense\Base\FieldTypes\IntegerField;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
+use Reticen8\Base\FieldTypes\ArrayField;
+use Reticen8\Base\FieldTypes\TextField;
+use Reticen8\Base\FieldTypes\IntegerField;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
 
 class AliasField extends ArrayField
 {

@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\CaptivePortal;
+namespace Reticen8\CaptivePortal;
 
-use OPNsense\Base\BaseModel;
+use Reticen8\Base\BaseModel;
 
 /**
  * Class CaptivePortal
- * @package OPNsense\CaptivePortal
+ * @package Reticen8\CaptivePortal
  */
 class CaptivePortal extends BaseModel
 {

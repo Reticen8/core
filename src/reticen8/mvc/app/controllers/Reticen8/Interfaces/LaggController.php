@@ -26,18 +26,18 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces;
+namespace Reticen8\Interfaces;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
- * @package OPNsense\Interfaces
+ * @package Reticen8\Interfaces
  */
 class LaggController extends IndexController
 {
     public function indexAction($selected = null)
     {
         $this->view->formDialogEdit = $this->getForm("dialogLagg");
-        $this->view->pick('OPNsense/Interface/lagg');
+        $this->view->pick('Reticen8/Interface/lagg');
     }
 }

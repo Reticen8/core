@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
 """
-    Copyright (c) 2017-2022 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2017-2022 Ad Schellevis <ad@reticen8.org>
     Copyright (C) 2017 Fabian Franz
     All rights reserved.
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2015-2017 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2015-2017 Franco Fichtner <franco@reticen8.org>
 # Copyright (C) 2014 Deciso B.V.
 # All rights reserved.
 #
@@ -31,10 +31,10 @@ PACKAGE=${1}
 : > ${LOCKFILE}
 
 echo "***GOT REQUEST TO REMOVE***" >> ${LOCKFILE}
-echo "Currently running $(opnsense-version) at $(date)" >> ${LOCKFILE}
+echo "Currently running $(reticen8-version) at $(date)" >> ${LOCKFILE}
 
 pkg remove -y ${PACKAGE} >> ${LOCKFILE} 2>&1
-/usr/local/opnsense/scripts/firmware/register.php remove ${PACKAGE} >> ${LOCKFILE} 2>&1
+/usr/local/reticen8/scripts/firmware/register.php remove ${PACKAGE} >> ${LOCKFILE} 2>&1
 pkg autoremove -y >> ${LOCKFILE} 2>&1
 
 echo '***DONE***' >> ${LOCKFILE}

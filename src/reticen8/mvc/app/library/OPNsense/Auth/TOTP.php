@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Auth;
+namespace Reticen8\Auth;
 
 require_once 'base32/Base32.php';
 
 /**
  * RFC 6238 TOTP: Time-Based One-Time Password Authenticator
- * @package OPNsense\Auth
+ * @package Reticen8\Auth
  */
 trait TOTP
 {

@@ -1,7 +1,7 @@
 <model>
-    <mount>//OPNsense/IDS</mount>
+    <mount>//Reticen8/IDS</mount>
     <version>1.0.9</version>
-    <description>OPNsense IDS</description>
+    <description>Reticen8 IDS</description>
     <items>
         <rules>
             <rule type="ArrayField">
@@ -45,7 +45,7 @@
                 <rulesets type="ModelRelationField">
                     <Model>
                         <rulesets>
-                            <source>OPNsense.IDS.IDS</source>
+                            <source>Reticen8.IDS.IDS</source>
                             <items>files.file</items>
                             <display>filename</display>
                             <filters>
@@ -169,7 +169,7 @@
             <UpdateCron type="ModelRelationField">
                 <Model>
                     <queues>
-                        <source>OPNsense.Cron.Cron</source>
+                        <source>Reticen8.Cron.Cron</source>
                         <items>jobs.job</items>
                         <display>description</display>
                         <filters>

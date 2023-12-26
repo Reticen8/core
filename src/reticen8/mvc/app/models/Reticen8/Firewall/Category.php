@@ -28,15 +28,15 @@
  *
  */
 
-namespace OPNsense\Firewall;
+namespace Reticen8\Firewall;
 
-use OPNsense\Base\BaseModel;
-use OPNsense\Core\Config;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\BaseModel;
+use Reticen8\Core\Config;
+use Reticen8\Firewall\Util;
 
 /**
  * Class Category
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class Category extends BaseModel
 {

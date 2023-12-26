@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2018 Deciso B.V.
- * Copyright (C) 2018 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2018 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2018 René Muhr <rene@team-rebellion.net>
  * Copyright (C) 2018 Fabian Franz
  * All rights reserved.
@@ -124,7 +124,7 @@ $(document).ready(function () {
         $(r).prevAll('div').removeClass('in').attr('aria-expanded', 'false');
     }
 
-    function opnsense_sidebar_toggle(store) {
+    function reticen8_sidebar_toggle(store) {
         navigation.toggleClass('col-sidebar-left');
         $('main').toggleClass('col-sm-9 col-sm-push-3 col-lg-10 col-lg-push-2 col-lg-12');
         $('.toggle-sidebar > i').toggleClass('fa-chevron-right fa-chevron-left');
@@ -152,7 +152,7 @@ $(document).ready(function () {
         var toggle_btn = $('.toggle-sidebar');
         /* navigation toggle */
         toggle_btn.click(function () {
-            opnsense_sidebar_toggle(true);
+            reticen8_sidebar_toggle(true);
             $(this).blur();
         });
 
@@ -189,7 +189,7 @@ $(document).ready(function () {
                 mouse_events_off();
                 toggle_btn.hide();
                 if (navigation.hasClass('col-sidebar-left')) {
-                    opnsense_sidebar_toggle(false);
+                    reticen8_sidebar_toggle(false);
                     mouse_events_off();
                     transition_duration(350);
                 }
@@ -198,7 +198,7 @@ $(document).ready(function () {
                 transition_duration(0);
                 toggle_btn.show();
                 if (window.localStorage && localStorage.getItem('toggle_sidebar_preset') == 1) {
-                    opnsense_sidebar_toggle(false);
+                    reticen8_sidebar_toggle(false);
                 }
             }
         });
@@ -208,7 +208,7 @@ $(document).ready(function () {
 
         /* auto-collapse if previously requested */
         if (window.localStorage && localStorage.getItem('toggle_sidebar_preset') == 1) {
-            opnsense_sidebar_toggle(false);
+            reticen8_sidebar_toggle(false);
         }
     }
 });

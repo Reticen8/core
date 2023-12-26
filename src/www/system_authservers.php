@@ -31,7 +31,7 @@
 require_once("guiconfig.inc");
 require_once("auth.inc");
 
-$authFactory = new \OPNsense\Auth\AuthenticationFactory();
+$authFactory = new \Reticen8\Auth\AuthenticationFactory();
 $authCNFOptions = $authFactory->listConfigOptions();
 
 config_read_array('system', 'authserver');
@@ -558,7 +558,7 @@ $( document ).ready(function() {
             <?php if ($act == "new" || $act == "edit") :
 ?>
             <form id="iform" name="iform" method="post">
-              <table class="table table-striped opnsense_standard_table_form">
+              <table class="table table-striped reticen8_standard_table_form">
                 <tr>
                   <td style="width:22%"></td>
                   <td style="width:78%; text-align:right">
@@ -853,8 +853,8 @@ endif; ?>
                     <input id="sync_memberof" name="sync_memberof" type="checkbox" <?= empty($pconfig['sync_memberof']) ? '' : 'checked="checked"';?> />
                     <div class="hidden" data-for="help_for_sync_memberof">
                       <?= gettext("Synchronize groups specified by memberOf or class attribute after login, this option requires to enable read properties. ".
-                                  "Groups will be extracted from the first CN= section and will only be considered when already existing in OPNsense. ".
-                                  "Group memberships will be persisted in OPNsense. ".
+                                  "Groups will be extracted from the first CN= section and will only be considered when already existing in Reticen8. ".
+                                  "Group memberships will be persisted in Reticen8. ".
                                   "Use the server test tool to check if memberOf is returned by your LDAP server before enabling.");?>
                     </div>
                   </td>
@@ -880,7 +880,7 @@ endif; ?>
                     endforeach; ?>
                     </select>
                     <div class="hidden" data-for="help_for_sync_memberof_groups">
-                      <?= gettext("Limit the groups which may be used by this authenticator, keep empty to consider all local groups in OPNsense. ".
+                      <?= gettext("Limit the groups which may be used by this authenticator, keep empty to consider all local groups in Reticen8. ".
                                   "When groups are selected, you can assign unassigned groups to the user manually ");?>
                     </div>
                   </td>

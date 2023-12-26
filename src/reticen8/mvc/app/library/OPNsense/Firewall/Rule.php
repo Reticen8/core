@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Firewall;
+namespace Reticen8\Firewall;
 
 /**
  * Class Rule basic rule parsing logic
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 abstract class Rule
 {

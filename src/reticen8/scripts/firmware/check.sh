@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2015-2023 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2015-2023 Franco Fichtner <franco@reticen8.org>
 # Copyright (C) 2014 Deciso B.V.
 # All rights reserved.
 #
@@ -42,7 +42,7 @@ LOCKFILE="/tmp/pkg_upgrade.progress"
 OUTFILE="/tmp/pkg_update.out"
 TEE="/usr/bin/tee -a"
 
-LICENSEFILE="/usr/local/opnsense/version/core.license"
+LICENSEFILE="/usr/local/reticen8/version/core.license"
 
 CUSTOMPKG=${1}
 
@@ -61,7 +61,7 @@ needs_reboot="0"
 packages_downgraded=
 packages_new=
 packages_upgraded=
-product_repo="OPNsense"
+product_repo="Reticen8"
 repository="error"
 sets_upgraded=
 upgrade_needs_reboot="0"
@@ -78,23 +78,23 @@ fi
 
 last_check=$(date)
 os_version=$(uname -sr)
-product_id=$(opnsense-version -n)
-product_target=opnsense${product_suffix}
-product_version=$(opnsense-version -v)
-product_abi=$(opnsense-version -a)
-product_xabi=$(opnsense-version -x)
+product_id=$(reticen8-version -n)
+product_target=reticen8${product_suffix}
+product_version=$(reticen8-version -v)
+product_abi=$(reticen8-version -a)
+product_xabi=$(reticen8-version -x)
 
 if [ -n "${product_xabi}" -a "${product_abi}" != "${product_xabi}" ]; then
     force_all="-f"
 fi
 
 echo "***GOT REQUEST TO CHECK FOR UPDATES***" >> ${LOCKFILE}
-echo "Currently running $(opnsense-version) at $(date)" >> ${LOCKFILE}
+echo "Currently running $(reticen8-version) at $(date)" >> ${LOCKFILE}
 
 # business subscriptions come with additional license metadata
-if [ -n "$(opnsense-update -x)" ]; then
+if [ -n "$(reticen8-update -x)" ]; then
     echo -n "Fetching subscription information, please wait... " >> ${LOCKFILE}
-    if fetch -qT 5 -o ${LICENSEFILE} "$(opnsense-update -M)/subscription" >> ${LOCKFILE} 2>&1; then
+    if fetch -qT 5 -o ${LICENSEFILE} "$(reticen8-update -M)/subscription" >> ${LOCKFILE} 2>&1; then
         echo "done" >> ${LOCKFILE}
     fi
 else
@@ -102,7 +102,7 @@ else
 fi
 
 echo -n "Fetching changelog information, please wait... " >> ${LOCKFILE}
-if /usr/local/opnsense/scripts/firmware/changelog.sh fetch >> ${LOCKFILE} 2>&1; then
+if /usr/local/reticen8/scripts/firmware/changelog.sh fetch >> ${LOCKFILE} 2>&1; then
     echo "done" >> ${LOCKFILE}
 fi
 
@@ -298,9 +298,9 @@ else
         download_size=$(grep 'to be downloaded' ${OUTFILE} | awk -F '[ ]' '{print $1$2}' | tr '\n' ',' | sed 's/,$//')
 
         # see if packages indicate a new version (not revision) of base / kernel
-        LQUERY=$(pkg query %v opnsense-update)
+        LQUERY=$(pkg query %v reticen8-update)
         LQUERY=${LQUERY%%_*}
-        RQUERY=$(pkg rquery %v opnsense-update)
+        RQUERY=$(pkg rquery %v reticen8-update)
         RQUERY=${RQUERY%%_*}
 
         if [ -n "${force_all}" -o "$(pkg version -t ${LQUERY} ${RQUERY})" = "<" ]; then
@@ -309,14 +309,14 @@ else
         fi
 
         if [ -z "${base_to_reboot}" ]; then
-            if opnsense-update -cbf; then
-                base_to_reboot="$(opnsense-update -v)"
+            if reticen8-update -cbf; then
+                base_to_reboot="$(reticen8-update -v)"
             fi
         fi
 
         if [ -n "${base_to_reboot}" ]; then
-            base_to_delete="$(opnsense-update -vb)"
-            base_is_size="$(opnsense-update -bfSr ${base_to_reboot})"
+            base_to_delete="$(reticen8-update -vb)"
+            base_is_size="$(reticen8-update -bfSr ${base_to_reboot})"
             if [ "${base_to_reboot}${force_all}" != "${base_to_delete}" -a -n "${base_is_size}" ]; then
                 # XXX this could be a downgrade or reinstall
                 if [ -n "${packages_upgraded}" ]; then
@@ -331,14 +331,14 @@ else
         fi
 
         if [ -z "${kernel_to_reboot}" ]; then
-            if opnsense-update -cfk; then
-                kernel_to_reboot="$(opnsense-update -v)"
+            if reticen8-update -cfk; then
+                kernel_to_reboot="$(reticen8-update -v)"
             fi
         fi
 
         if [ -n "${kernel_to_reboot}" ]; then
-            kernel_to_delete="$(opnsense-update -vk)"
-            kernel_is_size="$(opnsense-update -fkSr ${kernel_to_reboot})"
+            kernel_to_delete="$(reticen8-update -vk)"
+            kernel_is_size="$(reticen8-update -fkSr ${kernel_to_reboot})"
             if [ "${kernel_to_reboot}${force_all}" != "${kernel_to_delete}" -a -n "${kernel_is_size}" ]; then
                 # XXX this could be a downgrade or reinstall
                 if [ -n "${packages_upgraded}" ]; then
@@ -354,21 +354,21 @@ else
     fi
 fi
 
-packages_is_size="$(opnsense-update -SRp)"
+packages_is_size="$(reticen8-update -SRp)"
 if [ -n "${packages_is_size}" ]; then
-    upgrade_major_version=$(opnsense-update -vR)
+    upgrade_major_version=$(reticen8-update -vR)
 
-    upgrade_major_message=$(sed -e 's/"/\\&/g' -e "s/%%UPGRADE_RELEASE%%/${upgrade_major_version}/g" /usr/local/opnsense/data/firmware/upgrade.html 2> /dev/null | tr '\n' ' ')
+    upgrade_major_message=$(sed -e 's/"/\\&/g' -e "s/%%UPGRADE_RELEASE%%/${upgrade_major_version}/g" /usr/local/reticen8/data/firmware/upgrade.html 2> /dev/null | tr '\n' ' ')
 
-    packages_to_delete="$(opnsense-update -vp)"
+    packages_to_delete="$(reticen8-update -vp)"
     if [ "${packages_to_delete}" != "${upgrade_major_version}" ]; then
         sets_upgraded="{\"name\":\"packages\",\"size\":\"${packages_is_size}\",\"current_version\":\"${packages_to_delete}\",\"new_version\":\"${upgrade_major_version}\",\"repository\":\"${product_repo}\"}"
         upgrade_needs_reboot="1"
     fi
 
-    kernel_to_delete="$(opnsense-update -vk)"
+    kernel_to_delete="$(reticen8-update -vk)"
     if [ "${kernel_to_delete}" != "${upgrade_major_version}" ]; then
-        kernel_is_size="$(opnsense-update -SRk)"
+        kernel_is_size="$(reticen8-update -SRk)"
         if [ -n "${kernel_is_size}" ]; then
             if [ -n "${sets_upgraded}" ]; then
                 sets_upgraded="${sets_upgraded},"
@@ -378,9 +378,9 @@ if [ -n "${packages_is_size}" ]; then
         fi
     fi
 
-    base_to_delete="$(opnsense-update -vb)"
+    base_to_delete="$(reticen8-update -vb)"
     if [ "${base_to_delete}" != "${upgrade_major_version}" ]; then
-        base_is_size="$(opnsense-update -SRb)"
+        base_is_size="$(reticen8-update -SRb)"
         if [ -n "${base_is_size}" ]; then
             if [ -n "${sets_upgraded}" ]; then
                 sets_upgraded="${sets_upgraded},"

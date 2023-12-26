@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base;
+namespace Reticen8\Base;
 
 use Exception;
 use http\Message;
-use OPNsense\Base\FieldTypes\ContainerField;
-use OPNsense\Core\Config;
-use OPNsense\Phalcon\Logger\Logger;
+use Reticen8\Base\FieldTypes\ContainerField;
+use Reticen8\Core\Config;
+use Reticen8\Phalcon\Logger\Logger;
 use Phalcon\Logger\Adapter\Syslog;
 use Phalcon\Logger\Formatter\Line;
 use Phalcon\Messages\Messages;
@@ -46,9 +46,9 @@ use SimpleXMLElement;
  * Every model definition should include a class (derived from BaseModel) and a xml model to define the data (model.xml)
  *
  * See the HelloWorld model for a full implementation.
- * (https://github.com/opnsense/plugins/tree/master/devel/helloworld/src/opnsense/mvc/app/models/OPNsense/HelloWorld)
+ * (https://github.com/reticen8/plugins/tree/master/devel/helloworld/src/reticen8/mvc/app/models/Reticen8/HelloWorld)
  *
- * @package OPNsense\Base
+ * @package Reticen8\Base
  */
 abstract class BaseModel
 {
@@ -140,7 +140,7 @@ abstract class BaseModel
                 $field_rfcls = new ReflectionClass($classname);
                 $check_derived = $field_rfcls->getParentClass();
                 while ($check_derived != false) {
-                    if ($check_derived->name == 'OPNsense\Base\FieldTypes\BaseField') {
+                    if ($check_derived->name == 'Reticen8\Base\FieldTypes\BaseField') {
                         $is_derived_from_basefield = true;
                         break;
                     }
@@ -197,11 +197,11 @@ abstract class BaseModel
                     $field_rfcls = $this->getNewField($classname);
                 } else {
                     // standard field type
-                    $field_rfcls = $this->getNewField("OPNsense\\Base\\FieldTypes\\" . $xmlNodeType);
+                    $field_rfcls = $this->getNewField("Reticen8\\Base\\FieldTypes\\" . $xmlNodeType);
                 }
             } else {
                 // no type defined, so this must be a standard container (without content)
-                $field_rfcls = $this->getNewField('OPNsense\Base\FieldTypes\ContainerField');
+                $field_rfcls = $this->getNewField('Reticen8\Base\FieldTypes\ContainerField');
             }
 
             // generate full object name ( section.section.field syntax ) and create new Field
@@ -341,7 +341,7 @@ abstract class BaseModel
             if (strpos($model_xml->mount, "//") === 0) {
                 $src_mountpoint = $model_xml->mount;
             } else {
-                $src_mountpoint = "/opnsense{$model_xml->mount}";
+                $src_mountpoint = "/reticen8{$model_xml->mount}";
             }
             // use an xpath expression to find the root of our model in the config.xml file
             // if found, convert the data to a simple structure (or create an empty array)
@@ -452,7 +452,7 @@ abstract class BaseModel
     public function performValidation($validateFullModel = false)
     {
         // create a wrapped validator and collect all model validations.
-        $validation = new \OPNsense\Base\Validation();
+        $validation = new \Reticen8\Base\Validation();
         $validation_data = array();
         $all_nodes = $this->internalData->getFlatNodes();
 
@@ -460,7 +460,7 @@ abstract class BaseModel
             if ($validateFullModel || $node->isFieldChanged()) {
                 $node_validators = $node->getValidators();
                 foreach ($node_validators as $item_validator) {
-                    if (is_a($item_validator, "OPNsense\\Base\\Constraints\\BaseConstraint")) {
+                    if (is_a($item_validator, "Reticen8\\Base\\Constraints\\BaseConstraint")) {
                         $target_key = $item_validator->getOption("node")->__reference;
                         $validation->add($target_key, $item_validator);
                     } else {
@@ -599,7 +599,7 @@ abstract class BaseModel
                 $logger->error($exception_msg_part);
             }
             if (!$disable_validation) {
-                throw new \OPNsense\Phalcon\Filter\Validation\Exception($exception_msg);
+                throw new \Reticen8\Phalcon\Filter\Validation\Exception($exception_msg);
             }
         }
 
@@ -705,7 +705,7 @@ abstract class BaseModel
                     require_once $filename;
                     $mig_class = new ReflectionClass($mig_classname);
                     $chk_class = empty($mig_class->getParentClass()) ? $mig_class :  $mig_class->getParentClass();
-                    if ($chk_class->name == 'OPNsense\Base\BaseModelMigration') {
+                    if ($chk_class->name == 'Reticen8\Base\BaseModelMigration') {
                         $migobj = $mig_class->newInstance();
                         try {
                             $migobj->run($this);

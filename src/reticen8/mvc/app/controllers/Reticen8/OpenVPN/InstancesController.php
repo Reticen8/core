@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN;
+namespace Reticen8\OpenVPN;
 
-use OPNsense\Base\IndexController as BaseIndexController;
+use Reticen8\Base\IndexController as BaseIndexController;
 
 /**
  * Class InstancesController
- * @package OPNsense\OpenVPN
+ * @package Reticen8\OpenVPN
  */
 class InstancesController extends BaseIndexController
 {
@@ -42,7 +42,7 @@ class InstancesController extends BaseIndexController
      */
     public function indexAction()
     {
-        $this->view->pick('OPNsense/OpenVPN/instances');
+        $this->view->pick('Reticen8/OpenVPN/instances');
         $this->view->formDialogInstance = $this->getForm('dialogInstance');
         $this->view->formDialogStaticKey = $this->getForm('dialogStaticKey');
     }

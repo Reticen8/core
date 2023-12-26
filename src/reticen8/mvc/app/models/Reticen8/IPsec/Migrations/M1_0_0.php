@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec\Migrations;
+namespace Reticen8\IPsec\Migrations;
 
-use OPNsense\Base\BaseModelMigration;
-use OPNsense\Core\Config;
-use OPNsense\Core\Shell;
+use Reticen8\Base\BaseModelMigration;
+use Reticen8\Core\Config;
+use Reticen8\Core\Shell;
 
 class M1_0_0 extends BaseModelMigration
 {

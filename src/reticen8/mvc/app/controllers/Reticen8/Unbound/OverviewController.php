@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound;
+namespace Reticen8\Unbound;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 class OverviewController extends IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Unbound/overview');
+        $this->view->pick('Reticen8/Unbound/overview');
     }
 }

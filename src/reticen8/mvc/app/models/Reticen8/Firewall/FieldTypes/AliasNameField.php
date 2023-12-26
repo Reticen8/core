@@ -26,16 +26,16 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Firewall\FieldTypes;
+namespace Reticen8\Firewall\FieldTypes;
 
-use OPNsense\Base\FieldTypes\BaseField;
-use OPNsense\Base\Validators\CallbackValidator;
-use OPNsense\Phalcon\Filter\Validation\Validator\Regex;
-use OPNsense\Phalcon\Filter\Validation\Validator\ExclusionIn;
+use Reticen8\Base\FieldTypes\BaseField;
+use Reticen8\Base\Validators\CallbackValidator;
+use Reticen8\Phalcon\Filter\Validation\Validator\Regex;
+use Reticen8\Phalcon\Filter\Validation\Validator\ExclusionIn;
 
 /**
  * Class AliasNameField
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class AliasNameField extends BaseField
 {
@@ -52,7 +52,7 @@ class AliasNameField extends BaseField
     {
         $validators = parent::getValidators();
         // Internally reserved keywords
-        //  ref https://github.com/opnsense/src/blob/41ba6e29a8d3f862f95f9ab0a1482ef58c4a7cdb/sbin/pfctl/parse.y#L5482
+        //  ref https://github.com/reticen8/src/blob/41ba6e29a8d3f862f95f9ab0a1482ef58c4a7cdb/sbin/pfctl/parse.y#L5482
         $reservedwords = array(
             'all', 'allow-opts', 'altq', 'anchor', 'antispoof', 'any', 'bandwidth', 'binat', 'binat-anchor', 'bitmask',
             'block', 'block-policy', 'buckets', 'cbq', 'code', 'codelq', 'crop', 'debug', 'divert-reply', 'divert-to',

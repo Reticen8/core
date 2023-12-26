@@ -28,15 +28,15 @@
  *
  */
 
-namespace OPNsense\CaptivePortal\Api;
+namespace Reticen8\CaptivePortal\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\CaptivePortal\CaptivePortal;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\CaptivePortal\CaptivePortal;
 
 /**
  * Class SessionController
- * @package OPNsense\CaptivePortal
+ * @package Reticen8\CaptivePortal
  */
 class SessionController extends ApiControllerBase
 {

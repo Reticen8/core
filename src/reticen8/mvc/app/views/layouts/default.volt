@@ -11,8 +11,8 @@
     <meta name="copyright" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 
-    <title>{{headTitle|default("OPNsense") }} | {{system_hostname}}.{{system_domain}}</title>
-    {% set theme_name = ui_theme|default('opnsense') %}
+    <title>{{headTitle|default("Reticen8") }} | {{system_hostname}}.{{system_domain}}</title>
+    {% set theme_name = ui_theme|default('reticen8') %}
 
     <!-- Favicon -->
     <link href="{{ cache_safe('/ui/themes/%s/build/images/favicon.png' | format(theme_name)) }}" rel="shortcut icon">
@@ -218,12 +218,12 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="/">
-            {% if file_exists(["/usr/local/opnsense/www/themes/",theme_name,"/build/images/default-logo.svg"]|join("")) %}
+            {% if file_exists(["/usr/local/reticen8/www/themes/",theme_name,"/build/images/default-logo.svg"]|join("")) %}
                 <img class="brand-logo" src="{{ cache_safe('/ui/themes/%s/build/images/default-logo.svg' | format(theme_name)) }}" height="30" alt="logo"/>
             {% else %}
                 <img class="brand-logo" src="{{ cache_safe('/ui/themes/%s/build/images/default-logo.png' | format(theme_name)) }}" height="30" alt="logo"/>
             {% endif %}
-            {% if file_exists(["/usr/local/opnsense/www/themes/",theme_name,"/build/images/icon-logo.svg"]|join("")) %}
+            {% if file_exists(["/usr/local/reticen8/www/themes/",theme_name,"/build/images/icon-logo.svg"]|join("")) %}
                 <img class="brand-icon" src="{{ cache_safe('/ui/themes/%s/build/images/icon-logo.svg' | format(theme_name)) }}" height="30" alt="icon"/>
             {% else %}
                 <img class="brand-icon" src="{{ cache_safe('/ui/themes/%s/build/images/icon-logo.png' | format(theme_name)) }}" height="30" alt="icon"/>
@@ -296,7 +296,7 @@
     </main>
 
     <!-- dialog "wait for (service) action" -->
-    <div class="modal fade" id="OPNsenseStdWaitDialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal fade" id="Reticen8StdWaitDialog" tabindex="-1" data-backdrop="static" data-keyboard="false">
       <div class="modal-backdrop fade in"></div>
       <div class="modal-dialog">
         <div class="modal-content">

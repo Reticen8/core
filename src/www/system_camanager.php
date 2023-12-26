@@ -533,7 +533,7 @@ $( document ).ready(function() {
         <form method="post" name="iform" id="iform">
           <input type="hidden" name="id" id="id" value="<?=isset($id) ? $id :"";?>"/>
           <input type="hidden" name="act" id="action" value="<?=$act;?>"/>
-          <table class="table table-striped opnsense_standard_table_form">
+          <table class="table table-striped reticen8_standard_table_form">
             <tr>
               <td style="width:22%"></td>
               <td style="width:78%; text-align:right">
@@ -568,7 +568,7 @@ $( document ).ready(function() {
             </tr>
           </table>
           <!-- existing ca -->
-          <table id="existing" class="table table-striped opnsense_standard_table_form">
+          <table id="existing" class="table table-striped reticen8_standard_table_form">
             <thead>
               <tr>
                 <th colspan="2"><?=gettext("Existing Certificate Authority");?></th>
@@ -608,7 +608,7 @@ $( document ).ready(function() {
               </tbody>
             </table>
             <!-- internal ca -->
-            <table  id="internal" class="table table-striped opnsense_standard_table_form">
+            <table  id="internal" class="table table-striped reticen8_standard_table_form">
               <thead>
                 <tr>
                   <th colspan="2"><?=gettext("Internal Certificate Authority");?></th>
@@ -775,7 +775,7 @@ $( document ).ready(function() {
               </tbody>
             </table>
 
-            <table class="table opnsense_standard_table_form">
+            <table class="table reticen8_standard_table_form">
             <tr>
               <td style="width:22%">&nbsp;</td>
               <td style="width:78%">

@@ -1,9 +1,9 @@
 <?php
 
-include('/usr/local/opnsense/mvc/app/library/OPNsense/Phalcon/Config/Config.php');
-include('/usr/local/opnsense/mvc/app/library/OPNsense/Phalcon/Autoload/Loader.php');
+include('/usr/local/reticen8/mvc/app/library/Reticen8/Phalcon/Config/Config.php');
+include('/usr/local/reticen8/mvc/app/library/Reticen8/Phalcon/Autoload/Loader.php');
 
-return new OPNsense\Phalcon\Config\Config(array(
+return new Reticen8\Phalcon\Config\Config(array(
     'application' => array(
         'controllersDir' => __DIR__ . '/../../../app/controllers/',
         'modelsDir' => __DIR__ . '/../../../app/models/',
@@ -11,7 +11,7 @@ return new OPNsense\Phalcon\Config\Config(array(
         'pluginsDir' => __DIR__ . '/../../../app/plugins/',
         'libraryDir' => __DIR__ . '/../../../app/library/',
         'cacheDir' => __DIR__ . '/../../../app/cache/',
-        'baseUri' => '/opnsense_gui/',
+        'baseUri' => '/reticen8_gui/',
     ),
     'globals' => array(
         'config_path'    => '/conf/',

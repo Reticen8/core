@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<opnsense>
+<reticen8>
     <system>
         <group>
             <gid>100</gid>
@@ -14,4 +14,4 @@
             <name>group 3</name>
         </group>
     </system>
-</opnsense>
+</reticen8>

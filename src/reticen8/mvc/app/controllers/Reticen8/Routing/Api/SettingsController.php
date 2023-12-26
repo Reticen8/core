@@ -26,17 +26,17 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Routing\Api;
+namespace Reticen8\Routing\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Base\UserException;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Base\UserException;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
+use Reticen8\Firewall\Util;
 
 class SettingsController extends ApiMutableModelControllerBase
 {
-    protected static $internalModelClass = '\OPNsense\Routing\Gateways';
+    protected static $internalModelClass = '\Reticen8\Routing\Gateways';
     protected static $internalModelName = 'gateways';
 
     public function reconfigureAction()

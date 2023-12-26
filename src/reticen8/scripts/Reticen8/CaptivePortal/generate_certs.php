@@ -32,13 +32,13 @@
 require_once("config.inc");
 require_once("certs.inc");
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
-$store = new OPNsense\Trust\Store();
+$store = new Reticen8\Trust\Store();
 // traverse captive portal zones
 $configObj = Config::getInstance()->object();
-if (isset($configObj->OPNsense->captiveportal->zones)) {
-    foreach ($configObj->OPNsense->captiveportal->zones->children() as $zone) {
+if (isset($configObj->Reticen8->captiveportal->zones)) {
+    foreach ($configObj->Reticen8->captiveportal->zones->children() as $zone) {
         $cert = $store->getCertificate((string)$zone->certificate);
         // if the zone has a certificate attached, search for its contents
         if ($cert && !empty($cert['prv'])) {

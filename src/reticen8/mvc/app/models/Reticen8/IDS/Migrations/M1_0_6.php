@@ -26,12 +26,12 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IDS\Migrations;
+namespace Reticen8\IDS\Migrations;
 
-use OPNsense\Base\FieldTypes\BaseField;
-use OPNsense\Core\Config;
-use OPNsense\Base\BaseModelMigration;
-use OPNSense\IDS\IDS;
+use Reticen8\Base\FieldTypes\BaseField;
+use Reticen8\Core\Config;
+use Reticen8\Base\BaseModelMigration;
+use REticen8\IDS\IDS;
 
 class M1_0_6 extends BaseModelMigration
 {
@@ -42,11 +42,11 @@ class M1_0_6 extends BaseModelMigration
     public function run($model)
     {
         $cfgObj = Config::getInstance()->object();
-        if (!isset($cfgObj->OPNsense->IDS->files->file)) {
+        if (!isset($cfgObj->Reticen8->IDS->files->file)) {
             return;
         }
         $rulesets = [];
-        foreach ($cfgObj->OPNsense->IDS->files->file as $file) {
+        foreach ($cfgObj->Reticen8->IDS->files->file as $file) {
             if (!empty($file->filter) && !empty($file->enabled)) {
                 $rulesets[] = (string)$file->attributes()['uuid'];
             }

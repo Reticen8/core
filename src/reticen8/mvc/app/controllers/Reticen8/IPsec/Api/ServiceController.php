@@ -26,18 +26,18 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec\Api;
+namespace Reticen8\IPsec\Api;
 
-use OPNsense\Base\ApiMutableServiceControllerBase;
+use Reticen8\Base\ApiMutableServiceControllerBase;
 
 /**
  * {@inheritdoc}
  */
 class ServiceController extends ApiMutableServiceControllerBase
 {
-    protected static $internalServiceClass = '\OPNsense\IPsec\IPsec';
+    protected static $internalServiceClass = '\Reticen8\IPsec\IPsec';
     protected static $internalServiceEnabled = 'general.enabled';
-    protected static $internalServiceTemplate = 'OPNsense/IPsec';
+    protected static $internalServiceTemplate = 'Reticen8/IPsec';
     protected static $internalServiceName = 'ipsec';
 
     /**

@@ -28,17 +28,17 @@
  *
  */
 
-namespace OPNsense\Diagnostics\Api;
+namespace Reticen8\Diagnostics\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Base\UserException;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Base\UserException;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
 
 class LvtemplateController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'lvtemplate';
-    protected static $internalModelClass = 'OPNsense\Diagnostics\Lvtemplate';
+    protected static $internalModelClass = 'Reticen8\Diagnostics\Lvtemplate';
 
     public function searchItemAction()
     {

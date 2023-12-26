@@ -38,7 +38,7 @@ function view_file_exists($filename)
  */
 function view_cache_safe($url)
 {
-    $info = stat('/usr/local/opnsense/www/index.php');
+    $info = stat('/usr/local/reticen8/www/index.php');
     if (!empty($info['mtime'])) {
         return "{$url}?v=" . substr(md5($info['mtime']), 0, 16);
     }

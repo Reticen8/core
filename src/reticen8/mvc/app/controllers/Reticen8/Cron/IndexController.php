@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\Cron;
+namespace Reticen8\Cron;
 
 /**
  * Class IndexController
- * @package OPNsense\Cron
+ * @package Reticen8\Cron
  */
-class IndexController extends \OPNsense\Base\IndexController
+class IndexController extends \Reticen8\Base\IndexController
 {
     /**
      * cron index page
@@ -44,6 +44,6 @@ class IndexController extends \OPNsense\Base\IndexController
     {
         // include dialog form definitions
         $this->view->formDialogEdit = $this->getForm("dialogEdit");
-        $this->view->pick('OPNsense/Cron/index');
+        $this->view->pick('Reticen8/Cron/index');
     }
 }

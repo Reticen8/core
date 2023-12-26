@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (c) 2014-2021 Franco Fichtner <franco@opnsense.org>
+# Copyright (c) 2014-2021 Franco Fichtner <franco@reticen8.org>
 # Copyright (c) 2004-2009 Scott Ullrich <sullrich@gmail.com>
 #
 # Redistribution and use in source and binary forms, with or without
@@ -29,7 +29,7 @@ if [ "$(id -u)" != "0" ]; then
 	exit 1
 fi
 
-if ! bsdinstall opnsense; then
+if ! bsdinstall reticen8; then
 	clear
 	exit 0
 fi

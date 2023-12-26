@@ -28,15 +28,15 @@
  *
  */
 
-namespace OPNsense\Base\Validators;
+namespace Reticen8\Base\Validators;
 
-use OPNsense\Base\BaseValidator;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\BaseValidator;
+use Reticen8\Firewall\Util;
 use Phalcon\Messages\Message;
 
 /**
  * Class NetworkValidator validate networks and ip addresses
- * @package OPNsense\Base\Validators
+ * @package Reticen8\Base\Validators
  */
 class NetworkValidator extends BaseValidator
 {

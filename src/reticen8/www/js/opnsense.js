@@ -116,10 +116,10 @@ function getFormData(parent) {
  * bind data to form, using named arrays
  *
  * for example,
- *      data = {'host':{'name':'opnsense'}}
+ *      data = {'host':{'name':'reticen8'}}
  *      parent = 'general'
  *
- *      will search for an input tag host.name within the parent tag 'general' and fills it with the value 'opnsense'
+ *      will search for an input tag host.name within the parent tag 'general' and fills it with the value 'reticen8'
  *
  * @param parent tag id in dom
  * @param data named array structure

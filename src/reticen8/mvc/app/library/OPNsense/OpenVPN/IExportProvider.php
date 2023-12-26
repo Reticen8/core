@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN;
+namespace Reticen8\OpenVPN;
 
 /**
  * Interface for OpenVPN export connectors
- * @package OPNsense\Backup
+ * @package Reticen8\Backup
  */
 interface IExportProvider
 {

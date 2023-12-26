@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2015-2022 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2015-2022 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2009 Erik Kristensen <erik@erikkristensen.com>
  * Copyright (C) 2004-2010 Scott Ullrich <sullrich@gmail.com>
  * Copyright (C) 2003-2004 Manuel Kasper <mk@neon1.net>
@@ -45,7 +45,7 @@ final class product
 
     private function __construct()
     {
-        self::$data = json_decode(file_get_contents('/usr/local/opnsense/version/core'), true);
+        self::$data = json_decode(file_get_contents('/usr/local/reticen8/version/core'), true);
 
         /* boot detection */
         $bootflag = '/var/run/booting';
@@ -107,7 +107,7 @@ require_once('plugins.inc');
  */
 function load_config_from_file($filename)
 {
-    return OPNsense\Core\Config::getInstance()->toArrayFromFile($filename, listtags());
+    return Reticen8\Core\Config::getInstance()->toArrayFromFile($filename, listtags());
 }
 
 /****f* config/parse_config
@@ -118,7 +118,7 @@ function load_config_from_file($filename)
  ******/
 function parse_config()
 {
-    $cnf = OPNsense\Core\Config::getInstance();
+    $cnf = Reticen8\Core\Config::getInstance();
 
     // return config data as array, use old "listags" construction to mark certain elements as array (even if they're not recurring)
     $config = $cnf->toArray(listtags());
@@ -148,7 +148,7 @@ function convert_config($verbose = false)
     }
 
     /* chain the new migration into this function call */
-    $cmd = '/usr/local/opnsense/mvc/script/run_migrations.php';
+    $cmd = '/usr/local/reticen8/mvc/script/run_migrations.php';
     if ($verbose) {
         passthru($cmd);
     } else {
@@ -164,7 +164,7 @@ function convert_config($verbose = false)
     }
 
     /* factory reset on release type and plugins if necessary */
-    $cmd = '/usr/local/opnsense/scripts/firmware/register.php resync_factory';
+    $cmd = '/usr/local/reticen8/scripts/firmware/register.php resync_factory';
     if ($verbose) {
         passthru($cmd);
     } else {
@@ -172,7 +172,7 @@ function convert_config($verbose = false)
     }
 
     /* reload the config as it was rewritten and saved in the script context */
-    OPNsense\Core\Config::getInstance()->forceReload();
+    Reticen8\Core\Config::getInstance()->forceReload();
     $config = parse_config();
 }
 
@@ -206,13 +206,13 @@ function write_config($desc = '', $backup = true)
 
     plugins_interfaces();
 
-    $cnf = OPNsense\Core\Config::getInstance();
+    $cnf = Reticen8\Core\Config::getInstance();
     $cnf->fromArray($config);
     $revision_info = make_config_revision_entry($desc);
 
     try {
         $cnf->save($revision_info, $backup);
-    } catch (OPNsense\Core\ConfigException $e) {
+    } catch (Reticen8\Core\ConfigException $e) {
         // write failure
         syslog(LOG_ERR, 'WARNING: Config contents could not be saved. Could not open file!');
         return -1;
@@ -232,7 +232,7 @@ function config_restore($conffile)
         return 1;
     }
 
-    $cnf = OPNsense\Core\Config::getInstance();
+    $cnf = Reticen8\Core\Config::getInstance();
     $cnf->backup();
     $cnf->restoreBackup($conffile);
 

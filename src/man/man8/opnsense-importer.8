@@ -1,5 +1,5 @@
 .\"
-.\" Copyright (c) 2018-2023 Franco Fichtner <franco@opnsense.org>
+.\" Copyright (c) 2018-2023 Franco Fichtner <franco@reticen8.org>
 .\"
 .\" Redistribution and use in source and binary forms, with or without
 .\" modification, are permitted provided that the following conditions
@@ -28,8 +28,8 @@
 .Dt OPNSENSE-IMPORTER 8
 .Os
 .Sh NAME
-.Nm opnsense-importer
-.Nd OPNsense import utility
+.Nm reticen8-importer
+.Nd Reticen8 import utility
 .Sh SYNOPSIS
 .Nm
 .Op Fl bmpVz
@@ -49,7 +49,7 @@ If successful, the old configuration will be replaced.
 Encrypted
 .Pa /conf/config.xml
 files are supported via
-.Xr opnsense-crypt 8
+.Xr reticen8-crypt 8
 when the required file
 .Pa /conf/config.secret
 containing the correct password is also present.
@@ -63,7 +63,7 @@ selection allows the user to escape to a shell by issuing
 .Sq \&!
 instead.
 This shell can be used to e.g. start an early install process using
-.Xr opnsense-installer 8 .
+.Xr reticen8-installer 8 .
 .Pp
 The options are as follows:
 .Bl -tag -width ".Fl b" -offset indent
@@ -93,14 +93,14 @@ property in this order.
 .Sh EXIT STATUS
 .Ex -std
 .Sh SEE ALSO
-.Xr opnsense-crypt 8 ,
-.Xr opnsense-installer 8
+.Xr reticen8-crypt 8 ,
+.Xr reticen8-installer 8
 .Sh HISTORY
 The
 .Nm
-utility first appeared in OPNsense 17.1.4.
+utility first appeared in Reticen8 17.1.4.
 It was derived from code written for the
-.Xr opnsense-installer 8
+.Xr reticen8-installer 8
 utility.
 .Sh AUTHORS
-.An Franco Fichtner Aq Mt franco@opnsense.org
+.An Franco Fichtner Aq Mt franco@reticen8.org

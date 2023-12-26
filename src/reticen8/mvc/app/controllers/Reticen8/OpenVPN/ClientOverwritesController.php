@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN;
+namespace Reticen8\OpenVPN;
 
-use OPNsense\Base\IndexController as BaseIndexController;
+use Reticen8\Base\IndexController as BaseIndexController;
 
 /**
  * Class ClientOverwritesController
- * @package OPNsense\OpenVPN
+ * @package Reticen8\OpenVPN
  */
 class ClientOverwritesController extends BaseIndexController
 {
@@ -42,7 +42,7 @@ class ClientOverwritesController extends BaseIndexController
      */
     public function indexAction()
     {
-        $this->view->pick('OPNsense/OpenVPN/cso');
+        $this->view->pick('Reticen8/OpenVPN/cso');
         $this->view->formDialogCSO = $this->getForm('dialogCSO');
     }
 }

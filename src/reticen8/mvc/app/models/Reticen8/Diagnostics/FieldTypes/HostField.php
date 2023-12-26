@@ -28,11 +28,11 @@
  *
  */
 
-namespace OPNsense\Diagnostics\FieldTypes;
+namespace Reticen8\Diagnostics\FieldTypes;
 
-use OPNsense\Base\FieldTypes\BaseField;
-use OPNsense\Base\Validators\CallbackValidator;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\FieldTypes\BaseField;
+use Reticen8\Base\Validators\CallbackValidator;
+use Reticen8\Firewall\Util;
 
 class HostField extends BaseField
 {

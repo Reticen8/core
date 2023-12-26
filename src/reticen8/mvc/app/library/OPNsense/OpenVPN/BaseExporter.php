@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN;
+namespace Reticen8\OpenVPN;
 
 /**
  * Export stub file, contains shared logic for all types
- * @package OPNsense\Backup
+ * @package Reticen8\Backup
  */
 abstract class BaseExporter
 {

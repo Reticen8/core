@@ -1,6 +1,6 @@
 <?php
 
-namespace OPNsense\Phalcon\Filter\Validation\Validator;
+namespace Reticen8\Phalcon\Filter\Validation\Validator;
 
 use Phalcon\Filter\Validation\Validator\Email as PhalconEmail;
 use Phalcon\Validation\Validator\Email as PhalconEmail4;

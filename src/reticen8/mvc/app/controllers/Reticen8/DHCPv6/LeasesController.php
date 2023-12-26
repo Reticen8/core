@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\DHCPv6;
+namespace Reticen8\DHCPv6;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 class LeasesController extends IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/DHCPv6/leases');
+        $this->view->pick('Reticen8/DHCPv6/leases');
     }
 }

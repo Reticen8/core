@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces\Api;
+namespace Reticen8\Interfaces\Api;
 
-use OPNsense\Core\Backend;
-use OPNsense\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Base\ApiMutableModelControllerBase;
 
 class NeighborSettingsController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'neighbor';
-    protected static $internalModelClass = 'OPNsense\Interfaces\Neighbor';
+    protected static $internalModelClass = 'Reticen8\Interfaces\Neighbor';
 
     public function searchItemAction()
     {

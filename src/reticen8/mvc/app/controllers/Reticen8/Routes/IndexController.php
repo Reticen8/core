@@ -28,18 +28,18 @@
  *
  */
 
-namespace OPNsense\Routes;
+namespace Reticen8\Routes;
 
 /**
  * Class IndexController Index controller for core package
- * @package OPNsense\Routes
+ * @package Reticen8\Routes
  */
-class IndexController extends \OPNsense\Base\IndexController
+class IndexController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
         // include dialog form definitions
         $this->view->formDialogEditRoute = $this->getForm("dialogEditRoute");
-        $this->view->pick('OPNsense/Routes/index');
+        $this->view->pick('Reticen8/Routes/index');
     }
 }

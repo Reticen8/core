@@ -123,7 +123,7 @@ function rrd_configure($verbose = false, $bootup = false)
         $ifdescrs = get_configured_interface_with_descr();
         /* IPsec counters */
         $ifdescrs['ipsec'] = "IPsec";
-        $ovpn_servers = (new OPNsense\OpenVPN\OpenVPN())->serverDevices();
+        $ovpn_servers = (new Reticen8\OpenVPN\OpenVPN())->serverDevices();
         foreach ($ovpn_servers as $ifname => $data) {
             $ifdescrs[$ifname] = $data['descr'];
         }
@@ -312,7 +312,7 @@ function rrd_configure($verbose = false, $bootup = false)
 
         /* the pf states gathering function. */
         $rrdupdatesh .= "\n";
-        $rrdupdatesh .= "$rrdtool update $rrddbpath$ifname$states N:`/usr/local/opnsense/scripts/system/rrd_pfstate_info.py`\n\n";
+        $rrdupdatesh .= "$rrdtool update $rrddbpath$ifname$states N:`/usr/local/reticen8/scripts/system/rrd_pfstate_info.py`\n\n";
         /* End pf states statistics */
 
         /* CPU, create CPU statistics database */
@@ -497,7 +497,7 @@ function rrd_configure($verbose = false, $bootup = false)
         }
 
         /* the CPU Temperature gathering function */
-        $rrdupdatesh .= "CPUTEMP=\$(/usr/local/opnsense/scripts/system/temperature.sh rrd)\n";
+        $rrdupdatesh .= "CPUTEMP=\$(/usr/local/reticen8/scripts/system/temperature.sh rrd)\n";
         $rrdupdatesh .= "$rrdtool update $rrddbpath$ifname$cputemp N:\${CPUTEMP}\n";
         /* end CPU Temp gathering */
 

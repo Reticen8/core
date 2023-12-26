@@ -26,7 +26,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base;
+namespace Reticen8\Base;
 
 use Phalcon\Messages\Messages;
 
@@ -63,7 +63,7 @@ class Validation
      */
     public function add($key, $validator)
     {
-        if (is_a($validator, "OPNsense\\Base\\BaseValidator")) {
+        if (is_a($validator, "Reticen8\\Base\\BaseValidator")) {
             if (empty($this->validators[$key])) {
                 $this->validators[$key] = [];
             }

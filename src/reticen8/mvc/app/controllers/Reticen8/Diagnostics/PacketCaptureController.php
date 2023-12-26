@@ -26,19 +26,19 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Diagnostics;
+namespace Reticen8\Diagnostics;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
  * Class DnsDiagnosticsController
- * @package OPNsense\Diagnostics
+ * @package Reticen8\Diagnostics
  */
 class PacketCaptureController extends IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Diagnostics/packetcapture');
+        $this->view->pick('Reticen8/Diagnostics/packetcapture');
         $this->view->captureForm = $this->getForm("packetcapture");
     }
 }

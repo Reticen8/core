@@ -26,12 +26,12 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IDS\Migrations;
+namespace Reticen8\IDS\Migrations;
 
-use OPNsense\Base\FieldTypes\BaseField;
-use OPNsense\Core\Config;
-use OPNsense\Base\BaseModelMigration;
-use OPNSense\IDS\IDS;
+use Reticen8\Base\FieldTypes\BaseField;
+use Reticen8\Core\Config;
+use Reticen8\Base\BaseModelMigration;
+use REticen8\IDS\IDS;
 
 class M1_0_2 extends BaseModelMigration
 {
@@ -43,10 +43,10 @@ class M1_0_2 extends BaseModelMigration
     {
         $cfgObj = Config::getInstance()->object();
         $affectedUuids = [];
-        if (!isset($cfgObj->OPNsense->IDS->userDefinedRules->rule)) {
+        if (!isset($cfgObj->Reticen8->IDS->userDefinedRules->rule)) {
             return;
         }
-        foreach ($cfgObj->OPNsense->IDS->userDefinedRules->rule as $rule) {
+        foreach ($cfgObj->Reticen8->IDS->userDefinedRules->rule as $rule) {
             if (!empty($rule->geoip) || !empty($rule->geoip_direction)) {
                 $affectedUuids[] = (string)$rule['uuid'];
             }

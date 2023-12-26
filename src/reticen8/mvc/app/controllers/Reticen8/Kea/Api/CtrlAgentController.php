@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Kea\Api;
+namespace Reticen8\Kea\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
+use Reticen8\Base\ApiMutableModelControllerBase;
 
 class CtrlAgentController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'ctrlagent';
-    protected static $internalModelClass = 'OPNsense\Kea\KeaCtrlAgent';
+    protected static $internalModelClass = 'Reticen8\Kea\KeaCtrlAgent';
 
     /**
      * @inheritdoc

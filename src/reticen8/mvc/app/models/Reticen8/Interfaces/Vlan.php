@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces;
+namespace Reticen8\Interfaces;
 
 use Phalcon\Messages\Message;
-use OPNsense\Base\BaseModel;
-use OPNsense\Core\Config;
+use Reticen8\Base\BaseModel;
+use Reticen8\Core\Config;
 
 class Vlan extends BaseModel
 {

@@ -26,15 +26,15 @@
  *    POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Diagnostics\Api;
+namespace Reticen8\Diagnostics\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Backend;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Backend;
 
 class TracerouteController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'traceroute';
-    protected static $internalModelClass = 'OPNsense\Diagnostics\Traceroute';
+    protected static $internalModelClass = 'Reticen8\Diagnostics\Traceroute';
 
     public function setAction()
     {

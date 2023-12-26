@@ -1,6 +1,6 @@
 {% set cp_zones = [] %}
-{% if helpers.exists('OPNsense.captiveportal.zones.zone') %}
-{%      for cp_item in helpers.toList('OPNsense.captiveportal.zones.zone')  %}
+{% if helpers.exists('Reticen8.captiveportal.zones.zone') %}
+{%      for cp_item in helpers.toList('Reticen8.captiveportal.zones.zone')  %}
 {%          if cp_item.enabled|default("0") == '1' %}
 {%              do cp_zones.append(cp_key) %}
 {%          endif %}
@@ -8,9 +8,9 @@
 {% endif %}
 {# collect enabled #}
 {% set shapers = [] %}
-{% if helpers.exists('OPNsense.TrafficShaper') %}
-{%     if helpers.exists('OPNsense.TrafficShaper.pipes.pipe') %}
-{%         for pipe in helpers.toList('OPNsense.TrafficShaper.pipes.pipe') %}
+{% if helpers.exists('Reticen8.TrafficShaper') %}
+{%     if helpers.exists('Reticen8.TrafficShaper.pipes.pipe') %}
+{%         for pipe in helpers.toList('Reticen8.TrafficShaper.pipes.pipe') %}
 {%             if pipe.enabled|default('0') == '1' %}
 {%                 do shapers.append(cp_key) %}
 {%             endif%}

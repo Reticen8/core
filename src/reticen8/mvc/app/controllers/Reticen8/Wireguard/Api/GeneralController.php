@@ -27,15 +27,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Wireguard\Api;
+namespace Reticen8\Wireguard\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Config;
-use OPNsense\Core\Backend;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Config;
+use Reticen8\Core\Backend;
 
 class GeneralController extends ApiMutableModelControllerBase
 {
-    protected static $internalModelClass = '\OPNsense\Wireguard\General';
+    protected static $internalModelClass = '\Reticen8\Wireguard\General';
     protected static $internalModelName = 'general';
 
     /**
@@ -45,7 +45,7 @@ class GeneralController extends ApiMutableModelControllerBase
     {
         // get wireguard configuration
         $config = Config::getInstance()->object();
-        $config = $config->OPNsense->wireguard;
+        $config = $config->Reticen8->wireguard;
 
         // craft peers array
         $peers = [];

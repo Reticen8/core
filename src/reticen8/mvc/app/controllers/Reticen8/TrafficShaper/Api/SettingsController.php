@@ -28,20 +28,20 @@
  *
  */
 
-namespace OPNsense\TrafficShaper\Api;
+namespace Reticen8\TrafficShaper\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\TrafficShaper\TrafficShaper;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\TrafficShaper\TrafficShaper;
+use Reticen8\Core\Config;
 
 /**
  * Class SettingsController Handles settings related API actions for the Traffic Shaper
- * @package OPNsense\TrafficShaper
+ * @package Reticen8\TrafficShaper
  */
 class SettingsController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'ts';
-    protected static $internalModelClass = '\OPNsense\TrafficShaper\TrafficShaper';
+    protected static $internalModelClass = '\Reticen8\TrafficShaper\TrafficShaper';
     protected static $internalModelUseSafeDelete = true;
 
     /**
@@ -70,7 +70,7 @@ class SettingsController extends ApiMutableModelControllerBase
     /**
      * Add new pipe and set with attributes from post
      * @return array save result + validation output
-     * @throws \OPNsense\Base\ModelException when not bound to model
+     * @throws \Reticen8\Base\ModelException when not bound to model
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      */
     public function addPipeAction()
@@ -162,7 +162,7 @@ class SettingsController extends ApiMutableModelControllerBase
     /**
      * Add new queue and set with attributes from post
      * @return array save result + validation output
-     * @throws \OPNsense\Base\ModelException when not bound to model
+     * @throws \Reticen8\Base\ModelException when not bound to model
      */
     public function addQueueAction()
     {
@@ -243,7 +243,7 @@ class SettingsController extends ApiMutableModelControllerBase
     /**
      * Add new rule and set with attributes from post
      * @return array save result + validation output
-     * @throws \OPNsense\Base\ModelException when not bound to model
+     * @throws \Reticen8\Base\ModelException when not bound to model
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      */
     public function addRuleAction()

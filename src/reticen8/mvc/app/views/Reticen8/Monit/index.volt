@@ -44,7 +44,7 @@
       }
 
       /**
-       * chain std_bootgrid_reload from opnsense_bootgrid_plugin.js
+       * chain std_bootgrid_reload from reticen8_bootgrid_plugin.js
        * to get the isSubsystemDirty state on "UIBootgrid" changes
        */
       var opn_std_bootgrid_reload = std_bootgrid_reload;

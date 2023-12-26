@@ -40,7 +40,7 @@ $ostypes = json_decode(configd_run('filter list osfp json'));
 if ($ostypes == null) {
     $ostypes = array();
 }
-$gateways = new \OPNsense\Routing\Gateways();
+$gateways = new \Reticen8\Routing\Gateways();
 
 
 /**
@@ -612,11 +612,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // sort filter items per interface, not really necessary but leaves a bit nicer sorted config.xml behind.
         filter_rules_sort();
         // write to config
-        OPNsense\Core\Config::getInstance()->fromArray($config);
-        $catmdl = new OPNsense\Firewall\Category();
+        Reticen8\Core\Config::getInstance()->fromArray($config);
+        $catmdl = new Reticen8\Firewall\Category();
         if ($catmdl->sync()) {
             $catmdl->serializeToConfig();
-            $config = OPNsense\Core\Config::getInstance()->toArray(listtags());
+            $config = Reticen8\Core\Config::getInstance()->toArray(listtags());
         }
         write_config();
         mark_subsystem_dirty('filter');
@@ -638,7 +638,7 @@ include("head.inc");
 ?>
 <script src="<?= cache_safe('/ui/js/tokenize2.js') ?>"></script>
 <link rel="stylesheet" type="text/css" href="<?= cache_safe(get_themed_filename('/css/tokenize2.css')) ?>">
-<script src="<?= cache_safe('/ui/js/opnsense_ui.js') ?>"></script>
+<script src="<?= cache_safe('/ui/js/reticen8_ui.js') ?>"></script>
 <body>
   <script>
   $( document ).ready(function() {
@@ -774,7 +774,7 @@ include("head.inc");
                 <input name="after" type="hidden" value="<?=isset($after) ? $after :'';?>" />
                 <input type="hidden" name="floating" value="<?=$pconfig['floating'];?>" />
                 <div class="table-responsive">
-                  <table class="table table-striped opnsense_standard_table_form">
+                  <table class="table table-striped reticen8_standard_table_form">
                   <tr>
                     <td style="width:22%"><strong><?=gettext("Edit Firewall rule");?></strong></td>
                     <td style="width:78%;text-align:right">
@@ -1308,7 +1308,7 @@ include("head.inc");
                     <td>
                       <select name="category[]" id="category" multiple="multiple" class="tokenize" data-allownew="true" data-sortable="false" data-width="348px" data-live-search="true">
 <?php
-                      foreach ((new OPNsense\Firewall\Category())->iterateCategories() as $category):
+                      foreach ((new Reticen8\Firewall\Category())->iterateCategories() as $category):
                         $catname = htmlspecialchars($category['name'], ENT_QUOTES | ENT_HTML401);?>
                         <option value="<?=$catname;?>" <?=!empty($pconfig['category']) && in_array($catname, $pconfig['category']) ? 'selected="selected"' : '';?> ><?=$catname;?></option>
 <?php

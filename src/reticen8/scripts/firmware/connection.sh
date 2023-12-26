@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2021-2022 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2021-2022 Franco Fichtner <franco@reticen8.org>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -29,7 +29,7 @@ TEE="/usr/bin/tee -a"
 
 : > ${LOCKFILE}
 
-URL=$(opnsense-update -M)
+URL=$(reticen8-update -M)
 POPT="-c4 -s1500"
 
 HOST=${URL#*://}
@@ -43,7 +43,7 @@ rm -rf ${PKG_DBDIR}
 mkdir -p ${PKG_DBDIR}
 
 echo "***GOT REQUEST TO AUDIT CONNECTIVITY***" >> ${LOCKFILE}
-echo "Currently running $(opnsense-version) at $(date)" >> ${LOCKFILE}
+echo "Currently running $(reticen8-version) at $(date)" >> ${LOCKFILE}
 
 if [ -n "${IPV4}" -a -z "${IPV4%%*.*}" ]; then
 	echo "Checking connectivity for host: ${HOST} -> ${IPV4}" | ${TEE} ${LOCKFILE}

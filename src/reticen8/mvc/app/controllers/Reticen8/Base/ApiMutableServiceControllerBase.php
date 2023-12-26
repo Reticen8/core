@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2017-2018 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2017-2018 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2016 IT-assistans Sverige AB
  * Copyright (C) 2015-2016 Deciso B.V.
  * All rights reserved.
@@ -28,15 +28,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base;
+namespace Reticen8\Base;
 
-use OPNsense\Core\Backend;
+use Reticen8\Core\Backend;
 
 /**
  * Class ApiMutableServiceControllerBase, inherit this class to implement
  * an API that exposes a service controller with start, stop, restart,
  * reconfigure and status actions.
- * @package OPNsense\Base
+ * @package Reticen8\Base
  */
 abstract class ApiMutableServiceControllerBase extends ApiControllerBase
 {

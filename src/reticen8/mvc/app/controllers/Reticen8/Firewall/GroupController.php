@@ -26,18 +26,18 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Firewall;
+namespace Reticen8\Firewall;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class GroupController extends IndexController
 {
     public function indexAction($selected = null)
     {
         $this->view->formDialogEdit = $this->getForm("groupEdit");
-        $this->view->pick('OPNsense/Firewall/group');
+        $this->view->pick('Reticen8/Firewall/group');
     }
 }

@@ -557,17 +557,17 @@ $( document ).ready(function() {
   // hook category functionality
   hook_firewall_categories();
 
-  // our usual zebra striping doesn't respect hidden rows, hook repaint on .opnsense-rules change() and fire initially
-  $(".opnsense-rules > tbody > tr").each(function(){
+  // our usual zebra striping doesn't respect hidden rows, hook repaint on .reticen8-rules change() and fire initially
+  $(".reticen8-rules > tbody > tr").each(function(){
       // save zebra color
       let tr_color = $(this).children(0).css("background-color");
       if (tr_color != 'transparent' && !tr_color.includes('(0, 0, 0')) {
           $("#fw_category").data('stripe_color', tr_color);
       }
   });
-  $(".opnsense-rules").removeClass("table-striped");
-  $(".opnsense-rules").change(function(){
-      $(".opnsense-rules > tbody > tr:visible").each(function (index) {
+  $(".reticen8-rules").removeClass("table-striped");
+  $(".reticen8-rules").change(function(){
+      $(".reticen8-rules > tbody > tr:visible").each(function (index) {
           $(this).css("background-color", "inherit");
           if ( index % 2 == 0) {
               $(this).css("background-color", $("#fw_category").data('stripe_color'));
@@ -589,7 +589,7 @@ $( document ).ready(function() {
       $("#expand-"+$(this).data('type')).click(function(event){
           event.preventDefault();
           $(this).parent().parent().toggleClass('is_collapsed');
-          // trigger category change as this will show/hide all "rule" rows (and fires an event on .opnsense-rules )
+          // trigger category change as this will show/hide all "rule" rows (and fires an event on .reticen8-rules )
           $("#fw_category").change();
       });
   });
@@ -627,7 +627,7 @@ $( document ).ready(function() {
     .button-th {
         width: 150px;
     }
-    .opnsense-rules > tbody > tr > td {
+    .reticen8-rules > tbody > tr > td {
         padding-left:5px;
         padding-right:5px;
     }
@@ -693,7 +693,7 @@ $( document ).ready(function() {
               <input type="hidden" id="id" name="id" value="" />
               <input type="hidden" id="action" name="act" value="" />
               <div class="table-responsive">
-                <table class="table table-condensed table-striped opnsense-rules">
+                <table class="table table-condensed table-striped reticen8-rules">
                   <tbody>
                     <tr>
                       <td><input type="checkbox" id="selectAll"></td>
@@ -875,7 +875,7 @@ $( document ).ready(function() {
                 ):
                   // calculate a hash so we can track these records in the ruleset, new style (mvc) code will
                   // automatically provide us with a uuid, this is a workaround to provide some help with tracking issues.
-                  $rule_hash = OPNsense\Firewall\Util::calcRuleHash($a_filter_raw[$i]);
+                  $rule_hash = Reticen8\Firewall\Util::calcRuleHash($a_filter_raw[$i]);
                   $intf_count = empty($filterent['interface']) ? '*' : count(explode(',', $filterent['interface']));
 ?>
                   <tr class="rule  <?=isset($filterent['disabled'])?"text-muted":"";?>" data-category="<?=!empty($filterent['category']) ? $filterent['category'] : "";?>">
@@ -1023,7 +1023,7 @@ $( document ).ready(function() {
 ?>
                 </tbody>
               </table>
-              <table class="table table-condensed table-striped opnsense-rules">
+              <table class="table table-condensed table-striped reticen8-rules">
                 <tbody>
                   <tr class="hidden-xs hidden-sm">
                     <td>

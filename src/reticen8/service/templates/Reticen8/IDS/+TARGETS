@@ -1,4 +1,4 @@
-OPNsense.rules:/usr/local/etc/suricata/rules/OPNsense.rules
+Reticen8.rules:/usr/local/etc/suricata/rules/Reticen8.rules
 classification.config:/usr/local/etc/suricata/classification.config
 custom.yaml:/usr/local/etc/suricata/custom.yaml
 newsyslog.conf:/etc/newsyslog.conf.d/suricata

@@ -1,5 +1,5 @@
 <model>
-    <mount>//OPNsense/unboundplus</mount>
+    <mount>//Reticen8/unboundplus</mount>
     <description>Unbound configuration</description>
     <version>1.0.8</version>
     <items>
@@ -347,7 +347,7 @@
                 <host type="ModelRelationField">
                     <Model>
                         <host>
-                            <source>OPNsense.Unbound.Unbound</source>
+                            <source>Reticen8.Unbound.Unbound</source>
                             <items>hosts.host</items>
                             <display>hostname,domain</display>
                             <display_format>%s.%s</display_format>

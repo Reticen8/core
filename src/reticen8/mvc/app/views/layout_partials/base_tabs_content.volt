@@ -1,5 +1,5 @@
 {#
- # Copyright (c) 2017 Franco Fichtner <franco@opnsense.org>
+ # Copyright (c) 2017 Franco Fichtner <franco@reticen8.org>
  # Copyright (c) 2014-2015 Deciso B.V.
  # All rights reserved.
  #

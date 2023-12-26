@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<opnsense>
+<reticen8>
   <tests>
-    <OPNsense>
+    <Reticen8>
       <TestModel version="0.0.0">
         <general>
           <FromEmail>sample@example.com</FromEmail>
@@ -42,6 +42,6 @@
           </items>
         </simpleList>
       </TestModel>
-    </OPNsense>
+    </Reticen8>
   </tests>
-</opnsense>
+</reticen8>

@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
 """
-    Copyright (c) 2022 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2022 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -37,7 +37,7 @@ if __name__ == '__main__':
     cmd_args = parser.parse_args()
 
     result  = {'status': 'not_found'}
-    sp = subprocess.run(['/usr/local/opnsense/scripts/ipsec/list_sad.py'], capture_output=True, text=True)
+    sp = subprocess.run(['/usr/local/reticen8/scripts/ipsec/list_sad.py'], capture_output=True, text=True)
     payload = ujson.loads(sp.stdout)
     for record in payload['records']:
         if record['id'] == cmd_args.id:

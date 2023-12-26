@@ -28,7 +28,7 @@
  *
  */
 
-namespace OPNsense\Base;
+namespace Reticen8\Base;
 
 /**
  * Class BaseModelException for Model initialization

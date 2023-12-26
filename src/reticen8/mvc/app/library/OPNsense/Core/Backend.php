@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Core;
+namespace Reticen8\Core;
 
-use OPNsense\Phalcon\Logger\Logger;
+use Reticen8\Phalcon\Logger\Logger;
 use Phalcon\Logger\Adapter\Syslog;
 use Phalcon\Logger\Formatter\Line;
 
 /**
  * Class Backend
- * @package OPNsense\Core
+ * @package Reticen8\Core
  */
 class Backend
 {

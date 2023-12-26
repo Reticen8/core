@@ -26,7 +26,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\System;
+namespace Reticen8\System;
 
 abstract class AbstractStatus
 {

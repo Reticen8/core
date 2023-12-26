@@ -28,11 +28,11 @@
  *
  */
 
-namespace OPNsense\Base;
+namespace Reticen8\Base;
 
 /**
  * Class IndexController
- * @package OPNsense\Base
+ * @package Reticen8\Base
  */
 class IndexController extends ControllerBase
 {

@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound\FieldTypes;
+namespace Reticen8\Unbound\FieldTypes;
 
-use OPNsense\Base\FieldTypes\BaseField;
-use OPNsense\Base\Validators\CallbackValidator;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\FieldTypes\BaseField;
+use Reticen8\Base\Validators\CallbackValidator;
+use Reticen8\Firewall\Util;
 
 /**
  * Class UnboundServerField
- * @package OPNsense\Unbound\FieldTypes
+ * @package Reticen8\Unbound\FieldTypes
  */
 class UnboundServerField extends BaseField
 {

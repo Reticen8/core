@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Base\Validators\MinMaxValidator;
-use OPNsense\Base\Validators\IntegerValidator;
+use Reticen8\Base\Validators\MinMaxValidator;
+use Reticen8\Base\Validators\IntegerValidator;
 
 /**
  * Class AutoNumberField auto numbering integer type field, using its direct neighbors to determine the already used
  * numbers.
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class AutoNumberField extends BaseField
 {

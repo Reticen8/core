@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2023 Franco Fichtner <franco@opnsense.org>
+# Copyright (c) 2014-2023 Franco Fichtner <franco@reticen8.org>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -109,12 +109,12 @@ CORE_PKGVERSION=	${CORE_VERSION}
 CORE_PYTHON_DOT=	${CORE_PYTHON:C/./&./1}
 
 CORE_COMMENT?=		${CORE_PRODUCT} ${CORE_TYPE} release
-CORE_MAINTAINER?=	project@opnsense.org
-CORE_ORIGIN?=		opnsense/${CORE_NAME}
-CORE_PACKAGESITE?=	https://pkg.opnsense.org
-CORE_PRODUCT?=		OPNsense
+CORE_MAINTAINER?=	project@reticen8.org
+CORE_ORIGIN?=		reticen8/${CORE_NAME}
+CORE_PACKAGESITE?=	https://pkg.reticen8.org
+CORE_PRODUCT?=		Reticen8
 CORE_REPOSITORY?=	${CORE_ABI}/latest
-CORE_WWW?=		https://opnsense.org/
+CORE_WWW?=		https://reticen8.org/
 
 CORE_COPYRIGHT_HOLDER?=	Deciso B.V.
 CORE_COPYRIGHT_WWW?=	https://www.deciso.com/
@@ -150,10 +150,10 @@ CORE_DEPENDS?=		ca_root_nss \
 			ntp \
 			openssh-portable \
 			openvpn \
-			opnsense-installer \
-			opnsense-lang \
-			opnsense-update \
-			pam_opnsense \
+			reticen8-installer \
+			reticen8-lang \
+			reticen8-update \
+			pam_reticen8 \
 			pftop \
 			php${CORE_PHP}-ctype \
 			php${CORE_PHP}-curl \
@@ -205,8 +205,8 @@ debug:
 mount:
 	@if [ ! -f ${WRKDIR}/.mount_done ]; then \
 	    echo -n "Enabling core.git live mount..."; \
-	    sed ${SED_REPLACE} ${.CURDIR}/src/opnsense/version/core.in > \
-	        ${.CURDIR}/src/opnsense/version/core; \
+	    sed ${SED_REPLACE} ${.CURDIR}/src/reticen8/version/core.in > \
+	        ${.CURDIR}/src/reticen8/version/core; \
 	    mount_unionfs ${.CURDIR}/src ${LOCALBASE}; \
 	    touch ${WRKDIR}/.mount_done; \
 	    echo "done"; \
@@ -245,8 +245,8 @@ manifest:
 		fi; \
 	done
 	@echo "}"
-	@if [ -f ${WRKSRC}/usr/local/opnsense/version/core ]; then \
-	    echo "annotations $$(cat ${WRKSRC}/usr/local/opnsense/version/core)"; \
+	@if [ -f ${WRKSRC}/usr/local/reticen8/version/core ]; then \
+	    echo "annotations $$(cat ${WRKSRC}/usr/local/reticen8/version/core)"; \
 	fi
 
 .if ${.TARGETS:Mupgrade}
@@ -268,9 +268,9 @@ scripts:
 install:
 	@${CORE_MAKE} -C ${.CURDIR}/contrib install DESTDIR=${DESTDIR}
 	@${CORE_MAKE} -C ${.CURDIR}/src install DESTDIR=${DESTDIR} ${MAKE_REPLACE}
-.if exists(${LOCALBASE}/opnsense/www/index.php)
+.if exists(${LOCALBASE}/reticen8/www/index.php)
 	# try to update the current system if it looks like one
-	@touch ${LOCALBASE}/opnsense/www/index.php
+	@touch ${LOCALBASE}/reticen8/www/index.php
 .endif
 
 collect:
@@ -324,7 +324,7 @@ package: plist-check package-check clean-wrksrc
 	@${CORE_MAKE} DESTDIR=${WRKSRC} install
 	@echo " done"
 	@echo ">>> Generated version info for ${CORE_NAME}-${CORE_PKGVERSION}:"
-	@cat ${WRKSRC}/usr/local/opnsense/version/core
+	@cat ${WRKSRC}/usr/local/reticen8/version/core
 	@echo -n ">>> Generating metadata for ${CORE_NAME}-${CORE_PKGVERSION}..."
 	@${CORE_MAKE} DESTDIR=${WRKSRC} metadata
 	@echo " done"
@@ -334,7 +334,7 @@ package: plist-check package-check clean-wrksrc
 
 upgrade-check:
 	@if ! ${PKG} info ${CORE_NAME} > /dev/null; then \
-		echo ">>> Cannot find package.  Please run 'opnsense-update -t ${CORE_NAME}'" >&2; \
+		echo ">>> Cannot find package.  Please run 'reticen8-update -t ${CORE_NAME}'" >&2; \
 		exit 1; \
 	fi
 	@if [ "$$(${VERSIONBIN} -vH)" = "${CORE_PKGVERSION} ${CORE_HASH}" ]; then \
@@ -356,7 +356,7 @@ lint-xml:
 	    -name "*.xml*" -type f -print0 | xargs -0 -n1 xmllint --noout
 
 lint-model:
-	@for MODEL in $$(find ${.CURDIR}/src/opnsense/mvc/app/models -depth 3 \
+	@for MODEL in $$(find ${.CURDIR}/src/reticen8/mvc/app/models -depth 3 \
 	    -name "*.xml"); do \
 		(xmllint $${MODEL} --xpath '//*[@type and not(@type="ArrayField") and (not(Required) or Required="N") and Default]' 2> /dev/null | grep '^<' || true) | while read LINE; do \
 			echo "$${MODEL}: $${LINE} has a spurious default value set"; \
@@ -387,7 +387,7 @@ lint-model:
 		done; \
 	done
 
-SCRIPTDIRS!=	find ${.CURDIR}/src/opnsense/scripts -type d -depth 1
+SCRIPTDIRS!=	find ${.CURDIR}/src/reticen8/scripts -type d -depth 1
 
 lint-exec:
 .for DIR in ${.CURDIR}/src/etc/rc.d ${.CURDIR}/src/etc/rc.syshook.d ${SCRIPTDIRS}
@@ -421,7 +421,7 @@ sweep:
 	find ${.CURDIR} -type f -depth 1 -print0 | \
 	    xargs -0 -n1 ${.CURDIR}/Scripts/cleanfile
 
-STYLEDIRS?=	src/etc/inc src/opnsense
+STYLEDIRS?=	src/etc/inc src/reticen8
 
 style-python: debug
 	@pycodestyle-${CORE_PYTHON_DOT} --ignore=E501 ${.CURDIR}/src || true
@@ -445,7 +445,7 @@ style-fix: debug
 .endfor
 
 style-model:
-	@for MODEL in $$(find ${.CURDIR}/src/opnsense/mvc/app/models -depth 3 \
+	@for MODEL in $$(find ${.CURDIR}/src/reticen8/mvc/app/models -depth 3 \
 	    -name "*.xml"); do \
 		perl -i -pe 's/<default>(.*?)<\/default>/<Default>$$1<\/Default>/g' $${MODEL}; \
 		perl -i -pe 's/<multiple>(.*?)<\/multiple>/<Multiple>$$1<\/Multiple>/g' $${MODEL}; \
@@ -531,17 +531,17 @@ push:
 	@git checkout ${CORE_DEVEL}
 
 migrate:
-	@src/opnsense/mvc/script/run_migrations.php
+	@src/reticen8/mvc/script/run_migrations.php
 
 validate:
-	@src/opnsense/mvc/script/run_validations.php
+	@src/reticen8/mvc/script/run_validations.php
 
 test: debug
 	@if [ "$$(${VERSIONBIN} -v)" != "${CORE_PKGVERSION}" ]; then \
 		echo "Installed version does not match, expected ${CORE_PKGVERSION}"; \
 		exit 1; \
 	fi
-	@cd ${.CURDIR}/src/opnsense/mvc/tests && \
+	@cd ${.CURDIR}/src/reticen8/mvc/tests && \
 	    phpunit --configuration PHPunit.xml || true; \
 	    rm -f .phpunit.result.cache
 

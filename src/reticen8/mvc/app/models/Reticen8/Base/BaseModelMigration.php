@@ -28,13 +28,13 @@
 *
 */
 
-namespace OPNsense\Base;
+namespace Reticen8\Base;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 use Phalcon\Logger\Adapter\Syslog;
 
 /**
- * @package OPNsense\Base
+ * @package Reticen8\Base
  */
 class BaseModelMigration
 {

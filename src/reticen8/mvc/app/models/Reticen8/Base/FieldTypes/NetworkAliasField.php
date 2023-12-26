@@ -26,16 +26,16 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Core\Config;
-use OPNsense\Firewall\Util;
-use OPNsense\Firewall\Alias;
-use OPNsense\Base\Validators\CallbackValidator;
+use Reticen8\Core\Config;
+use Reticen8\Firewall\Util;
+use Reticen8\Firewall\Alias;
+use Reticen8\Base\Validators\CallbackValidator;
 
 /**
  * Network field type supporting aliases and special nets
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class NetworkAliasField extends BaseListField
 {

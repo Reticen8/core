@@ -1,5 +1,5 @@
 <model>
-    <mount>//OPNsense/Kea/ctrl_agent</mount>
+    <mount>//Reticen8/Kea/ctrl_agent</mount>
     <version>0.0.1</version>
     <description>Kea Control Agent configuration</description>
     <items>

@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Auth\Services;
+namespace Reticen8\Auth\Services;
 
-use OPNsense\Core\ACL;
-use OPNsense\Core\Config;
-use OPNsense\Auth\IService;
+use Reticen8\Core\ACL;
+use Reticen8\Core\Config;
+use Reticen8\Auth\IService;
 
 /**
  * WebGui service
- * @package OPNsense\Auth
+ * @package Reticen8\Auth
  */
 class WebGui implements IService
 {

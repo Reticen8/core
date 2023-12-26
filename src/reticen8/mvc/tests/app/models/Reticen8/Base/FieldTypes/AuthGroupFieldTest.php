@@ -28,15 +28,15 @@
  *
  */
 
-namespace tests\OPNsense\Base\FieldTypes;
+namespace tests\Reticen8\Base\FieldTypes;
 
 // @CodingStandardsIgnoreStart
 require_once 'Field_Framework_TestCase.php';
 // @CodingStandardsIgnoreEnd
 
-use OPNsense\Base\FieldTypes\AuthGroupField;
+use Reticen8\Base\FieldTypes\AuthGroupField;
 use Phalcon\Di\FactoryDefault;
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 class AuthGroupFieldTest extends Field_Framework_TestCase
 {
@@ -45,7 +45,7 @@ class AuthGroupFieldTest extends Field_Framework_TestCase
      */
     public function testCanBeCreated()
     {
-        $this->assertInstanceOf('\OPNsense\Base\FieldTypes\AuthGroupField', new AuthGroupField());
+        $this->assertInstanceOf('\Reticen8\Base\FieldTypes\AuthGroupField', new AuthGroupField());
         // switch config to test set for this type
         FactoryDefault::getDefault()->get('config')->globals->config_path = __DIR__ . '/AuthGroupFieldTest/';
         Config::getInstance()->forceReload();
@@ -70,7 +70,7 @@ class AuthGroupFieldTest extends Field_Framework_TestCase
      */
     public function testSelectSetWithUnknownValue()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("CsvListValidator");
         // init field
         $field = new AuthGroupField();
@@ -99,7 +99,7 @@ class AuthGroupFieldTest extends Field_Framework_TestCase
      */
     public function testSelectSetOnSingleValue()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("InclusionIn");
         // init field
         $field = new AuthGroupField();

@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Auth;
+namespace Reticen8\Auth;
 
 /**
  * Class Radius connector
- * @package OPNsense\Auth
+ * @package Reticen8\Auth
  */
 class Radius extends Base implements IAuthConnector
 {

@@ -26,12 +26,12 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces;
+namespace Reticen8\Interfaces;
 
-class OverviewController extends \OPNsense\Base\IndexController
+class OverviewController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Interface/overview');
+        $this->view->pick('Reticen8/Interface/overview');
     }
 }

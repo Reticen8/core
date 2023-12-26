@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2015-2019 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2015-2019 Franco Fichtner <franco@reticen8.org>
 # Copyright (C) 2014 Deciso B.V.
 # All rights reserved.
 #
@@ -32,31 +32,31 @@ REBOOT=
 : > ${LOCKFILE}
 
 echo "***GOT REQUEST TO REINSTALL***" >> ${LOCKFILE}
-echo "Currently running $(opnsense-version) at $(date)" >> ${LOCKFILE}
+echo "Currently running $(reticen8-version) at $(date)" >> ${LOCKFILE}
 
 if [ "${PACKAGE}" = "base" ]; then
-	if opnsense-update -Tb; then
+	if reticen8-update -Tb; then
 		# force reinstall intended
-		if opnsense-update -bf >> ${LOCKFILE} 2>&1; then
+		if reticen8-update -bf >> ${LOCKFILE} 2>&1; then
 			REBOOT=1
 		fi
 	else
 		# for locked message only
-		opnsense-update -b >> ${LOCKFILE} 2>&1
+		reticen8-update -b >> ${LOCKFILE} 2>&1
 	fi
 elif [ "${PACKAGE}" = "kernel" ]; then
-	if opnsense-update -Tk; then
+	if reticen8-update -Tk; then
 		# force reinstall intended
-		if opnsense-update -kf >> ${LOCKFILE} 2>&1; then
+		if reticen8-update -kf >> ${LOCKFILE} 2>&1; then
 			REBOOT=1
 		fi
 	else
 		# for locked message only
-		opnsense-update -k >> ${LOCKFILE} 2>&1
+		reticen8-update -k >> ${LOCKFILE} 2>&1
 	fi
 else
-	opnsense-revert -l ${PACKAGE} >> ${LOCKFILE} 2>&1
-	/usr/local/opnsense/scripts/firmware/register.php install ${PACKAGE} >> ${LOCKFILE} 2>&1
+	reticen8-revert -l ${PACKAGE} >> ${LOCKFILE} 2>&1
+	/usr/local/reticen8/scripts/firmware/register.php install ${PACKAGE} >> ${LOCKFILE} 2>&1
 	pkg autoremove -y >> ${LOCKFILE} 2>&1
 fi
 

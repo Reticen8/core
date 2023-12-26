@@ -29,14 +29,14 @@
  *
  */
 
-namespace OPNsense\Routes;
+namespace Reticen8\Routes;
 
 use Phalcon\Messages\Message;
-use OPNsense\Base\BaseModel;
+use Reticen8\Base\BaseModel;
 
 /**
  * Class Route
- * @package OPNsense\Routes
+ * @package Reticen8\Routes
  */
 class Route extends BaseModel
 {

@@ -25,15 +25,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Wireguard;
+namespace Reticen8\Wireguard;
 
-class GeneralController extends \OPNsense\Base\IndexController
+class GeneralController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
         $this->view->generalForm = $this->getForm("general");
         $this->view->formDialogEditWireguardClient = $this->getForm("dialogEditWireguardClient");
         $this->view->formDialogEditWireguardServer = $this->getForm("dialogEditWireguardServer");
-        $this->view->pick('OPNsense/Wireguard/general');
+        $this->view->pick('Reticen8/Wireguard/general');
     }
 }

@@ -28,15 +28,15 @@
  *
  */
 
-namespace OPNsense\TrafficShaper\Api;
+namespace Reticen8\TrafficShaper\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\TrafficShaper\TrafficShaper;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\TrafficShaper\TrafficShaper;
 
 /**
  * Class ServiceController
- * @package OPNsense\TrafficShaper
+ * @package Reticen8\TrafficShaper
  */
 class ServiceController extends ApiControllerBase
 {
@@ -50,7 +50,7 @@ class ServiceController extends ApiControllerBase
             $this->sessionClose();
 
             $backend = new Backend();
-            $backend->configdRun('template reload OPNsense/IPFW');
+            $backend->configdRun('template reload Reticen8/IPFW');
             $bckresult = trim($backend->configdRun("ipfw reload"));
             if ($bckresult == "OK") {
                 $status = "ok";

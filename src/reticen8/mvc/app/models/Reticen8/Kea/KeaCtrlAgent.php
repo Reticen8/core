@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Kea;
+namespace Reticen8\Kea;
 
-use OPNsense\Base\BaseModel;
+use Reticen8\Base\BaseModel;
 
 class KeaCtrlAgent extends BaseModel
 {

@@ -26,19 +26,19 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
 use Exception;
 use Generator;
 use InvalidArgumentException;
-use OPNsense\Phalcon\Filter\Validation\Validator\PresenceOf;
+use Reticen8\Phalcon\Filter\Validation\Validator\PresenceOf;
 use ReflectionClass;
 use ReflectionException;
 use SimpleXMLElement;
 
 /**
  * Class BaseField
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  * @property-read string $__reference this tag absolute reference (node.subnode.subnode)
  * @property-read string $__type this tag's class Name ( example TextField )
  * @property-read string $__Ixx get tag by index/name even if the name is a number
@@ -130,8 +130,8 @@ abstract class BaseField
      */
     public function isArrayType()
     {
-        return is_a($this, "OPNsense\\Base\\FieldTypes\\ArrayField") ||
-            is_subclass_of($this, "OPNsense\\Base\\FieldTypes\\ArrayField");
+        return is_a($this, "Reticen8\\Base\\FieldTypes\\ArrayField") ||
+            is_subclass_of($this, "Reticen8\\Base\\FieldTypes\\ArrayField");
     }
 
     /**
@@ -492,8 +492,8 @@ abstract class BaseField
             $constraint = $this->internalConstraints[$name];
             if (!empty($constraint['type'])) {
                 try {
-                    $constr_class = new ReflectionClass('OPNsense\\Base\\Constraints\\' . $constraint['type']);
-                    if ($constr_class->getParentClass()->name == 'OPNsense\Base\Constraints\BaseConstraint') {
+                    $constr_class = new ReflectionClass('Reticen8\\Base\\Constraints\\' . $constraint['type']);
+                    if ($constr_class->getParentClass()->name == 'Reticen8\Base\Constraints\BaseConstraint') {
                         $constraint['name'] = $name;
                         $constraint['node'] = $this;
                         return $constr_class->newInstance($constraint);

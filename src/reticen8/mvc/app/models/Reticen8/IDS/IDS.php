@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IDS;
+namespace Reticen8\IDS;
 
-use OPNsense\Base\BaseModel;
+use Reticen8\Base\BaseModel;
 
 /**
  * Class IDS
- * @package OPNsense\IDS
+ * @package Reticen8\IDS
  */
 class IDS extends BaseModel
 {

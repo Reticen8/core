@@ -28,12 +28,12 @@
  *
  */
 
-namespace OPNsense\Core;
+namespace Reticen8\Core;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
- * @package OPNsense\Core
+ * @package Reticen8\Core
  */
 class RebootController extends IndexController
 {
@@ -42,6 +42,6 @@ class RebootController extends IndexController
      */
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Core/reboot');
+        $this->view->pick('Reticen8/Core/reboot');
     }
 }

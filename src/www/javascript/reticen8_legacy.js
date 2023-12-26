@@ -112,7 +112,7 @@ function hook_stacked_form_tables(match)
                           $(this).addClass('hidden-xs');
                       } else {
                           // annotate mobile header with a classname
-                          mobile_header.addClass('opnsense-table-mobile-header');
+                          mobile_header.addClass('reticen8-table-mobile-header');
                       }
                       $(this).before(mobile_header);
                       children.first().addClass('hidden-xs');
@@ -136,7 +136,7 @@ function hook_stacked_form_tables(match)
                       }
 
                       // skip generated mobile headers (group header+content on mobile)
-                      if (!$(this).hasClass('opnsense-table-mobile-header')) {
+                      if (!$(this).hasClass('reticen8-table-mobile-header')) {
                           ++index;
                       }
                   });
@@ -179,7 +179,7 @@ function window_highlight_table_option()
  * - a <select> with the id "fw_category" to load categories in
  * - <tr/> entities with class "rule" to identify the rows to filter
  * - on the <tr/> tag a data element named "category", which contains a comma separated list of categories this rule belongs to
- * - a <table/> with id "opnsense-rules" which contains the rules
+ * - a <table/> with id "reticen8-rules" which contains the rules
  */
 function hook_firewall_categories() {
     let cat_select = $("#fw_category");
@@ -262,7 +262,7 @@ function hook_firewall_categories() {
                     $(this).show();
                 }
             });
-            $(".opnsense-rules").change();
+            $(".reticen8-rules").change();
         });
         cat_select.change();
         $('.selector-item').tooltip();

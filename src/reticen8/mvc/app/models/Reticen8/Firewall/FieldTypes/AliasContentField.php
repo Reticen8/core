@@ -26,19 +26,19 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Firewall\FieldTypes;
+namespace Reticen8\Firewall\FieldTypes;
 
-use OPNsense\Base\FieldTypes\BaseField;
-use OPNsense\Base\Validators\CallbackValidator;
-use OPNsense\Phalcon\Filter\Validation\Validator\Regex;
-use OPNsense\Phalcon\Filter\Validation\Validator\ExclusionIn;
-use OPNsense\Core\Config;
+use Reticen8\Base\FieldTypes\BaseField;
+use Reticen8\Base\Validators\CallbackValidator;
+use Reticen8\Phalcon\Filter\Validation\Validator\Regex;
+use Reticen8\Phalcon\Filter\Validation\Validator\ExclusionIn;
+use Reticen8\Core\Config;
 use Phalcon\Messages\Message;
-use OPNsense\Firewall\Util;
+use Reticen8\Firewall\Util;
 
 /**
  * Class AliasContentField
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class AliasContentField extends BaseField
 {
@@ -107,7 +107,7 @@ class AliasContentField extends BaseField
         if (empty(self::$internalCountryCodes)) {
             // Maxmind's country code 6255148 (EU Unclassified)
             self::$internalCountryCodes[] = 'EU';
-            foreach (explode("\n", file_get_contents('/usr/local/opnsense/contrib/tzdata/iso3166.tab')) as $line) {
+            foreach (explode("\n", file_get_contents('/usr/local/reticen8/contrib/tzdata/iso3166.tab')) as $line) {
                 $line = trim($line);
                 if (strlen($line) > 3 && substr($line, 0, 1) != '#') {
                     self::$internalCountryCodes[] = substr($line, 0, 2);
@@ -138,7 +138,7 @@ class AliasContentField extends BaseField
      * Validate port alias options
      * @param array $data to validate
      * @return bool|Callback
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     private function validatePort($data)
     {
@@ -158,7 +158,7 @@ class AliasContentField extends BaseField
      * Validate asn alias options
      * @param array $data to validate
      * @return bool|Callback
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     private function validateASN($data)
     {
@@ -176,7 +176,7 @@ class AliasContentField extends BaseField
      * Validate host options
      * @param array $data to validate
      * @return bool|Callback
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     private function validateHost($data)
     {
@@ -203,7 +203,7 @@ class AliasContentField extends BaseField
      * Validate host options
      * @param array $data to validate
      * @return bool|Callback
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     private function validateNestedAlias($data)
     {
@@ -223,7 +223,7 @@ class AliasContentField extends BaseField
      * Validate network options
      * @param array $data to validate
      * @return bool|Callback
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     private function validateNetwork($data)
     {
@@ -268,7 +268,7 @@ class AliasContentField extends BaseField
      * Validate partial ipv6 network definition
      * @param array $data to validate
      * @return bool|Callback
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     private function validatePartialIPv6Network($data)
     {
@@ -305,7 +305,7 @@ class AliasContentField extends BaseField
      * Validate (partial) mac address options
      * @param array $data to validate
      * @return bool|Callback
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     private function validatePartialMacAddr($data)
     {
@@ -325,7 +325,7 @@ class AliasContentField extends BaseField
      * Validate (partial) mac address options
      * @param array $data to validate
      * @return array
-     * @throws \OPNsense\Base\ModelException
+     * @throws \Reticen8\Base\ModelException
      */
     private function validateGroups($data)
     {

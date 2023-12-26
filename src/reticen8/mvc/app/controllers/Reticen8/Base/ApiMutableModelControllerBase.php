@@ -28,10 +28,10 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base;
+namespace Reticen8\Base;
 
-use OPNsense\Core\ACL;
-use OPNsense\Core\Config;
+use Reticen8\Core\ACL;
+use Reticen8\Core\Config;
 
 /**
  * Class ApiMutableModelControllerBase, inherit this class to implement
@@ -39,7 +39,7 @@ use OPNsense\Core\Config;
  * You need to implement a method to create new blank model
  * objecs (newModelObject) as well as a method to return
  * the name of the model.
- * @package OPNsense\Base
+ * @package Reticen8\Base
  */
 abstract class ApiMutableModelControllerBase extends ApiControllerBase
 {
@@ -268,7 +268,7 @@ abstract class ApiMutableModelControllerBase extends ApiControllerBase
      * @return array result / validation output
      * @throws \Phalcon\Filter\Validation\Exception on validation issues
      * @throws \ReflectionException when binding to the model class fails
-     * @throws \OPNsense\Base\UserException when denied write access
+     * @throws \Reticen8\Base\UserException when denied write access
      */
     protected function save($validateFullModel = false, $disable_validation = false)
     {

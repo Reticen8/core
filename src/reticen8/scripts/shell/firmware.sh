@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (c) 2015-2022 Franco Fichtner <franco@opnsense.org>
+# Copyright (c) 2015-2022 Franco Fichtner <franco@reticen8.org>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -37,8 +37,8 @@ set -e
 # will tell us itself.  With this we shield the firmware shell run from
 # the complexity of GUI/API updates so that bugs are most likely avoided.
 
-LAUNCHER="/usr/local/opnsense/scripts/firmware/launcher.sh"
-RELEASE=$(opnsense-update -vR)
+LAUNCHER="/usr/local/reticen8/scripts/firmware/launcher.sh"
+RELEASE=$(reticen8-update -vR)
 PROMPT="y/N"
 CHANGELOG=
 ARGS=
@@ -74,7 +74,7 @@ if [ -n "${RELEASE}" ]; then
 	echo
 
 	PROMPT="${RELEASE}/${PROMPT}"
-elif CHANGELOG=$(/usr/local/opnsense/scripts/firmware/reboot.sh); then
+elif CHANGELOG=$(/usr/local/reticen8/scripts/firmware/reboot.sh); then
 	echo "This update requires a reboot."
 	echo
 fi

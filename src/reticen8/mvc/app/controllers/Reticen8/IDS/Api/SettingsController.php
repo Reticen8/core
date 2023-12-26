@@ -26,22 +26,22 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IDS\Api;
+namespace Reticen8\IDS\Api;
 
 use Phalcon\Filter\FilterFactory;
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
-use OPNsense\Base\UIModelGrid;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
+use Reticen8\Base\UIModelGrid;
 
 /**
  * Class SettingsController Handles settings related API actions for the IDS module
- * @package OPNsense\IDS
+ * @package Reticen8\IDS
  */
 class SettingsController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'ids';
-    protected static $internalModelClass = '\OPNsense\IDS\IDS';
+    protected static $internalModelClass = '\Reticen8\IDS\IDS';
 
     /**
      * Query non layered model items

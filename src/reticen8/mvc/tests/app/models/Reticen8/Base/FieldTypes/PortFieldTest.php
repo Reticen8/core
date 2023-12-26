@@ -28,13 +28,13 @@
  *
  */
 
-namespace tests\OPNsense\Base\FieldTypes;
+namespace tests\Reticen8\Base\FieldTypes;
 
 // @CodingStandardsIgnoreStart
 require_once 'Field_Framework_TestCase.php';
 // @CodingStandardsIgnoreEnd
 
-use OPNsense\Base\FieldTypes\PortField;
+use Reticen8\Base\FieldTypes\PortField;
 
 class PortFieldTest extends Field_Framework_TestCase
 {
@@ -43,14 +43,14 @@ class PortFieldTest extends Field_Framework_TestCase
      */
     public function testCanBeCreated()
     {
-        $this->assertInstanceOf('\OPNsense\Base\FieldTypes\PortField', new PortField());
+        $this->assertInstanceOf('\Reticen8\Base\FieldTypes\PortField', new PortField());
     }
 
     /**
      */
     public function testRequiredEmpty()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("PresenceOf");
         $field = new PortField();
         $field->setRequired("Y");

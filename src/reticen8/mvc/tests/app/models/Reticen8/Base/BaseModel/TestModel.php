@@ -28,9 +28,9 @@
  *
  */
 
-namespace tests\OPNsense\Base\BaseModel;
+namespace tests\Reticen8\Base\BaseModel;
 
-use OPNsense\Base\BaseModel;
+use Reticen8\Base\BaseModel;
 
 /**
  * Class TestModel

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2018-2023 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2018-2023 Franco Fichtner <franco@reticen8.org>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -30,8 +30,8 @@ WANT_REBOOT=1
 
 DUMMY_UPDATE=$(${PKG} update 2>&1)
 
-LQUERY=$(${PKG} query %v opnsense-update 2> /dev/null)
-RQUERY=$(${PKG} rquery %v opnsense-update 2> /dev/null)
+LQUERY=$(${PKG} query %v reticen8-update 2> /dev/null)
+RQUERY=$(${PKG} rquery %v reticen8-update 2> /dev/null)
 
 # We do not check for downloads here to make sure the actual version
 # we want is actually there.  The whole point of this script is a
@@ -40,11 +40,11 @@ RQUERY=$(${PKG} rquery %v opnsense-update 2> /dev/null)
 
 if [ -n "${LQUERY}" -a -n "${RQUERY}" -a "${LQUERY%%_*}" != "${RQUERY%%_*}" ]; then
 	WANT_REBOOT=0
-elif opnsense-update -bk -c; then
+elif reticen8-update -bk -c; then
 	WANT_REBOOT=0
 fi
 
-COREPKG=$(opnsense-version -n)
+COREPKG=$(reticen8-version -n)
 
 LQUERY=$(${PKG} query %v ${COREPKG} 2> /dev/null)
 RQUERY=$(${PKG} rquery %v ${COREPKG} 2> /dev/null)

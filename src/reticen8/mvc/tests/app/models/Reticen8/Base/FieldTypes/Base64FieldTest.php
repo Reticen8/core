@@ -28,24 +28,24 @@
  *
  */
 
-namespace tests\OPNsense\Base\FieldTypes;
+namespace tests\Reticen8\Base\FieldTypes;
 
 // @CodingStandardsIgnoreStart
 require_once 'Field_Framework_TestCase.php';
 // @CodingStandardsIgnoreEnd
 
-use OPNsense\Base\FieldTypes\Base64Field;
+use Reticen8\Base\FieldTypes\Base64Field;
 
 class Base64FieldTest extends Field_Framework_TestCase
 {
     public function testCanBeCreated()
     {
-        $this->assertInstanceOf('\OPNsense\Base\FieldTypes\Base64Field', new Base64Field());
+        $this->assertInstanceOf('\Reticen8\Base\FieldTypes\Base64Field', new Base64Field());
     }
 
     public function testRequiredEmpty()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("PresenceOf");
         $field = new Base64Field();
         $field->setRequired("Y");

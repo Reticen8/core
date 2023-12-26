@@ -1,6 +1,6 @@
 #!/usr/local/bin/python3
 """
-    Copyright (c) 2023 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2023 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -28,7 +28,7 @@ import sys
 import os
 import shutil
 import glob
-sys.path.insert(0, "/usr/local/opnsense/site-python")
+sys.path.insert(0, "/usr/local/reticen8/site-python")
 from duckdb_helper import DbConnection
 
 # export database in case the new storage version doesn't match

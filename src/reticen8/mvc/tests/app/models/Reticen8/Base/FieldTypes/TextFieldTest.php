@@ -28,13 +28,13 @@
  *
  */
 
-namespace tests\OPNsense\Base\FieldTypes;
+namespace tests\Reticen8\Base\FieldTypes;
 
 // @CodingStandardsIgnoreStart
 require_once 'Field_Framework_TestCase.php';
 // @CodingStandardsIgnoreEnd
 
-use OPNsense\Base\FieldTypes\TextField;
+use Reticen8\Base\FieldTypes\TextField;
 
 class TextFieldTest extends Field_Framework_TestCase
 {
@@ -43,7 +43,7 @@ class TextFieldTest extends Field_Framework_TestCase
      */
     public function testCanBeCreated()
     {
-        $this->assertInstanceOf('\OPNsense\Base\FieldTypes\TextField', new TextField());
+        $this->assertInstanceOf('\Reticen8\Base\FieldTypes\TextField', new TextField());
     }
 
     /**
@@ -128,7 +128,7 @@ class TextFieldTest extends Field_Framework_TestCase
      */
     public function testRequiredEmpty()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("PresenceOf");
         $field = new TextField();
         $field->setRequired("Y");
@@ -173,7 +173,7 @@ class TextFieldTest extends Field_Framework_TestCase
         $field->setMask('/^[a-z]{8}$/');
         $field->setValue("4bcd3fgh");
 
-        $this->assertContains('OPNsense\Phalcon\Filter\Validation\Validator\Regex', $this->validate($field));
+        $this->assertContains('Reticen8\Phalcon\Filter\Validation\Validator\Regex', $this->validate($field));
     }
 
     /**
@@ -243,7 +243,7 @@ class TextFieldTest extends Field_Framework_TestCase
         $field->setValue(1234);
 
         $this->assertEquals($field->getNodeData(), "1234");
-        $this->assertContains('OPNsense\Phalcon\Filter\Validation\Validator\Regex', $this->validate($field));
+        $this->assertContains('Reticen8\Phalcon\Filter\Validation\Validator\Regex', $this->validate($field));
     }
 
     /**
@@ -341,6 +341,6 @@ class TextFieldTest extends Field_Framework_TestCase
         $field->setChangeCase('UPPER');
         $field->setValue("ab cde fgh");
 
-        $this->assertContains('OPNsense\Phalcon\Filter\Validation\Validator\Regex', $this->validate($field));
+        $this->assertContains('Reticen8\Phalcon\Filter\Validation\Validator\Regex', $this->validate($field));
     }
 }

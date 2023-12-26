@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN;
+namespace Reticen8\OpenVPN;
 
-use OPNsense\Base\IndexController as BaseIndexController;
+use Reticen8\Base\IndexController as BaseIndexController;
 
 /**
  * Class ExportController
- * @package OPNsense\OpenVPN
+ * @package Reticen8\OpenVPN
  */
 class ExportController extends BaseIndexController
 {
@@ -42,7 +42,7 @@ class ExportController extends BaseIndexController
      */
     public function indexAction()
     {
-        $this->view->pick('OPNsense/OpenVPN/export');
+        $this->view->pick('Reticen8/OpenVPN/export');
         $this->view->exportForm = $this->getForm("export_options");
     }
 }

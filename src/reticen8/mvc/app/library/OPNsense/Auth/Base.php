@@ -28,14 +28,14 @@
  *
  */
 
-namespace OPNsense\Auth;
+namespace Reticen8\Auth;
 
-use OPNsense\Core\Config;
-use OPNsense\Core\Backend;
+use Reticen8\Core\Config;
+use Reticen8\Core\Backend;
 
 /**
  * Authenticator stub, implements local methods
- * @package OPNsense\Auth
+ * @package Reticen8\Auth
  */
 abstract class Base
 {

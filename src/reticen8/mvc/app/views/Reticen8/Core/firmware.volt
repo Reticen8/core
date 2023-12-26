@@ -1,5 +1,5 @@
 {#
- # Copyright (c) 2015-2023 Franco Fichtner <franco@opnsense.org>
+ # Copyright (c) 2015-2023 Franco Fichtner <franco@reticen8.org>
  # Copyright (c) 2015-2018 Deciso B.V.
  # All rights reserved.
  #
@@ -578,7 +578,7 @@
                 event.preventDefault();
                 let package_name = $(this).data('package');
                 /* XXX temporary placeholder to inform the user that he/she is installing from a different (external) source */
-                if ($(this).data('repository') !== 'OPNsense') {
+                if ($(this).data('repository') !== 'Reticen8') {
                     BootstrapDialog.show({
                         type:BootstrapDialog.TYPE_INFO,
                         title: "{{ lang._('Third party software') }}",

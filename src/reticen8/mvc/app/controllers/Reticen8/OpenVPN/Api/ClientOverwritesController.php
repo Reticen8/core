@@ -26,18 +26,18 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN\Api;
+namespace Reticen8\OpenVPN\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
+use Reticen8\Base\ApiMutableModelControllerBase;
 
 /**
  * Class ClientOverwritesController
- * @package OPNsense\OpenVPN\Api
+ * @package Reticen8\OpenVPN\Api
  */
 class ClientOverwritesController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'cso';
-    protected static $internalModelClass = 'OPNsense\OpenVPN\OpenVPN';
+    protected static $internalModelClass = 'Reticen8\OpenVPN\OpenVPN';
 
     public function searchAction()
     {

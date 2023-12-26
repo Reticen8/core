@@ -26,18 +26,18 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces\Api;
+namespace Reticen8\Interfaces\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Base\UserException;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Base\UserException;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
+use Reticen8\Firewall\Util;
 
 class VipSettingsController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'vip';
-    protected static $internalModelClass = 'OPNsense\Interfaces\Vip';
+    protected static $internalModelClass = 'Reticen8\Interfaces\Vip';
 
     /**
      * extract network field into subnet + bits for model

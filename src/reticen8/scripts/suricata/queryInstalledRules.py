@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
 """
-    Copyright (c) 2015-2019 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2015-2019 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -34,7 +34,7 @@
 """
 
 import sys
-sys.path.insert(0, "/usr/local/opnsense/site-python")
+sys.path.insert(0, "/usr/local/reticen8/site-python")
 import ujson
 from lib.rulecache import RuleCache
 from params import update_params

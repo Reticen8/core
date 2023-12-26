@@ -1,6 +1,6 @@
 <?php
 
-namespace OPNsense\Phalcon\Di;
+namespace Reticen8\Phalcon\Di;
 
 use Phalcon\Di\Di as PhalconDi;
 use Phalcon\Di as PhalconDi4;

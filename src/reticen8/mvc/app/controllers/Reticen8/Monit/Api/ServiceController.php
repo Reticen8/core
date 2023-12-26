@@ -27,20 +27,20 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Monit\Api;
+namespace Reticen8\Monit\Api;
 
-use OPNsense\Base\ApiMutableServiceControllerBase;
-use OPNsense\Core\Backend;
+use Reticen8\Base\ApiMutableServiceControllerBase;
+use Reticen8\Core\Backend;
 
 /**
  * Class ServiceController
- * @package OPNsense\Monit
+ * @package Reticen8\Monit
  */
 class ServiceController extends ApiMutableServiceControllerBase
 {
-    protected static $internalServiceClass = '\OPNsense\Monit\Monit';
+    protected static $internalServiceClass = '\Reticen8\Monit\Monit';
     protected static $internalServiceEnabled = 'general.enabled';
-    protected static $internalServiceTemplate = 'OPNsense/Monit';
+    protected static $internalServiceTemplate = 'Reticen8/Monit';
     protected static $internalServiceName = 'monit';
 
     /**
@@ -54,7 +54,7 @@ class ServiceController extends ApiMutableServiceControllerBase
             $this->sessionClose();
             $backend = new Backend();
             $result['function'] = 'check';
-            $result['template'] = trim($backend->configdRun('template reload OPNsense/Monit'));
+            $result['template'] = trim($backend->configdRun('template reload Reticen8/Monit'));
             if ($result['template'] != 'OK') {
                 $result['result'] = "Template error: " . $result['template'];
                 return $result;

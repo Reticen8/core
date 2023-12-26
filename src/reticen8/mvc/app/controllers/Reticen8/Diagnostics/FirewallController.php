@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Diagnostics;
+namespace Reticen8\Diagnostics;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
  * Class FirewallController
- * @package OPNsense\Diagnostics
+ * @package Reticen8\Diagnostics
  */
 class FirewallController extends IndexController
 {
@@ -43,7 +43,7 @@ class FirewallController extends IndexController
     {
         return array_merge(parent::templateJSIncludes(), [
             '/ui/js/tree.jquery.min.js',
-            '/ui/js/opnsense-treeview.js'
+            '/ui/js/reticen8-treeview.js'
         ]);
     }
 
@@ -60,28 +60,28 @@ class FirewallController extends IndexController
      */
     public function logAction()
     {
-        $this->view->pick('OPNsense/Diagnostics/fw_log');
+        $this->view->pick('Reticen8/Diagnostics/fw_log');
     }
     /**
      * firewall statistical view
      */
     public function statsAction()
     {
-        $this->view->pick('OPNsense/Diagnostics/fw_stats');
+        $this->view->pick('Reticen8/Diagnostics/fw_stats');
     }
     /**
      * firewall states
      */
     public function statesAction()
     {
-        $this->view->pick('OPNsense/Diagnostics/fw_states');
+        $this->view->pick('Reticen8/Diagnostics/fw_states');
     }
     /**
      * firewall pftop
      */
     public function pfTopAction()
     {
-        $this->view->pick('OPNsense/Diagnostics/fw_pftop');
+        $this->view->pick('Reticen8/Diagnostics/fw_pftop');
     }
 
     /**
@@ -117,6 +117,6 @@ class FirewallController extends IndexController
           ]
         ];
         $this->view->default_tab = "info";
-        $this->view->pick('OPNsense/Diagnostics/treeview');
+        $this->view->pick('Reticen8/Diagnostics/treeview');
     }
 }

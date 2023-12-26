@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Syslog;
+namespace Reticen8\Syslog;
 
 use Phalcon\Messages\Message;
-use OPNsense\Base\BaseModel;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\BaseModel;
+use Reticen8\Firewall\Util;
 
 /**
  * Class Syslog
- * @package OPNsense\Routes
+ * @package Reticen8\Routes
  */
 class Syslog extends BaseModel
 {

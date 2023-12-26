@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 /**
  * Class InterfaceField field type to select usable interfaces, currently this is kind of a backward compatibility
  * package to glue legacy interfaces into the model.
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class InterfaceField extends BaseListField
 {

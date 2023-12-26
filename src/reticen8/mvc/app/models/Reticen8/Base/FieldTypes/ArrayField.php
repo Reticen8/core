@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
 /**
  * Class ArrayField
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class ArrayField extends BaseField
 {
@@ -122,7 +122,7 @@ class ArrayField extends BaseField
         foreach ($this->internalTemplateNode->iterateItems() as $key => $node) {
             if ($node->isContainer()) {
                 foreach ($node->iterateRecursiveItems() as $subnode) {
-                    if (is_a($subnode, "OPNsense\\Base\\FieldTypes\\ArrayField")) {
+                    if (is_a($subnode, "Reticen8\\Base\\FieldTypes\\ArrayField")) {
                         // validate child nodes, nesting not supported in this version.
                         throw new \Exception("Unsupported copy, Array doesn't support nesting.");
                     }

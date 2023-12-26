@@ -30,7 +30,7 @@ function kea_services()
 {
 
     $services = [];
-    if (!empty((string)(new \OPNsense\Kea\KeaDhcpv4())->general->enabled)) {
+    if (!empty((string)(new \Reticen8\Kea\KeaDhcpv4())->general->enabled)) {
         $services[] = [
             'description' => gettext('KEA DHCPv4 server'),
             'pidfile' => '/var/run/kea/kea-dhcp4.kea-dhcp4.pid',
@@ -60,7 +60,7 @@ function kea_xmlrpc_sync()
 
     $result[] = [
         'description' => gettext('Kea DHCP'),
-        'section' => 'OPNsense.Kea',
+        'section' => 'Reticen8.Kea',
         'id' => 'kea',
         'services' => ["kea-dhcpv4"],
     ];

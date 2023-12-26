@@ -29,7 +29,7 @@ elif [ "${AF}" = "inet6" ]; then
 	/usr/local/sbin/configctl -d interface newipv6 ${IF}
 fi
 
-UPTIME=$(/usr/local/opnsense/scripts/interfaces/ppp-uptime.sh ${IF})
+UPTIME=$(/usr/local/reticen8/scripts/interfaces/ppp-uptime.sh ${IF})
 if [ -n "${UPTIME}" -a -f "/conf/${IF}.log" ]; then
 	echo $(date -j +%Y.%m.%d-%H:%M:%S) ${UPTIME} >> /conf/${IF}.log
 fi

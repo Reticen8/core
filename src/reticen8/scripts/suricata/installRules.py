@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
 """
-    Copyright (c) 2015-2020 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2015-2020 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -27,7 +27,7 @@
 
     --------------------------------------------------------------------------------------
 
-    Install suricata ruleset into opnsense.rules directory
+    Install suricata ruleset into reticen8.rules directory
 """
 import os
 import glob
@@ -38,10 +38,10 @@ from lib import rule_source_directory
 if __name__ == '__main__':
     RuleCache = lib.rulecache.RuleCache()
 
-    rule_target_dir = ('%s../opnsense.rules' % rule_source_directory)
+    rule_target_dir = ('%s../reticen8.rules' % rule_source_directory)
     rule_yaml_list = ('%s../installed_rules.yaml' % rule_source_directory)
 
-    # parse OPNsense rule config
+    # parse Reticen8 rule config
     rule_updates = RuleCache.list_local_changes()
 
     # create target rule directory if not existing

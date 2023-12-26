@@ -1,5 +1,5 @@
 <model>
-    <mount>//OPNsense/OpenVPNExport</mount>
+    <mount>//Reticen8/OpenVPNExport</mount>
     <version>0.0.1</version>
     <description>OpenVPN export presets</description>
     <items>

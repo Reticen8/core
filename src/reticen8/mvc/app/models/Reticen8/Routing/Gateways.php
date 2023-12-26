@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Routing;
+namespace Reticen8\Routing;
 
-use OPNsense\Base\BaseModel;
-use OPNsense\Core\Config;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\BaseModel;
+use Reticen8\Core\Config;
+use Reticen8\Firewall\Util;
 use Phalcon\Messages\Message;
 
 class Gateways extends BaseModel
@@ -96,9 +96,9 @@ class Gateways extends BaseModel
 
         $new = (string)$node->name;
         $cfg = Config::getInstance()->object();
-        if (!empty($cfg->OPNsense->Gateways) && !empty($cfg->OPNsense->Gateways->gateway_item)) {
+        if (!empty($cfg->Reticen8->Gateways) && !empty($cfg->Reticen8->Gateways->gateway_item)) {
             /* Exclude legacy components from validation */
-            foreach ($cfg->OPNsense->Gateways->gateway_item as $item) {
+            foreach ($cfg->Reticen8->Gateways->gateway_item as $item) {
                 $uuid = (string)$item->attributes()->uuid;
                 if ($uuid === explode('.', $ref)[1]) {
                     $old = (string)$item->name;

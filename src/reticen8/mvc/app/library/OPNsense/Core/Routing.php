@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\Core;
+namespace Reticen8\Core;
 
 use Phalcon\Mvc\Router;
 
 /**
- * Class Routing handles OPNsense ui/api routing
- * @package OPNsense\Core
+ * Class Routing handles Reticen8 ui/api routing
+ * @package Reticen8\Core
  */
 class Routing
 {
@@ -76,10 +76,10 @@ class Routing
         $this->type = $type;
         switch ($this->type) {
             case "ui":
-                $this->router->setDefaultNamespace('OPNsense\Core');
+                $this->router->setDefaultNamespace('Reticen8\Core');
                 break;
             case "api":
-                $this->router->setDefaultNamespace('OPNsense\Core\Api');
+                $this->router->setDefaultNamespace('Reticen8\Core\Api');
                 $this->suffix = "/Api";
                 break;
             default:
@@ -96,7 +96,7 @@ class Routing
     {
         //
         // probe registered API modules and create a namespace map
-        // for example, OPNsense\Core\Api will be mapped at http(s):\\host\core\..
+        // for example, Reticen8\Core\Api will be mapped at http(s):\\host\core\..
         //
         // if the glob for probing the directories turns out to be too slow,
         // we should consider some kind of caching here
@@ -113,8 +113,8 @@ class Routing
                         if (empty($registered_modules[$basename])) {
                             $registered_modules[$basename] = array();
                         }
-                        // always place OPNsense components on top
-                        $sortOrder = stristr($module_base, '/OPNsense/') ? "0" : count($registered_modules[$basename]) + 1;
+                        // always place Reticen8 components on top
+                        $sortOrder = stristr($module_base, '/Reticen8/') ? "0" : count($registered_modules[$basename]) + 1;
                         $registered_modules[$basename][$sortOrder] = array();
                         $registered_modules[$basename][$sortOrder]['namespace'] = $namespace_name;
                         $registered_modules[$basename][$sortOrder]['path'] = $api_base;

@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Firewall\Api;
+namespace Reticen8\Firewall\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Backend;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Backend;
 
 /**
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class FilterUtilController extends ApiControllerBase
 {

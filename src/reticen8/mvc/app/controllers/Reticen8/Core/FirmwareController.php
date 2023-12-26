@@ -28,19 +28,19 @@
  *
  */
 
-namespace OPNsense\Core;
+namespace Reticen8\Core;
 
 /**
  * Class FirmwareController controller for firmware core actions
- * @package OPNsense\Core
+ * @package Reticen8\Core
  */
-class FirmwareController extends \OPNsense\Base\IndexController
+class FirmwareController extends \Reticen8\Base\IndexController
 {
     /**
      * return to / for non existent actions
      */
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Core/firmware');
+        $this->view->pick('Reticen8/Core/firmware');
     }
 }

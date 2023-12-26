@@ -2,7 +2,7 @@
 <?php
 
 /*
- * Copyright (C) 2023 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2023 Franco Fichtner <franco@reticen8.org>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -36,7 +36,7 @@ function signalhandler($signal)
 {
     global $config;
 
-    OPNsense\Core\Config::getInstance()->forceReload();
+    Reticen8\Core\Config::getInstance()->forceReload();
     $config = parse_config();
 
     syslog(LOG_NOTICE, 'Reloaded gateway watcher configuration on SIGHUP');

@@ -26,16 +26,16 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN\Api;
+namespace Reticen8\OpenVPN\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Config;
-use OPNsense\Core\Backend;
-use OPNsense\OpenVPN\OpenVPN;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Config;
+use Reticen8\Core\Backend;
+use Reticen8\OpenVPN\OpenVPN;
 
 /**
  * Class ServiceController
- * @package OPNsense\OpenVPN
+ * @package Reticen8\OpenVPN
  */
 class ServiceController extends ApiControllerBase
 {

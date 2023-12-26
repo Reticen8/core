@@ -30,7 +30,7 @@ import sys
 import glob
 import os
 
-sys.path.insert(0, "/usr/local/opnsense/site-python")
+sys.path.insert(0, "/usr/local/reticen8/site-python")
 from duckdb_helper import restore_database
 
 if __name__ == '__main__':

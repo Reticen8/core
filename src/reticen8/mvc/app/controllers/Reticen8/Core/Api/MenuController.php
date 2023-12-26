@@ -28,15 +28,15 @@
  *
  */
 
-namespace OPNsense\Core\Api;
+namespace Reticen8\Core\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Base\Menu;
-use OPNsense\Core\ACL;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Base\Menu;
+use Reticen8\Core\ACL;
 
 /**
  * Class MenuController
- * @package OPNsense\Core
+ * @package Reticen8\Core
  */
 class MenuController extends ApiControllerBase
 {

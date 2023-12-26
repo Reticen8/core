@@ -28,11 +28,11 @@
  *
  */
 
-namespace OPNsense\Auth;
+namespace Reticen8\Auth;
 
 /**
  * Interface IAuthConnector for authenticator connectors
- * @package OPNsense\Auth
+ * @package Reticen8\Auth
  */
 interface IAuthConnector
 {

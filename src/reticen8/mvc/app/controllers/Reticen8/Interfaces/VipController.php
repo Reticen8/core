@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces;
+namespace Reticen8\Interfaces;
 
-class VipController extends \OPNsense\Base\IndexController
+class VipController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Interface/vip');
+        $this->view->pick('Reticen8/Interface/vip');
         $this->view->formDialogVip = $this->getForm("dialogVip");
     }
 }

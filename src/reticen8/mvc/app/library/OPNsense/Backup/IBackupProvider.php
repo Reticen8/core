@@ -28,11 +28,11 @@
  *
  */
 
-namespace OPNsense\Backup;
+namespace Reticen8\Backup;
 
 /**
  * Interface for backup connectors
- * @package OPNsense\Backup
+ * @package Reticen8\Backup
  */
 interface IBackupProvider
 {

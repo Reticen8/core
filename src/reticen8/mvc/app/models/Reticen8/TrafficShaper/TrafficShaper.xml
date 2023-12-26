@@ -1,7 +1,7 @@
 <model>
-    <mount>//OPNsense/TrafficShaper</mount>
+    <mount>//Reticen8/TrafficShaper</mount>
     <version>1.0.3</version>
-    <description>OPNsense traffic shaper</description>
+    <description>Reticen8 traffic shaper</description>
     <items>
         <pipes>
             <pipe type="ArrayField">
@@ -137,7 +137,7 @@
                 <pipe type="ModelRelationField">
                     <Model>
                         <pipes>
-                            <source>OPNsense.TrafficShaper.TrafficShaper</source>
+                            <source>Reticen8.TrafficShaper.TrafficShaper</source>
                             <items>pipes.pipe</items>
                             <display>description</display>
                         </pipes>
@@ -330,7 +330,7 @@
                 <target type="ModelRelationField">
                     <Model>
                         <pipes>
-                            <source>OPNsense.TrafficShaper.TrafficShaper</source>
+                            <source>Reticen8.TrafficShaper.TrafficShaper</source>
                             <items>pipes.pipe</items>
                             <display>description</display>
                             <filters>
@@ -338,7 +338,7 @@
                             </filters>
                         </pipes>
                         <queues>
-                            <source>OPNsense.TrafficShaper.TrafficShaper</source>
+                            <source>Reticen8.TrafficShaper.TrafficShaper</source>
                             <items>queues.queue</items>
                             <display>description</display>
                             <filters>

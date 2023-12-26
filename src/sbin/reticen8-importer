@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (c) 2014-2023 Franco Fichtner <franco@opnsense.org>
+# Copyright (c) 2014-2023 Franco Fichtner <franco@reticen8.org>
 # Copyright (c) 2004-2009 Scott Ullrich <sullrich@gmail.com>
 #
 # Redistribution and use in source and binary forms, with or without
@@ -317,10 +317,10 @@ while : ; do
 		${SHELL}
 		break
 	elif [ -n "${DO_PASSWORD}" ]; then
-		if [ -f "${MNT}/usr/local/sbin/opnsense-shell" ]; then
+		if [ -f "${MNT}/usr/local/sbin/reticen8-shell" ]; then
 			mount -t devfs devfs ${MNT}/dev
 			chroot ${MNT} /bin/sh /etc/rc.d/ldconfig start
-			chroot ${MNT} /usr/local/sbin/opnsense-shell password root -x 0
+			chroot ${MNT} /usr/local/sbin/reticen8-shell password root -x 0
 			umount ${MNT}/dev
 
 			echo "The password was reset successfully."
@@ -335,7 +335,7 @@ while : ; do
 		fi
 	elif [ -f "${MNT}/conf/config.xml" ]; then
 		if [ "$(grep -cx -- '---- BEGIN config.xml ----' ${MNT}/conf/config.xml)" != "0" ]; then
-			if ! opnsense-crypt ${MNT}/conf/config.xml; then
+			if ! reticen8-crypt ${MNT}/conf/config.xml; then
 				echo "The file /conf/config.xml could not be decrypted."
 
 				if [ -n "${DO_DEV}" ]; then

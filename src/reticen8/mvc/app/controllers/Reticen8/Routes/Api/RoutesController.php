@@ -27,20 +27,20 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Routes\Api;
+namespace Reticen8\Routes\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
-use OPNsense\Routes\Route;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
+use Reticen8\Routes\Route;
 
 /**
- * @package OPNsense\Routes
+ * @package Reticen8\Routes
  */
 class RoutesController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'route';
-    protected static $internalModelClass = '\OPNsense\Routes\Route';
+    protected static $internalModelClass = '\Reticen8\Routes\Route';
 
     /**
      * search routes
@@ -79,7 +79,7 @@ class RoutesController extends ApiMutableModelControllerBase
     /**
      * Add new route and set with attributes from post
      * @return array save result + validation output
-     * @throws \OPNsense\Base\ModelException when not bound to model
+     * @throws \Reticen8\Base\ModelException when not bound to model
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      * @throws \ReflectionException
      */
@@ -105,7 +105,7 @@ class RoutesController extends ApiMutableModelControllerBase
      * @return array save status
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      * @throws \ReflectionException when not bound to model
-     * @throws \OPNsense\Base\ModelException when not bound to model
+     * @throws \Reticen8\Base\ModelException when not bound to model
      */
     public function delrouteAction($uuid)
     {
@@ -125,7 +125,7 @@ class RoutesController extends ApiMutableModelControllerBase
      * @return array status
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      * @throws \ReflectionException when not bound to model
-     * @throws \OPNsense\Base\ModelException when not bound to model
+     * @throws \Reticen8\Base\ModelException when not bound to model
      */
     public function togglerouteAction($uuid, $disabled = null)
     {

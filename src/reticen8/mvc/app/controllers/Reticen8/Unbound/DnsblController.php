@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound;
+namespace Reticen8\Unbound;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 class DnsblController extends IndexController
 {
     public function indexAction()
     {
         $this->view->dnsblForm = $this->getForm('dnsbl');
-        $this->view->pick('OPNsense/Unbound/dnsbl');
+        $this->view->pick('Reticen8/Unbound/dnsbl');
     }
 }

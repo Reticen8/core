@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Firewall;
+namespace Reticen8\Firewall;
 
 /**
  * Class SNatRule, outbound / source nat rules
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class SNatRule extends Rule
 {

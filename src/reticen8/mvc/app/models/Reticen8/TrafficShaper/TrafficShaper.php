@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\TrafficShaper;
+namespace Reticen8\TrafficShaper;
 
 use Phalcon\Messages\Message;
-use OPNsense\Base\BaseModel;
+use Reticen8\Base\BaseModel;
 
 /**
  * Class TrafficShaper
- * @package OPNsense\TrafficShaper
+ * @package Reticen8\TrafficShaper
  */
 class TrafficShaper extends BaseModel
 {

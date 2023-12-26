@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<opnsense>
+<reticen8>
   <version>1</version>
   <interfaces>
     <wan>
@@ -88,4 +88,4 @@
   <filter>
     <rule></rule>
   </filter>
-  </opnsense>
+  </reticen8>

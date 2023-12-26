@@ -28,15 +28,15 @@
  *
  */
 
-namespace OPNsense\Firewall;
+namespace Reticen8\Firewall;
 
-use OPNsense\Base\BaseModel;
-use OPNsense\Core\Config;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\BaseModel;
+use Reticen8\Core\Config;
+use Reticen8\Firewall\Util;
 
 /**
  * Class Alias
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class Alias extends BaseModel
 {
@@ -81,14 +81,14 @@ class Alias extends BaseModel
         $sources[] = [['load_balancer', 'virtual_server'], ['port']];
         $sources[] = [['staticroutes', 'route'], ['network']];
         // os-firewall plugin paths
-        $sources[] = [['OPNsense', 'Firewall', 'Filter', 'rules', 'rule'], ['source_net']];
-        $sources[] = [['OPNsense', 'Firewall', 'Filter', 'rules', 'rule'], ['source_port']];
-        $sources[] = [['OPNsense', 'Firewall', 'Filter', 'rules', 'rule'], ['destination_net']];
-        $sources[] = [['OPNsense', 'Firewall', 'Filter', 'rules', 'rule'], ['destination_port']];
-        $sources[] = [['OPNsense', 'Firewall', 'Filter', 'snatrules', 'rule'], ['source_net']];
-        $sources[] = [['OPNsense', 'Firewall', 'Filter', 'snatrules', 'rule'], ['source_port']];
-        $sources[] = [['OPNsense', 'Firewall', 'Filter', 'snatrules', 'rule'], ['destination_net']];
-        $sources[] = [['OPNsense', 'Firewall', 'Filter', 'snatrules', 'rule'], ['destination_port']];
+        $sources[] = [['Reticen8', 'Firewall', 'Filter', 'rules', 'rule'], ['source_net']];
+        $sources[] = [['Reticen8', 'Firewall', 'Filter', 'rules', 'rule'], ['source_port']];
+        $sources[] = [['Reticen8', 'Firewall', 'Filter', 'rules', 'rule'], ['destination_net']];
+        $sources[] = [['Reticen8', 'Firewall', 'Filter', 'rules', 'rule'], ['destination_port']];
+        $sources[] = [['Reticen8', 'Firewall', 'Filter', 'snatrules', 'rule'], ['source_net']];
+        $sources[] = [['Reticen8', 'Firewall', 'Filter', 'snatrules', 'rule'], ['source_port']];
+        $sources[] = [['Reticen8', 'Firewall', 'Filter', 'snatrules', 'rule'], ['destination_net']];
+        $sources[] = [['Reticen8', 'Firewall', 'Filter', 'snatrules', 'rule'], ['destination_port']];
 
         return $sources;
     }

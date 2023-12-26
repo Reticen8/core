@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\Monit;
+namespace Reticen8\Monit;
 
 /**
  * Class StatusController
- * @package OPNsense\Monit
+ * @package Reticen8\Monit
  */
-class StatusController extends \OPNsense\Base\IndexController
+class StatusController extends \Reticen8\Base\IndexController
 {
     /**
      * monit status page
@@ -42,6 +42,6 @@ class StatusController extends \OPNsense\Base\IndexController
      */
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Monit/status');
+        $this->view->pick('Reticen8/Monit/status');
     }
 }

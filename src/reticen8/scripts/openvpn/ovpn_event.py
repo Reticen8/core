@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
 """
-    Copyright (c) 2023 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2023 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -69,7 +69,7 @@ def main(params):
     elif params.script_type == 'learn-address':
         if os.fork() == 0:
             sys.exit(subprocess.run(
-                ['/usr/local/opnsense/scripts/filter/update_tables.py', '--types', 'authgroup']
+                ['/usr/local/reticen8/scripts/filter/update_tables.py', '--types', 'authgroup']
             ).returncode)
 
 

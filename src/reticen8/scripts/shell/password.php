@@ -2,7 +2,7 @@
 <?php
 
 /*
- * Copyright (C) 2017-2018 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2017-2018 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2003-2004 Manuel Kasper <mk@neon1.net>
  * All rights reserved.
  *

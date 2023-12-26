@@ -1,5 +1,5 @@
 <model>
-    <mount>//OPNsense/Firewall/Alias</mount>
+    <mount>//Reticen8/Firewall/Alias</mount>
     <version>1.0.1</version>
     <description>Firewall aliases</description>
     <items>
@@ -70,7 +70,7 @@
                 <categories type="ModelRelationField">
                     <Model>
                         <rulesets>
-                            <source>OPNsense.Firewall.Category</source>
+                            <source>Reticen8.Firewall.Category</source>
                             <items>categories.category</items>
                             <display>name</display>
                         </rulesets>

@@ -3,7 +3,7 @@
 
 require_once('script/load_phalcon.php');
 
-use OPNsense\Backup\BackupFactory;
+use Reticen8\Backup\BackupFactory;
 
 /* add random delay in seconds */
 $random_delay = !empty($argv[1]) ? $argv[1] : null;

@@ -28,10 +28,10 @@
  *
  */
 
-namespace OPNsense\IPsec\FieldTypes;
+namespace Reticen8\IPsec\FieldTypes;
 
-use OPNsense\Base\FieldTypes\ArrayField;
-use OPNsense\Base\FieldTypes\TextField;
+use Reticen8\Base\FieldTypes\ArrayField;
+use Reticen8\Base\FieldTypes\TextField;
 
 class ConnnectionField extends ArrayField
 {

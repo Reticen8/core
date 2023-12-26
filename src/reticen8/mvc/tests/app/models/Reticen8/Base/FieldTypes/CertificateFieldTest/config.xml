@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<opnsense>
+<reticen8>
     <cert>
         <refid>5537f364ba123</refid>
         <descr>cert 1</descr>
@@ -16,4 +16,4 @@
         <refid>15c382ee6020f</refid>
         <descr>ca 2</descr>
     </ca>
-</opnsense>
+</reticen8>

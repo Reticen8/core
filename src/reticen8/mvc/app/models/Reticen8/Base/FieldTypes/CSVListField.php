@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Base\Validators\CallbackValidator;
+use Reticen8\Base\Validators\CallbackValidator;
 
 /**
  * Class CSVListField
  * Physical stored as a single entry, stores multiple selections.
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class CSVListField extends BaseField
 {

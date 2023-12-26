@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\Monit;
+namespace Reticen8\Monit;
 
 /**
  * Class IndexController
- * @package OPNsense\Monit
+ * @package Reticen8\Monit
  */
-class IndexController extends \OPNsense\Base\IndexController
+class IndexController extends \Reticen8\Base\IndexController
 {
     /**
      * monit index page
@@ -46,6 +46,6 @@ class IndexController extends \OPNsense\Base\IndexController
         $this->view->formDialogEditAlert = $this->getForm("alerts");
         $this->view->formDialogEditService = $this->getForm("services");
         $this->view->formDialogEditTest = $this->getForm("tests");
-        $this->view->pick('OPNsense/Monit/index');
+        $this->view->pick('Reticen8/Monit/index');
     }
 }

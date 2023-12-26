@@ -26,18 +26,18 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec\Api;
+namespace Reticen8\IPsec\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
+use Reticen8\Base\ApiMutableModelControllerBase;
 
 /**
  * Class PreSharedKeysController
- * @package OPNsense\IPsec\Api
+ * @package Reticen8\IPsec\Api
  */
 class PreSharedKeysController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'ipsec';
-    protected static $internalModelClass = 'OPNsense\IPsec\IPsec';
+    protected static $internalModelClass = 'Reticen8\IPsec\IPsec';
 
     /**
      * Search preSharedKeys
@@ -53,7 +53,7 @@ class PreSharedKeysController extends ApiMutableModelControllerBase
      * Update preSharedKey with given properties
      * @param $uuid
      * @return array
-     * @throws \OPNsense\Base\UserException
+     * @throws \Reticen8\Base\UserException
      * @throws \ReflectionException
      */
     public function setItemAction($uuid = null)
@@ -64,7 +64,7 @@ class PreSharedKeysController extends ApiMutableModelControllerBase
     /**
      * Add new preSharedKey with given properties
      * @return array
-     * @throws \OPNsense\Base\UserException
+     * @throws \Reticen8\Base\UserException
      * @throws \ReflectionException
      */
     public function addItemAction()
@@ -87,7 +87,7 @@ class PreSharedKeysController extends ApiMutableModelControllerBase
      * Delete preSharedKey by UUID
      * @param $uuid
      * @return array
-     * @throws \OPNsense\Base\UserException
+     * @throws \Reticen8\Base\UserException
      * @throws \ReflectionException
      */
     public function delItemAction($uuid)

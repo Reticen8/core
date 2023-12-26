@@ -368,7 +368,7 @@ if (isset($input_errors) && count($input_errors) > 0) {
           <section class="col-xs-12">
            <div class="tab-content content-box col-xs-12">
                <div class="table-responsive">
-                <table class="table table-striped opnsense_standard_table_form">
+                <table class="table table-striped reticen8_standard_table_form">
                   <tr>
                     <td colspan="2"><b><?=gettext("Extended Authentication (Xauth)"); ?></b></td>
                   </tr>
@@ -432,7 +432,7 @@ foreach ($auth_servers as $auth_key => $auth_server) : ?>
           </section>
           <section class="col-xs-12">
              <div class="tab-content content-box col-xs-12">
-                <table class="table table-striped opnsense_standard_table_form" id="ike_extensions">
+                <table class="table table-striped reticen8_standard_table_form" id="ike_extensions">
                   <tr class="ike_heading">
                       <td style="width:22%"><b><?=gettext("IKE Extensions"); ?> </b></td>
                       <td style="width:78%; text-align:right">
@@ -613,7 +613,7 @@ endforeach;
         </section>
         <section class="col-xs-12">
             <div class="tab-content content-box col-xs-12">
-              <table class="table table-striped opnsense_standard_table_form" id="ike_extensions">
+              <table class="table table-striped reticen8_standard_table_form" id="ike_extensions">
                   <tr>
                     <td style="width:22%">&nbsp;</td>
                     <td style="width:78%;">

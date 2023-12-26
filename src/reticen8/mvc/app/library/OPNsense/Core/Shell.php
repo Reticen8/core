@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Core;
+namespace Reticen8\Core;
 
 use Phalcon\Di\FactoryDefault;
 
 /**
  * Class Shell shell/command handling routines
- * @package OPNsense\Core
+ * @package Reticen8\Core
  */
 class Shell
 {

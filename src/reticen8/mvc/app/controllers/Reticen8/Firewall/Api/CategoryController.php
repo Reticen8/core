@@ -28,20 +28,20 @@
  *
  */
 
-namespace OPNsense\Firewall\Api;
+namespace Reticen8\Firewall\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Base\UserException;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Base\UserException;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
 
 /**
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class CategoryController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'category';
-    protected static $internalModelClass = 'OPNsense\Firewall\Category';
+    protected static $internalModelClass = 'Reticen8\Firewall\Category';
 
     /**
      * search categories
@@ -89,7 +89,7 @@ class CategoryController extends ApiMutableModelControllerBase
     /**
      * Add new category and set with attributes from post
      * @return array save result + validation output
-     * @throws \OPNsense\Base\ModelException when not bound to model
+     * @throws \Reticen8\Base\ModelException when not bound to model
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      * @throws \ReflectionException when not bound to model
      */
@@ -115,7 +115,7 @@ class CategoryController extends ApiMutableModelControllerBase
      * @return array save status
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      * @throws \ReflectionException when not bound to model
-     * @throws \OPNsense\Base\UserException when unable to delete
+     * @throws \Reticen8\Base\UserException when unable to delete
      */
     public function delItemAction($uuid)
     {
@@ -124,7 +124,7 @@ class CategoryController extends ApiMutableModelControllerBase
         $node_name = $node != null ? (string)$node->name : null;
         if ($node_name != null && $this->getModel()->isUsed($node_name)) {
             $message = gettext("Cannot delete a category which is still in use.");
-            throw new \OPNsense\Base\UserException($message, gettext("Category in use"));
+            throw new \Reticen8\Base\UserException($message, gettext("Category in use"));
         }
         return $this->delBase("categories.category", $uuid);
     }

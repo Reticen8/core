@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Firewall;
+namespace Reticen8\Firewall;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 /**
  * Class Plugin
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class Plugin
 {
@@ -96,9 +96,9 @@ class Plugin
 
     /**
      * set defined gateways (route-to)
-     * @param  \OPNsense\Routing\Gateways $gateways object
+     * @param  \Reticen8\Routing\Gateways $gateways object
      */
-    public function setGateways(\OPNsense\Routing\Gateways $gateways)
+    public function setGateways(\Reticen8\Routing\Gateways $gateways)
     {
         $this->gateways = $gateways;
         foreach ($gateways->gatewaysIndexedByName(false, true) as $key => $gw) {
@@ -119,9 +119,9 @@ class Plugin
     }
 
     /**
-     * @return \OPNsense\Routing\Gateways gateway object
+     * @return \Reticen8\Routing\Gateways gateway object
      */
-    public function getGateways(): ?\OPNsense\Routing\Gateways
+    public function getGateways(): ?\Reticen8\Routing\Gateways
     {
         return $this->gateways;
     }

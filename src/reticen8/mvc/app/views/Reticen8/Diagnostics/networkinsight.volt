@@ -1,6 +1,6 @@
 {#
 
-OPNsense® is Copyright © 2016 by Deciso B.V.
+Reticen8® is Copyright © 2016 by Deciso B.V.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
@@ -34,7 +34,7 @@ POSSIBILITY OF SUCH DAMAGE.
 </style>
 
 <!-- nvd3 -->
-<link rel="stylesheet" type="text/css" href="{{ cache_safe(theme_file_or_default('/css/nv.d3.css', ui_theme|default('opnsense'))) }}" />
+<link rel="stylesheet" type="text/css" href="{{ cache_safe(theme_file_or_default('/css/nv.d3.css', ui_theme|default('reticen8'))) }}" />
 
 <!-- d3 -->
 <script src="{{ cache_safe('/ui/js/d3.min.js') }}"></script>

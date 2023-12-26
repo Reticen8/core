@@ -27,7 +27,7 @@
 
 local drawer = require("drawer")
 
-local brand_opnsense = {
+local brand_reticen8 = {
 "  ______  _____  _____                         ",
 " /  __  |/ ___ |/ __  |                        ",
 " | |  | | |__/ | |  | |___  ___ _ __  ___  ___ ",
@@ -36,8 +36,8 @@ local brand_opnsense = {
 " |_____/|_|    |_| /__|___/\\___|_| |_|___/\\___|"
 }
 
-drawer.addBrand("opnsense", {
-	graphic = brand_opnsense,
+drawer.addBrand("reticen8", {
+	graphic = brand_reticen8,
 	shift = {x = 10, y = 1},
 })
 

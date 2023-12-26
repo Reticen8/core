@@ -1,5 +1,5 @@
 """
-    Copyright (c) 2015-2019 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2015-2019 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -87,7 +87,7 @@ class Config(object):
         return None
 
 
-class OPNsenseConfig(object):
+class Reticen8Config(object):
     """ Read configuration data from config.xml
     """
     def __init__(self):
@@ -105,7 +105,7 @@ class OPNsenseConfig(object):
             :param fileid: internal fileid (field in template node)
             :return: string, bse64 encoded data or None if not found
         """
-        templates = self.rootNode.findall("./OPNsense/captiveportal/templates/template")
+        templates = self.rootNode.findall("./Reticen8/captiveportal/templates/template")
         if templates is not None:
             for template in templates:
                 if template.find('fileid') is not None and template.find('content') is not None:

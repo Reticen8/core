@@ -1,5 +1,5 @@
 """
-    Copyright (c) 2022 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2022 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -35,7 +35,7 @@ from .base import BaseContentParser
 
 
 class BGPASN(BaseContentParser):
-    _asn_source = 'https://rulesets.opnsense.org/alias/asn.gz'      # source for ASN administration
+    _asn_source = 'https://rulesets.reticen8.org/alias/asn.gz'      # source for ASN administration
     _asn_filename = '/usr/local/share/bgp/asn.csv'                  # local copy
     _asn_ttl =  (86400 - 90)                                        # validity in seconds of the local copy
     _asn_fhandle = None                                             # file handle to local copy

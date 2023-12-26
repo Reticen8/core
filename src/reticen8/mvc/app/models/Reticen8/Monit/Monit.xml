@@ -1,5 +1,5 @@
 <model>
-   <mount>//OPNsense/monit</mount>
+   <mount>//Reticen8/monit</mount>
    <version>1.0.12</version>
    <description>Monit settings</description>
    <items>
@@ -233,7 +233,7 @@
          <tests type="ModelRelationField">
             <Model>
                <template>
-                  <source>OPNsense.monit.monit</source>
+                  <source>Reticen8.monit.monit</source>
                   <items>test</items>
                   <display>name</display>
                </template>
@@ -244,7 +244,7 @@
          <depends type="ModelRelationField">
             <Model>
                <template>
-                  <source>OPNsense.monit.monit</source>
+                  <source>Reticen8.monit.monit</source>
                   <items>service</items>
                   <display>name</display>
                </template>

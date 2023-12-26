@@ -26,19 +26,19 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Core;
+namespace Reticen8\Core;
 
 /**
  * Class ServiceController controller for service core actions
- * @package OPNsense\Core
+ * @package Reticen8\Core
  */
-class ServiceController extends \OPNsense\Base\IndexController
+class ServiceController extends \Reticen8\Base\IndexController
 {
     /**
      * return to / for non existent actions
      */
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Core/service');
+        $this->view->pick('Reticen8/Core/service');
     }
 }

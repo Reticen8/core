@@ -26,32 +26,32 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IDS\Api;
+namespace Reticen8\IDS\Api;
 
-use OPNsense\Base\ApiMutableServiceControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
-use OPNsense\Cron\Cron;
-use OPNsense\IDS\IDS;
-use OPNsense\Phalcon\Filter\Filter;
+use Reticen8\Base\ApiMutableServiceControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
+use Reticen8\Cron\Cron;
+use Reticen8\IDS\IDS;
+use Reticen8\Phalcon\Filter\Filter;
 use Phalcon\Filter\FilterFactory;
 
 /**
  * Class ServiceController
- * @package OPNsense\IDS
+ * @package Reticen8\IDS
  */
 class ServiceController extends ApiMutableServiceControllerBase
 {
-    protected static $internalServiceClass = '\OPNsense\IDS\IDS';
+    protected static $internalServiceClass = '\Reticen8\IDS\IDS';
     protected static $internalServiceEnabled = 'general.enabled';
-    protected static $internalServiceTemplate = 'OPNsense/IDS';
+    protected static $internalServiceTemplate = 'Reticen8/IDS';
     protected static $internalServiceName = 'ids';
 
     /**
      * Reconfigure IDS
      * @return array result status
      * @throws \Exception when configd action fails
-     * @throws \OPNsense\Base\ModelException when unable to construct model
+     * @throws \Reticen8\Base\ModelException when unable to construct model
      * @throws \Phalcon\Filter\Validation\Exception when one or more model validations fail
      */
     public function reconfigureAction()
@@ -82,7 +82,7 @@ class ServiceController extends ApiMutableServiceControllerBase
             }
 
             $backend = new Backend();
-            $bckresult = trim($backend->configdRun('template reload OPNsense/IDS'));
+            $bckresult = trim($backend->configdRun('template reload Reticen8/IDS'));
 
             if ($bckresult == "OK") {
                 if ((string)$mdlIDS->general->enabled == 1) {
@@ -122,7 +122,7 @@ class ServiceController extends ApiMutableServiceControllerBase
             // we have to trigger a template reload to be sure we have the right download configuration
             // ideally we should only regenerate the download config, but that's not supported at the moment.
             // (not sure if it should be supported)
-            $bckresult = trim($backend->configdRun('template reload OPNsense/IDS'));
+            $bckresult = trim($backend->configdRun('template reload Reticen8/IDS'));
 
             if ($bckresult == "OK") {
                 if ($wait != null) {
@@ -153,7 +153,7 @@ class ServiceController extends ApiMutableServiceControllerBase
             $this->sessionClose();
             $backend = new Backend();
             // flush rule configuration
-            $bckresult = trim($backend->configdRun('template reload OPNsense/IDS'));
+            $bckresult = trim($backend->configdRun('template reload Reticen8/IDS'));
             if ($bckresult == "OK") {
                 $status = $backend->configdRun("ids reload");
             } else {

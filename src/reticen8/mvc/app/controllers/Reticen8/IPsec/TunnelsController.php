@@ -26,16 +26,16 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec;
+namespace Reticen8\IPsec;
 
 /**
  * Class TunnelsController
- * @package OPNsense\IPsec
+ * @package Reticen8\IPsec
  */
-class TunnelsController extends \OPNsense\Base\IndexController
+class TunnelsController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/IPsec/tunnels');
+        $this->view->pick('Reticen8/IPsec/tunnels');
     }
 }

@@ -2,7 +2,7 @@
 
 /*
  * Copyright (C) 2018 Deciso B.V.
- * Copyright (C) 2018-2021 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2018-2021 Franco Fichtner <franco@reticen8.org>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -27,11 +27,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Backup;
+namespace Reticen8\Backup;
 
 /**
  * Backup stub file, contains shared logic for all backup strategies
- * @package OPNsense\Backup
+ * @package Reticen8\Backup
  */
 abstract class Base
 {
@@ -71,7 +71,7 @@ abstract class Base
         @unlink($file);
 
         if (file_exists("{$file}.enc") && !$retval) {
-            $version = trim(shell_exec('opnsense-version -Nv') ?? '');
+            $version = trim(shell_exec('reticen8-version -Nv') ?? '');
             $result = "---- BEGIN {$tag} ----\n";
             $result .= "Version: {$version}\n";
             $result .= "Cipher: " . strtoupper($cipher) . "\n";
@@ -166,7 +166,7 @@ abstract class Base
 
     /**
      * set model properties
-     * @param OPNsense\Base\BaseModel $mdl model to set properties to
+     * @param Reticen8\Base\BaseModel $mdl model to set properties to
      * @param array $properties named
      */
     protected function setModelProperties($mdl, $properties)
@@ -174,7 +174,7 @@ abstract class Base
         foreach ($properties as $key => $value) {
             $node = $mdl->getNodeByReference($key);
             $node_class = get_class($node);
-            if ($node_class == "OPNsense\Base\FieldTypes\BooleanField") {
+            if ($node_class == "Reticen8\Base\FieldTypes\BooleanField") {
                 $node->setValue(empty($value) ? "0" : "1");
             } else {
                 $node->setValue($value);
@@ -184,7 +184,7 @@ abstract class Base
 
     /**
      * validate model and return simple array with validation messages
-     * @param OPNsense\Base\BaseModel $mdl model to set properties to
+     * @param Reticen8\Base\BaseModel $mdl model to set properties to
      * @return array
      */
     protected function validateModel($mdl)

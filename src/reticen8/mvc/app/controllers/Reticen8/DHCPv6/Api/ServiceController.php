@@ -26,10 +26,10 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\DHCPv6\Api;
+namespace Reticen8\DHCPv6\Api;
 
-use OPNsense\Base\ApiMutableServiceControllerBase;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiMutableServiceControllerBase;
+use Reticen8\Core\Config;
 
 class ServiceController extends ApiMutableServiceControllerBase
 {

@@ -1,7 +1,7 @@
 <model>
-    <mount>//OPNsense/Swanctl</mount>
+    <mount>//Reticen8/Swanctl</mount>
     <version>1.0.0</version>
-    <description>OPNsense IPsec Connections</description>
+    <description>Reticen8 IPsec Connections</description>
     <items>
         <Connections>
             <Connection type=".\ConnnectionField">
@@ -112,7 +112,7 @@
                 <connection type="ModelRelationField">
                     <Model>
                         <host>
-                            <source>OPNsense.IPsec.Swanctl</source>
+                            <source>Reticen8.IPsec.Swanctl</source>
                             <items>Connections.Connection</items>
                             <display>description</display>
                         </host>
@@ -150,7 +150,7 @@
                 <pubkeys type="ModelRelationField">
                     <Model>
                         <host>
-                            <source>OPNsense.IPsec.IPsec</source>
+                            <source>Reticen8.IPsec.IPsec</source>
                             <items>keyPairs.keyPair</items>
                             <display>name</display>
                         </host>
@@ -169,7 +169,7 @@
                 <connection type="ModelRelationField">
                     <Model>
                         <host>
-                            <source>OPNsense.IPsec.Swanctl</source>
+                            <source>Reticen8.IPsec.Swanctl</source>
                             <items>Connections.Connection</items>
                             <display>description</display>
                         </host>
@@ -210,7 +210,7 @@
                 <pubkeys type="ModelRelationField">
                     <Model>
                         <host>
-                            <source>OPNsense.IPsec.IPsec</source>
+                            <source>Reticen8.IPsec.IPsec</source>
                             <items>keyPairs.keyPair</items>
                             <display>name</display>
                         </host>
@@ -230,7 +230,7 @@
                 <connection type="ModelRelationField">
                     <Model>
                         <host>
-                            <source>OPNsense.IPsec.Swanctl</source>
+                            <source>Reticen8.IPsec.Swanctl</source>
                             <items>Connections.Connection</items>
                             <display>description</display>
                         </host>
@@ -418,7 +418,7 @@
                 <connection_child type="ModelRelationField">
                     <Model>
                         <host>
-                            <source>OPNsense.IPsec.Swanctl</source>
+                            <source>Reticen8.IPsec.Swanctl</source>
                             <items>children.child</items>
                             <display>connection,description</display>
                             <display_format>%s - %s</display_format>

@@ -28,16 +28,16 @@
  *
  */
 
-namespace OPNsense\Diagnostics\Api;
+namespace Reticen8\Diagnostics\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
 
 class PacketCaptureController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'packetcapture';
-    protected static $internalModelClass = 'OPNsense\Diagnostics\PacketCapture';
+    protected static $internalModelClass = 'Reticen8\Diagnostics\PacketCapture';
     private static $capture_dir = '/tmp/captures';
 
     /**

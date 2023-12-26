@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (c) 2014-2018 Franco Fichtner <franco@opnsense.org>
+# Copyright (c) 2014-2018 Franco Fichtner <franco@reticen8.org>
 # Copyright (c) 2004-2011 Scott Ullrich <sullrich@gmail.com>
 # Copyright (c) 2003-2004 Manuel Kasper <mk@neon1.net>
 # All rights reserved.
@@ -9,19 +9,19 @@
 trap : 2
 trap : 3
 
-CMD_BANNER="/usr/local/opnsense/scripts/shell/banner.php"
-CMD_DEFAULTS="/usr/local/opnsense/scripts/shell/defaults.php"
-CMD_FIRMWARE="/usr/local/opnsense/scripts/shell/firmware.sh"
-CMD_HALT="/usr/local/opnsense/scripts/shell/halt.php"
-CMD_PASSWORD="/usr/local/opnsense/scripts/shell/password.php"
+CMD_BANNER="/usr/local/reticen8/scripts/shell/banner.php"
+CMD_DEFAULTS="/usr/local/reticen8/scripts/shell/defaults.php"
+CMD_FIRMWARE="/usr/local/reticen8/scripts/shell/firmware.sh"
+CMD_HALT="/usr/local/reticen8/scripts/shell/halt.php"
+CMD_PASSWORD="/usr/local/reticen8/scripts/shell/password.php"
 CMD_PFLOG="/usr/sbin/tcpdump -s 256 -v -S -l -n -e -ttt -i pflog0"
 CMD_PFTOP="/usr/local/sbin/pftop"
-CMD_PING="/usr/local/opnsense/scripts/shell/ping.php"
-CMD_REBOOT="/usr/local/opnsense/scripts/shell/reboot.php"
+CMD_PING="/usr/local/reticen8/scripts/shell/ping.php"
+CMD_REBOOT="/usr/local/reticen8/scripts/shell/reboot.php"
 CMD_RELOAD="/usr/local/etc/rc.reload_all"
-CMD_RESTORE="/usr/local/opnsense/scripts/shell/restore.sh"
-CMD_SETADDR="/usr/local/opnsense/scripts/shell/setaddr.php"
-CMD_SETPORTS="/usr/local/opnsense/scripts/shell/setports.php"
+CMD_RESTORE="/usr/local/reticen8/scripts/shell/restore.sh"
+CMD_SETADDR="/usr/local/reticen8/scripts/shell/setaddr.php"
+CMD_SETPORTS="/usr/local/reticen8/scripts/shell/setports.php"
 CMD_SHELL="/bin/csh"
 
 # rc.d may call this while being root using `su -m user -c ...'
@@ -52,7 +52,7 @@ if [ "$(id -u)" != "0" ]; then
 	exit 1
 fi
 
-# The invoke using "opnsense-shell cmd" will launch the
+# The invoke using "reticen8-shell cmd" will launch the
 # utility without presenting and looping the menu.
 case "${1}" in
 banner)

@@ -26,15 +26,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Diagnostics\Api;
+namespace Reticen8\Diagnostics\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Config;
-use OPNsense\Core\Backend;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Config;
+use Reticen8\Core\Backend;
 
 /**
  * Class SystemController
- * @package OPNsense\Diagnostics\Api
+ * @package Reticen8\Diagnostics\Api
  */
 class SystemController extends ApiControllerBase
 {

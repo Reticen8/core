@@ -28,15 +28,15 @@
  *
  */
 
-namespace OPNsense\Diagnostics\Api;
+namespace Reticen8\Diagnostics\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Backend;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Backend;
 
 class DnsDiagnosticsController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'dns';
-    protected static $internalModelClass = 'OPNsense\Diagnostics\DnsDiagnostics';
+    protected static $internalModelClass = 'Reticen8\Diagnostics\DnsDiagnostics';
 
     public function setAction()
     {

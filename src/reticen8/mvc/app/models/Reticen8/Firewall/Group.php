@@ -28,14 +28,14 @@
  *
  */
 
-namespace OPNsense\Firewall;
+namespace Reticen8\Firewall;
 
-use OPNsense\Base\BaseModel;
-use OPNsense\Core\Config;
+use Reticen8\Base\BaseModel;
+use Reticen8\Core\Config;
 
 /**
  * Class Group
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class Group extends BaseModel
 {
@@ -49,8 +49,8 @@ class Group extends BaseModel
             ['nat', 'npt'],
         ];
         // os-firewall plugin paths
-        $sources[] = ['OPNsense', 'Firewall', 'Filter', 'rules', 'rule'];
-        $sources[] = ['OPNsense', 'Firewall', 'Filter', 'snatrules', 'rule'];
+        $sources[] = ['Reticen8', 'Firewall', 'Filter', 'rules', 'rule'];
+        $sources[] = ['Reticen8', 'Firewall', 'Filter', 'snatrules', 'rule'];
 
         foreach ($sources as $aliasref) {
             $cfgsection = Config::getInstance()->object();

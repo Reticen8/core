@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2016-2021 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2016-2021 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2004-2007 Scott Ullrich <sullrich@gmail.com>
  * Copyright (C) 2003-2004 Manuel Kasper <mk@neon1.net>
  * All rights reserved.
@@ -124,10 +124,10 @@ function webgui_configure_do($verbose = false, $interface = '')
     webgui_generate_config($portarg, $crt, $key, $ca, $listeners);
 
     /* regenerate the php.ini files in case the setup has changed */
-    configd_run('template reload OPNsense/WebGui');
+    configd_run('template reload Reticen8/WebGui');
 
     /* flush Phalcon volt templates */
-    foreach (glob('/usr/local/opnsense/mvc/app/cache/*.php') as $filename) {
+    foreach (glob('/usr/local/reticen8/mvc/app/cache/*.php') as $filename) {
         unlink($filename);
     }
 
@@ -166,7 +166,7 @@ function webgui_create_selfsigned($verbose = false)
 
     mwexecf(
         '/usr/local/bin/openssl req -new -extensions server_cert ' .
-        '-config /usr/local/etc/ssl/opnsense.cnf ' .
+        '-config /usr/local/etc/ssl/reticen8.cnf ' .
         '-newkey rsa:4096 -sha256 -days 397 -nodes -x509 ' .
         '-subj "/CN="%s"/C=NL/ST=Zuid-Holland/L=Middelharnis/O="%s" self-signed web certificate" ' .
         '-addext "subjectAltName = DNS:"%s -keyout /tmp/ssl.key -out /tmp/ssl.crt',
@@ -202,8 +202,8 @@ function webgui_generate_config($port, $cert, $key, $ca, $listeners)
 
     $http_rewrite_rules = <<<EOD
 # Phalcon ui and api routing
-alias.url += ( "/ui/" => "/usr/local/opnsense/www/" )
-alias.url += ( "/api/"  => "/usr/local/opnsense/www/" )
+alias.url += ( "/ui/" => "/usr/local/reticen8/www/" )
+alias.url += ( "/api/"  => "/usr/local/reticen8/www/" )
 url.rewrite-if-not-file = ( "^/ui/([^\?]+)(\?(.*))?" => "/ui/index.php?$3" ,
                             "^/api/([^\?]+)(\?(.*))?" => "/api/api.php?$3"
 )
@@ -274,7 +274,7 @@ server.max-keep-alive-idle = 30
 ## a static document-root, for virtual-hosting take look at the
 ## server.virtual-* options
 server.document-root        = "/usr/local/www/"
-server.tag = "OPNsense"
+server.tag = "Reticen8"
 
 {$http_rewrite_rules}
 

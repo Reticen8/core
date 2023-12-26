@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2016-2023 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2016-2023 Franco Fichtner <franco@reticen8.org>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -24,7 +24,7 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-BASEDIR="/usr/local/opnsense/scripts/firmware"
+BASEDIR="/usr/local/reticen8/scripts/firmware"
 LOCKFILE="/tmp/pkg_upgrade.progress"
 FLOCK="/usr/local/bin/flock -n -o"
 COMMANDS="
@@ -98,7 +98,7 @@ if [ -n "${DO_RANDOM}" ]; then
 fi
 
 # business mirror compliance requires disabling the use of TLS below 1.3
-if [ -n "$(opnsense-update -x)" ]; then
+if [ -n "$(reticen8-update -x)" ]; then
 	export SSL_NO_TLS1="yes"
 	export SSL_NO_TLS1_1="yes"
 	export SSL_NO_TLS1_2="yes"

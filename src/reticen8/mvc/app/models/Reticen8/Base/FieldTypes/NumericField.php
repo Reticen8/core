@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Base\Validators\MinMaxValidator;
-use OPNsense\Phalcon\Filter\Validation\Validator\Numericality;
+use Reticen8\Base\Validators\MinMaxValidator;
+use Reticen8\Phalcon\Filter\Validation\Validator\Numericality;
 
 /**
  * Class NumericField
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class NumericField extends BaseField
 {

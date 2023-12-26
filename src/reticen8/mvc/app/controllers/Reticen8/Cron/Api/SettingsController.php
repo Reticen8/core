@@ -28,20 +28,20 @@
  *
  */
 
-namespace OPNsense\Cron\Api;
+namespace Reticen8\Cron\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Config;
-use OPNsense\Cron\Cron;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Config;
+use Reticen8\Cron\Cron;
 
 /**
  * Class SettingsController Handles settings related API actions for the Cron
- * @package OPNsense\Cron
+ * @package Reticen8\Cron
  */
 class SettingsController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'job';
-    protected static $internalModelClass = '\OPNsense\Cron\Cron';
+    protected static $internalModelClass = '\Reticen8\Cron\Cron';
 
     /**
      * retrieve job settings or return defaults
@@ -102,7 +102,7 @@ class SettingsController extends ApiMutableModelControllerBase
     /**
      * add new job and set with attributes from post
      * @return array save result + validation output
-     * @throws \OPNsense\Base\ModelException when not bound to model
+     * @throws \Reticen8\Base\ModelException when not bound to model
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      * @throws \ReflectionException
      */
@@ -118,7 +118,7 @@ class SettingsController extends ApiMutableModelControllerBase
      * @return array status
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      * @throws \ReflectionException when not bound to model
-     * @throws \OPNsense\Base\ModelException when not bound to model
+     * @throws \Reticen8\Base\ModelException when not bound to model
      */
     public function delJobAction($uuid)
     {

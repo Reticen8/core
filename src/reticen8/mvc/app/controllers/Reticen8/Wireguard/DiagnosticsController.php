@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Wireguard;
+namespace Reticen8\Wireguard;
 
-class DiagnosticsController extends \OPNsense\Base\IndexController
+class DiagnosticsController extends \Reticen8\Base\IndexController
 {
     protected function templateJSIncludes()
     {
@@ -39,6 +39,6 @@ class DiagnosticsController extends \OPNsense\Base\IndexController
 
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Wireguard/diagnostics');
+        $this->view->pick('Reticen8/Wireguard/diagnostics');
     }
 }

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2015-2021 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2015-2021 Franco Fichtner <franco@reticen8.org>
 # Copyright (C) 2014 Deciso B.V.
 # All rights reserved.
 #
@@ -31,11 +31,11 @@ PACKAGE=${1}
 : > ${LOCKFILE}
 
 echo "***GOT REQUEST TO INSTALL***" >> ${LOCKFILE}
-echo "Currently running $(opnsense-version) at $(date)" >> ${LOCKFILE}
+echo "Currently running $(reticen8-version) at $(date)" >> ${LOCKFILE}
 
 if [ "${PACKAGE#os-}" != "${PACKAGE}" ]; then
-	COREPKG=$(opnsense-version -n)
-	COREVER=$(opnsense-version -v)
+	COREPKG=$(reticen8-version -n)
+	COREVER=$(reticen8-version -v)
 	REPOVER=$(pkg rquery %v ${COREPKG})
 
 	# plugins must pass a version check on up-to-date core package
@@ -47,7 +47,7 @@ if [ "${PACKAGE#os-}" != "${PACKAGE}" ]; then
 fi
 
 pkg install -y ${PACKAGE} >> ${LOCKFILE} 2>&1
-/usr/local/opnsense/scripts/firmware/register.php install ${PACKAGE} >> ${LOCKFILE} 2>&1
+/usr/local/reticen8/scripts/firmware/register.php install ${PACKAGE} >> ${LOCKFILE} 2>&1
 pkg autoremove -y >> ${LOCKFILE} 2>&1
 
 echo '***DONE***' >> ${LOCKFILE}

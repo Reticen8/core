@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound;
+namespace Reticen8\Unbound;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 class DotController extends IndexController
 {
@@ -37,6 +37,6 @@ class DotController extends IndexController
         $this->view->selected_forward = "";
         $this->view->forwardingForm = $this->getForm('forwarding');
         $this->view->formDialogEdit = $this->getForm('dialogDot');
-        $this->view->pick('OPNsense/Unbound/dot');
+        $this->view->pick('Reticen8/Unbound/dot');
     }
 }

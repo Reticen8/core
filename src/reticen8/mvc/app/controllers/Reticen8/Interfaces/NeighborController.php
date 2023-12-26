@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces;
+namespace Reticen8\Interfaces;
 
-class NeighborController extends \OPNsense\Base\IndexController
+class NeighborController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Interface/neighbor');
+        $this->view->pick('Reticen8/Interface/neighbor');
         $this->view->formDialogEdit = $this->getForm("dialogNeighbor");
     }
 }

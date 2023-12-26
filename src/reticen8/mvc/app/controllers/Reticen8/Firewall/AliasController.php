@@ -26,12 +26,12 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Firewall;
+namespace Reticen8\Firewall;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class AliasController extends IndexController
 {
@@ -40,6 +40,6 @@ class AliasController extends IndexController
         // include dialog form definitions
         $this->view->selected_alias = $selected;
         $this->view->formGeoIPSettings = $this->getForm("geoIPSettings");
-        $this->view->pick('OPNsense/Firewall/alias');
+        $this->view->pick('Reticen8/Firewall/alias');
     }
 }

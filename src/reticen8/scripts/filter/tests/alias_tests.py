@@ -60,9 +60,9 @@ class TestAliasMethods(unittest.TestCase):
 
     def test_host_name(self):
         tmp = BaseContentParser(**self.properties)
-        payload = list(tmp.iter_addresses('pkg.opnsense.org'))
+        payload = list(tmp.iter_addresses('pkg.reticen8.org'))
         self.assertEqual(payload, [], 'unexpected result')
-        self.assertGreater(len(tmp.resolve_dns()), 1, 'pkg.opnsense.org should return at least 2 addresses')
+        self.assertGreater(len(tmp.resolve_dns()), 1, 'pkg.reticen8.org should return at least 2 addresses')
 
     def test_wildcard(self):
         payload = list(BaseContentParser(**self.properties).iter_addresses('192.168.0.0/0.0.255.0'))

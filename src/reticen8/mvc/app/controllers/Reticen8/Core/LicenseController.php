@@ -28,19 +28,19 @@
  *
  */
 
-namespace OPNsense\Core;
+namespace Reticen8\Core;
 
 /**
  * Class LicenseController
- * @package OPNsense\Core
+ * @package Reticen8\Core
  */
-class LicenseController extends \OPNsense\Base\IndexController
+class LicenseController extends \Reticen8\Base\IndexController
 {
     /**
      * return to / for non existent actions
      */
     public function indexAction()
     {
-        $this->view->pick('OPNsense/Core/license');
+        $this->view->pick('Reticen8/Core/license');
     }
 }

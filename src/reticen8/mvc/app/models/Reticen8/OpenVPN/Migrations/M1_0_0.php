@@ -26,12 +26,12 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN\Migrations;
+namespace Reticen8\OpenVPN\Migrations;
 
-use OPNsense\Core\Config;
-use OPNsense\Base\BaseModelMigration;
-use OPNsense\OpenVPN\OpenVPN;
-use OPNsense\Firewall\Util;
+use Reticen8\Core\Config;
+use Reticen8\Base\BaseModelMigration;
+use Reticen8\OpenVPN\OpenVPN;
+use Reticen8\Firewall\Util;
 
 class M1_0_0 extends BaseModelMigration
 {

@@ -28,20 +28,20 @@
  *
  */
 
-namespace OPNsense\Firewall\Api;
+namespace Reticen8\Firewall\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Base\UserException;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Base\UserException;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
 
 /**
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class GroupController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'group';
-    protected static $internalModelClass = 'OPNsense\Firewall\Group';
+    protected static $internalModelClass = 'Reticen8\Firewall\Group';
 
     /**
      * search groups
@@ -83,7 +83,7 @@ class GroupController extends ApiMutableModelControllerBase
     /**
      * Add new group and set with attributes from post
      * @return array save result + validation output
-     * @throws \OPNsense\Base\ModelException when not bound to model
+     * @throws \Reticen8\Base\ModelException when not bound to model
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      * @throws \ReflectionException when not bound to model
      */
@@ -109,7 +109,7 @@ class GroupController extends ApiMutableModelControllerBase
      * @return array save status
      * @throws \Phalcon\Filter\Validation\Exception when field validations fail
      * @throws \ReflectionException when not bound to model
-     * @throws \OPNsense\Base\UserException when unable to delete
+     * @throws \Reticen8\Base\UserException when unable to delete
      */
     public function delItemAction($uuid)
     {
@@ -123,7 +123,7 @@ class GroupController extends ApiMutableModelControllerBase
                 $message .= htmlspecialchars(sprintf("\n[%s] %s", $key, $value), ENT_NOQUOTES | ENT_HTML401);
             }
             $message = sprintf(gettext("Cannot delete group. Currently in use by %s"), $message);
-            throw new \OPNsense\Base\UserException($message, gettext("Group in use"));
+            throw new \Reticen8\Base\UserException($message, gettext("Group in use"));
         }
         return $this->delBase("ifgroupentry", $uuid);
     }

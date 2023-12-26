@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\Auth;
+namespace Reticen8\Auth;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 /**
  * Class Voucher user database connector
- * @package OPNsense\Auth
+ * @package Reticen8\Auth
  */
 class Voucher extends Base implements IAuthConnector
 {

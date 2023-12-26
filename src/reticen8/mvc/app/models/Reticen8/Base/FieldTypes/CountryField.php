@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Phalcon\Filter\Validation\Validator\InclusionIn;
-use OPNsense\Base\Validators\CsvListValidator;
+use Reticen8\Phalcon\Filter\Validation\Validator\InclusionIn;
+use Reticen8\Base\Validators\CsvListValidator;
 
 /**
  * Class CountryField field type to select iso3166 countries
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class CountryField extends BaseListField
 {
@@ -65,7 +65,7 @@ class CountryField extends BaseListField
             self::$internalCacheOptionList[$setid] = [];
         }
         if (empty(self::$internalCacheOptionList[$setid])) {
-            $filename = '/usr/local/opnsense/contrib/tzdata/iso3166.tab';
+            $filename = '/usr/local/reticen8/contrib/tzdata/iso3166.tab';
             $data = file_get_contents($filename);
             foreach (explode("\n", $data) as $line) {
                 $line = trim($line);

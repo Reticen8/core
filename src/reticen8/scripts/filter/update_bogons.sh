@@ -1,6 +1,6 @@
 #!/bin/sh
 
-URL="$(opnsense-update -X)/sets/bogons.txz"
+URL="$(reticen8-update -X)/sets/bogons.txz"
 DESTDIR="/usr/local/etc"
 WORKDIR="/tmp/bogons"
 FETCH="fetch -qT 30"
@@ -27,7 +27,7 @@ while [ ${RETRIES} -gt 0 ]; do
 
     if [ ! -f ${WORKDIR}/bogons.txz ]; then
         echo "bogons update cannot download ${URL}" | logger
-    elif ! opnsense-verify -q ${WORKDIR}/bogons.txz; then
+    elif ! reticen8-verify -q ${WORKDIR}/bogons.txz; then
         echo "bogons update cannot verify ${URL}" | logger
     elif ! tar -C ${WORKDIR} -xJf ${WORKDIR}/bogons.txz; then
         echo "bogons update cannot extract ${URL}" | logger

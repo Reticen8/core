@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2020-2021 Franco Fichtner <franco@opnsense.org>
+# Copyright (C) 2020-2021 Franco Fichtner <franco@reticen8.org>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -32,8 +32,8 @@ for PACKAGE in $(/usr/local/sbin/pluginctl -g system.firmware.plugins | \
     /usr/bin/sed 's/,/ /g'); do
 	if ! pkg query %n ${PACKAGE} > /dev/null; then
 		if [ -n "${MUSTCHECK}" ] ; then
-			COREPKG=$(opnsense-version -n)
-			COREVER=$(opnsense-version -v)
+			COREPKG=$(reticen8-version -n)
+			COREVER=$(reticen8-version -v)
 			REPOVER=$(pkg rquery %v ${COREPKG})
 
 			# plugins must pass a version check on up-to-date core package
@@ -46,7 +46,7 @@ for PACKAGE in $(/usr/local/sbin/pluginctl -g system.firmware.plugins | \
 		fi
 
 		(pkg install -y ${PACKAGE} 2>&1) | ${TEE} ${LOCKFILE}
-		(/usr/local/opnsense/scripts/firmware/register.php install ${PACKAGE} 2>&1) | ${TEE} ${LOCKFILE}
+		(/usr/local/reticen8/scripts/firmware/register.php install ${PACKAGE} 2>&1) | ${TEE} ${LOCKFILE}
 	fi
 done
 

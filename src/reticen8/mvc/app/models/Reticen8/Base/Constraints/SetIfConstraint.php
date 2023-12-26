@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\Constraints;
+namespace Reticen8\Base\Constraints;
 
 /**
  * validate if a field is set depending on the setting of another field
  * containing a specific value
  * Class SetIfConstraint
- * @package OPNsense\Base\Constraints
+ * @package Reticen8\Base\Constraints
  */
 class SetIfConstraint extends BaseConstraint
 {

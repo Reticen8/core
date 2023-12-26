@@ -27,14 +27,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec;
+namespace Reticen8\IPsec;
 
 use Phalcon\Messages\Message;
-use OPNsense\Base\BaseModel;
+use Reticen8\Base\BaseModel;
 
 /**
  * Class IPsec
- * @package OPNsense\IPsec
+ * @package Reticen8\IPsec
  */
 class IPsec extends BaseModel
 {
@@ -74,7 +74,7 @@ class IPsec extends BaseModel
     /**
      * Validates a keyPair instance within a model.
      * @param $nodeKey string Fully-qualified key of the keyPair instance within a model
-     * @param $keyPair \OPNsense\Base\FieldTypes\BaseField Field instance of a keyPair
+     * @param $keyPair \Reticen8\Base\FieldTypes\BaseField Field instance of a keyPair
      * @param $messages \Phalcon\Messages\Messages Validation message group
      * @return array key size and fingerprint
      */

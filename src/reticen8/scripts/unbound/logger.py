@@ -37,7 +37,7 @@ import pandas
 import signal
 import socket
 import duckdb
-sys.path.insert(0, "/usr/local/opnsense/site-python")
+sys.path.insert(0, "/usr/local/reticen8/site-python")
 from duckdb_helper import DbConnection, StorageVersionException, restore_database
 
 class DNSReader:

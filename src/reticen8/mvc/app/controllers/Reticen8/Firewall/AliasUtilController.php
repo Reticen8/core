@@ -28,17 +28,17 @@
  *
  */
 
-namespace OPNsense\Firewall;
+namespace Reticen8\Firewall;
 
-use OPNsense\Base\IndexController;
+use Reticen8\Base\IndexController;
 
 /**
- * @package OPNsense\Firewall
+ * @package Reticen8\Firewall
  */
 class AliasUtilController extends IndexController
 {
     public function indexAction($selected = null)
     {
-        $this->view->pick('OPNsense/Firewall/alias_util');
+        $this->view->pick('Reticen8/Firewall/alias_util');
     }
 }

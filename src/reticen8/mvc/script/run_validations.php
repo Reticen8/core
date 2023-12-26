@@ -29,10 +29,10 @@
 
 require_once('script/load_phalcon.php');
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 $classprefix = !empty($argv[1]) ? str_replace('/', '\\', $argv[1]) : '';
-$class_info = new \ReflectionClass("OPNsense\\Base\\BaseModel");
+$class_info = new \ReflectionClass("Reticen8\\Base\\BaseModel");
 $model_dir = dirname($class_info->getFileName()) . "/../../";
 
 foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($model_dir)) as $x) {
@@ -46,7 +46,7 @@ foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($model_dir
         try {
             $mdl_class_info = new \ReflectionClass($classname);
             $parent = $mdl_class_info->getParentClass();
-            if ($parent && $parent->name == 'OPNsense\Base\BaseModel') {
+            if ($parent && $parent->name == 'Reticen8\Base\BaseModel') {
                 $name = $mdl_class_info->getName();
                 $mdl = $mdl_class_info->newInstance();
                 if (!$mdl->isVolatile()) {

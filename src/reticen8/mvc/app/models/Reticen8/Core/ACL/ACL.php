@@ -28,11 +28,11 @@
  *
  */
 
-namespace OPNsense\Core\ACL;
+namespace Reticen8\Core\ACL;
 
 /**
  * Class ACL, access control list wrapper
- * @package OPNsense\Core
+ * @package Reticen8\Core
  */
 class ACL
 {

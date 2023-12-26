@@ -26,13 +26,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 /**
  * Class VirtualIPField field type to select virtual ip's (such as carp)
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class VirtualIPField extends BaseListField
 {

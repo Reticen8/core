@@ -28,9 +28,9 @@
  *
  */
 
-namespace OPNsense\TrafficShaper\Migrations;
+namespace Reticen8\TrafficShaper\Migrations;
 
-use OPNsense\Base\BaseModelMigration;
+use Reticen8\Base\BaseModelMigration;
 
 class M1_0_0 extends BaseModelMigration
 {

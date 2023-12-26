@@ -26,19 +26,19 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN\Api;
+namespace Reticen8\OpenVPN\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Backend;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Backend;
 
 /**
  * Class InstancesController
- * @package OPNsense\OpenVPN\Api
+ * @package Reticen8\OpenVPN\Api
  */
 class InstancesController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'instance';
-    protected static $internalModelClass = 'OPNsense\OpenVPN\OpenVPN';
+    protected static $internalModelClass = 'Reticen8\OpenVPN\OpenVPN';
 
     public function searchAction()
     {

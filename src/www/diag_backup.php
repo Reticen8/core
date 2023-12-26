@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (C) 2015-2023 Franco Fichtner <franco@opnsense.org>
+ * Copyright (C) 2015-2023 Franco Fichtner <franco@reticen8.org>
  * Copyright (C) 2014 Deciso B.V.
  * Copyright (C) 2004-2009 Scott Ullrich <sullrich@gmail.com>
  * Copyright (C) 2008 Shrew Soft Inc. <mgrooms@shrew.net>
@@ -37,7 +37,7 @@ require_once("filter.inc");
 require_once("rrd.inc");
 require_once("system.inc");
 
-use OPNsense\Backup\Local;
+use Reticen8\Backup\Local;
 
 /**
  * restore config section
@@ -170,7 +170,7 @@ foreach (plugins_xmlrpc_sync() as $area) {
 
 natcasesort($areas);
 
-$backupFactory = new OPNsense\Backup\BackupFactory();
+$backupFactory = new Reticen8\Backup\BackupFactory();
 $do_reboot = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -221,7 +221,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             /* backup RRD data */
             if (empty($_POST['donotbackuprrd'])) {
                 $rrd_data_xml = rrd_export();
-                $closing_tag = "</opnsense>";
+                $closing_tag = "</reticen8>";
                 $data = str_replace($closing_tag, $rrd_data_xml . $closing_tag, $data);
             }
 
@@ -313,7 +313,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 }
                 $filename = $_FILES['conffile']['tmp_name'];
                 file_put_contents($filename, $data);
-                $cnf = OPNsense\Core\Config::getInstance();
+                $cnf = Reticen8\Core\Config::getInstance();
                 if ($cnf->restoreBackup($filename)) {
                     if (!empty($pconfig['rebootafterrestore'])) {
                         $do_reboot = true;
@@ -511,7 +511,7 @@ $( document ).ready(function() {
                                 <td><input name="save" type="submit" class="btn btn-primary" value="<?= html_safe(gettext('Save')) ?>"/></td>
                                 <td>
                                     <?= gettext('Be aware of how much space is consumed by backups before adjusting this value.'); ?>
-<?php if (count(OPNsense\Core\Config::getInstance()->getBackups(true)) > 0): ?>
+<?php if (count(Reticen8\Core\Config::getInstance()->getBackups(true)) > 0): ?>
                                     <?= gettext('Current space used:') . ' ' . exec("/usr/bin/du -sh /conf/backup | /usr/bin/awk '{print $1;}'") ?>
 <?php endif ?>
                                 </td>
@@ -606,7 +606,7 @@ $( document ).ready(function() {
 <?php
           foreach ($backupFactory->listProviders() as $providerId => $provider):?>
           <div class="content-box tab-content table-responsive __mb">
-            <table class="table table-striped opnsense_standard_table_form">
+            <table class="table table-striped reticen8_standard_table_form">
                     <tr>
                         <td colspan="2"><strong><?= $provider['handle']->getName() ?></strong></td>
                     </tr>

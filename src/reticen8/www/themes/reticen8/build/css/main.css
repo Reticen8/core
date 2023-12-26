@@ -22,15 +22,15 @@
 
 @font-face {
   font-family: "SourceSansProBold";
-  src: url("/ui/themes/opnsense/build/fonts/SourceSansPro-Bold/SourceSansPro-Bold.woff") format("woff"), url("/ui/themes/opnsense/build/fonts/SourceSansPro-Bold/SourceSansPro-Bold.ttf") format("truetype");
+  src: url("/ui/themes/reticen8/build/fonts/SourceSansPro-Bold/SourceSansPro-Bold.woff") format("woff"), url("/ui/themes/reticen8/build/fonts/SourceSansPro-Bold/SourceSansPro-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "SourceSansProSemibold";
-  src: url("/ui/themes/opnsense/build/fonts/SourceSansPro-Semibold/SourceSansPro-Semibold.woff") format("woff"), url("/ui/themes/opnsense/build/fonts/SourceSansPro-Semibold/SourceSansPro-Semibold.ttf") format("truetype");
+  src: url("/ui/themes/reticen8/build/fonts/SourceSansPro-Semibold/SourceSansPro-Semibold.woff") format("woff"), url("/ui/themes/reticen8/build/fonts/SourceSansPro-Semibold/SourceSansPro-Semibold.ttf") format("truetype");
 }
 @font-face {
   font-family: "SourceSansProRegular";
-  src: url("/ui/themes/opnsense/build/fonts/SourceSansPro-Regular/SourceSansPro-Regular.woff") format("woff"), url("/ui/themes/opnsense/build/fonts/SourceSansPro-Regular/SourceSansPro-Regular.ttf") format("truetype");
+  src: url("/ui/themes/reticen8/build/fonts/SourceSansPro-Regular/SourceSansPro-Regular.woff") format("woff"), url("/ui/themes/reticen8/build/fonts/SourceSansPro-Regular/SourceSansPro-Regular.ttf") format("truetype");
 }
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
@@ -7447,7 +7447,7 @@ table {
   padding: 10px 20px;
 }
 
-.label-opnsense {
+.label-reticen8 {
   /* emulates btn */
   border: 1px solid transparent;
   display: inline-block;
@@ -7457,12 +7457,12 @@ table {
   border-radius: 3px;
 }
 
-.label-opnsense-sm {
+.label-reticen8-sm {
   /* emulates btn-sm */
   padding: 5px 10px;
 }
 
-.label-opnsense-xs,
+.label-reticen8-xs,
 .btn-xs,
 .btn-group-xs > .btn {
   /* emulates btn-xs */
@@ -7508,7 +7508,7 @@ select {
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: right;
-  background-image: url(/ui/themes/opnsense/build/images/caret.png) !important;
+  background-image: url(/ui/themes/reticen8/build/images/caret.png) !important;
 }
 
 #grid-log th[data-column-id=__timestamp__],
@@ -7580,6 +7580,6 @@ div[data-for*=help_for] {
   padding: 15px;
 }
 
-#OPNsenseStdWaitDialog  div.modal-body {
+#Reticen8StdWaitDialog  div.modal-body {
   padding: 15px;
 }

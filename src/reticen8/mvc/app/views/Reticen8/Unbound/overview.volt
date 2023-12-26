@@ -24,7 +24,7 @@
  # POSSIBILITY OF SUCH DAMAGE.
  #}
 
-{% set theme_name = ui_theme|default('opnsense') %}
+{% set theme_name = ui_theme|default('reticen8') %}
 <script src="{{ cache_safe('/ui/js/chart.min.js') }}"></script>
 <script src="{{ cache_safe('/ui/js/chartjs-plugin-streaming.min.js') }}"></script>
 <script src="{{ cache_safe('/ui/js/chartjs-plugin-colorschemes.js') }}"></script>

@@ -28,17 +28,17 @@
  *
  */
 
-namespace OPNsense\CaptivePortal;
+namespace Reticen8\CaptivePortal;
 
 /**
  * Class VoucherController
- * @package OPNsense\CaptivePortal
+ * @package Reticen8\CaptivePortal
  */
-class VoucherController extends \OPNsense\Base\IndexController
+class VoucherController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
         // choose template
-        $this->view->pick('OPNsense/CaptivePortal/vouchers');
+        $this->view->pick('Reticen8/CaptivePortal/vouchers');
     }
 }

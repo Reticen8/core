@@ -852,7 +852,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         if ($pconfig['gateway'] != "none" || $pconfig['gatewayv6'] != "none") {
             $match = false;
-            foreach ((new \OPNsense\Routing\Gateways())->gatewayIterator() as $gateway) {
+            foreach ((new \Reticen8\Routing\Gateways())->gatewayIterator() as $gateway) {
                 if (in_array($pconfig['gateway'], $gateway) || in_array($pconfig['gatewayv6'], $gateway)) {
                     $match = true;
                 }
@@ -1584,9 +1584,9 @@ include("head.inc");
 
       // handle dhcp Protocol Timing preselects
       $("#customdhcp :input").change(function() {
-          var custom_map = {'DHCP' : {}, 'OPNsense' : {}, 'SavedCfg' : {} , 'Clear': {} };
+          var custom_map = {'DHCP' : {}, 'Reticen8' : {}, 'SavedCfg' : {} , 'Clear': {} };
           custom_map['DHCP'] = ["60", "300", "0", "10", "120", "10"];
-          custom_map['OPNsense'] = ["60", "15", "0", "", "", "1"];
+          custom_map['Reticen8'] = ["60", "15", "0", "", "", "1"];
           custom_map['SavedCfg'] = ["<?=$pconfig['adv_dhcp_pt_timeout'];?>", "<?=$pconfig['adv_dhcp_pt_retry'];?>", "<?=$pconfig['adv_dhcp_pt_select_timeout'];?>", "<?=$pconfig['adv_dhcp_pt_reboot'];?>", "<?=$pconfig['adv_dhcp_pt_backoff_cutoff'];?>", "<?=$pconfig['adv_dhcp_pt_initial_interval'];?>"];
           custom_map['Clear'] = ["", "", "", "", "", ""];
           $("#adv_dhcp_pt_timeout").val(custom_map[$(this).val()][0]);
@@ -1735,7 +1735,7 @@ include("head.inc");
           <form method="post" name="iform" id="iform">
               <div class="tab-content content-box col-xs-12 __mb">
                 <div class="table-responsive">
-                  <table class="table table-striped opnsense_standard_table_form">
+                  <table class="table table-striped reticen8_standard_table_form">
                     <thead>
                       <tr>
                         <td style="width:22%"><strong><?=gettext("Basic configuration"); ?></strong></td>
@@ -1796,7 +1796,7 @@ include("head.inc");
                 <div class="tab-content content-box col-xs-12 __mb">
                   <div class="table-responsive">
                     <!-- Section : All -->
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("Generic configuration"); ?></th>
@@ -1954,7 +1954,7 @@ include("head.inc");
                 <!-- Hardware settings -->
                 <div class="tab-content content-box col-xs-12 __mb">
                   <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("Hardware settings"); ?></th>
@@ -2027,7 +2027,7 @@ include("head.inc");
                 <!-- static IPv4 -->
                 <div class="tab-content content-box col-xs-12 __mb" id="staticv4" style="display:none">
                   <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("Static IPv4 configuration"); ?></th>
@@ -2062,7 +2062,7 @@ include("head.inc");
                             <select name="gateway" class="selectpicker" data-style="btn-default" data-size="10" id="gateway">
                               <option value="none"><?= gettext('Auto-detect') ?></option>
 <?php
-                              foreach ((new \OPNsense\Routing\Gateways())->gatewayIterator() as $gateway):
+                              foreach ((new \Reticen8\Routing\Gateways())->gatewayIterator() as $gateway):
                                 if ($gateway['interface'] == $if && is_ipaddrv4($gateway['gateway'])):
 ?>
                                 <option value="<?=$gateway['name'];?>" <?= $gateway['name'] == $pconfig['gateway'] ? "selected=\"selected\"" : ""; ?>>
@@ -2086,7 +2086,7 @@ include("head.inc");
                 <!-- Section : dhcp v4 -->
                 <div class="tab-content content-box col-xs-12 __mb" id="dhcp" style="display:none">
                   <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("DHCP client configuration");?></th>
@@ -2210,7 +2210,7 @@ include("head.inc");
                                 <input name="adv_dhcp_pt_values" type="radio" value="Clear"/><?=gettext("Clear");?>
                               </label>
                               <label class="btn btn-default">
-                                <input name="adv_dhcp_pt_values" type="radio" value="OPNsense"/><?=gettext("OPNsense Default");?>
+                                <input name="adv_dhcp_pt_values" type="radio" value="Reticen8"/><?=gettext("Reticen8 Default");?>
                               </label>
                               <label class="btn btn-default">
                                 <input name="adv_dhcp_pt_values" type="radio" value="SavedCfg" checked="checked"/><?=gettext("Saved Cfg");?>
@@ -2275,7 +2275,7 @@ include("head.inc");
                 <!-- Section : PPP -->
                 <div class="tab-content content-box col-xs-12 __mb" id="ppp" style="display:none">
                   <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("PPP configuration"); ?></th>
@@ -2377,7 +2377,7 @@ include("head.inc");
                 <!-- Section : PPPOE -->
                 <div class="tab-content content-box col-xs-12 __mb" id="pppoe" style="display:none">
                   <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("PPPoE configuration"); ?></th>
@@ -2458,7 +2458,7 @@ include("head.inc");
                 <!-- Section : PPTP / L2TP -->
                 <div class="tab-content content-box col-xs-12 __mb" id="pptp" style="display:none">
                   <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("PPTP/L2TP configuration"); ?></th>
@@ -2543,7 +2543,7 @@ include("head.inc");
                 <!-- Section : static IPv6 -->
                 <div class="tab-content content-box col-xs-12 __mb" id="staticv6" style="display:none">
                   <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("Static IPv6 configuration"); ?></th>
@@ -2577,7 +2577,7 @@ include("head.inc");
                             <select name="gatewayv6" class="selectpicker" data-size="10" data-style="btn-default" id="gatewayv6">
                               <option value="none"><?= gettext('Auto-detect') ?></option>
 <?php
-                              foreach ((new \OPNsense\Routing\Gateways())->gatewayIterator() as $gateway):
+                              foreach ((new \Reticen8\Routing\Gateways())->gatewayIterator() as $gateway):
                                 if ($gateway['interface'] == $if && is_ipaddrv6($gateway['gateway'])):
 ?>
                                 <option value="<?=$gateway['name'];?>" <?= $gateway['name'] == $pconfig['gatewayv6'] ? "selected=\"selected\"" : ""; ?>>
@@ -2610,7 +2610,7 @@ include("head.inc");
                 <!-- Section : dhcp v6 -->
                 <div class="tab-content content-box col-xs-12 __mb" id="dhcp6" style="display:none">
                   <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("DHCPv6 client configuration");?></th>
@@ -2842,7 +2842,7 @@ include("head.inc");
                 <!-- Section : SLAAC -->
                 <div class="tab-content content-box col-xs-12 __mb" id="slaac" style="display:none">
                   <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("SLAAC configuration"); ?></th>
@@ -2865,7 +2865,7 @@ include("head.inc");
                 <!-- Section : 6RD-->
                 <div class="tab-content content-box col-xs-12 __mb" id="6rd" style="display:none">
                   <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("6RD Rapid Deployment"); ?></th>
@@ -2923,7 +2923,7 @@ include("head.inc");
                 <!-- Section : Track 6 -->
                 <div class="tab-content content-box col-xs-12 __mb" id="track6" style="display:none">
                   <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("Track IPv6 Interface"); ?></th>
@@ -2993,7 +2993,7 @@ include("head.inc");
                 <!-- Section : Wireless -->
                 <div class="tab-content content-box col-xs-12 __mb">
                   <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("Common wireless configuration - Settings apply to all wireless networks on"); ?> <?=$wlanbaseif;?> </th>
@@ -3192,7 +3192,7 @@ include("head.inc");
 
                 <div class="tab-content content-box col-xs-12 __mb">
                   <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <thead>
                         <tr>
                           <th colspan="2"><?=gettext("Network-specific wireless configuration");?></th>
@@ -3575,7 +3575,7 @@ include("head.inc");
               </div>
               <div class="tab-content content-box col-xs-12 __mb">
                 <div class="table-responsive">
-                    <table class="table table-striped opnsense_standard_table_form">
+                    <table class="table table-striped reticen8_standard_table_form">
                       <tr>
                         <td style="width:22%"></td>
                         <td style="width:78%">

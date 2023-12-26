@@ -26,17 +26,17 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces\Api;
+namespace Reticen8\Interfaces\Api;
 
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
-use OPNsense\Base\UserException;
-use OPNsense\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
+use Reticen8\Base\UserException;
+use Reticen8\Base\ApiMutableModelControllerBase;
 
 class VlanSettingsController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'vlan';
-    protected static $internalModelClass = 'OPNsense\Interfaces\Vlan';
+    protected static $internalModelClass = 'Reticen8\Interfaces\Vlan';
 
     private function generateVlanIfName($current = null)
     {

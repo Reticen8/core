@@ -28,17 +28,17 @@
  *
  */
 
-namespace OPNsense\Diagnostics\Api;
+namespace Reticen8\Diagnostics\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Diagnostics\Netflow;
-use OPNsense\Core\Config;
-use OPNsense\Core\Backend;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Diagnostics\Netflow;
+use Reticen8\Core\Config;
+use Reticen8\Core\Backend;
 use Phalcon\Filter\FilterFactory;
 
 /**
  * Class NetworkinsightController
- * @package OPNsense\Netflow
+ * @package Reticen8\Netflow
  */
 class NetworkinsightController extends ApiControllerBase
 {

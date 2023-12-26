@@ -28,18 +28,18 @@
  *
  */
 
-namespace OPNsense\IDS;
+namespace Reticen8\IDS;
 
 /**
  * Class PolicyController
- * @package OPNsense\IDS
+ * @package Reticen8\IDS
  */
-class PolicyController extends \OPNsense\Base\IndexController
+class PolicyController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
         $this->view->formDialogPolicy = $this->getForm("dialogPolicy");
         $this->view->formDialogPolicyRule = $this->getForm("dialogPolicyRule");
-        $this->view->pick('OPNsense/IDS/policy');
+        $this->view->pick('Reticen8/IDS/policy');
     }
 }

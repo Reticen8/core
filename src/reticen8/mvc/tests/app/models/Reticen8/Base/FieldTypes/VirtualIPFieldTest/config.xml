@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<opnsense>
+<reticen8>
     <interfaces>
         <wan>
             <if>if001</if>
@@ -40,7 +40,7 @@
             <vhid>9</vhid>
             <advskew>0</advskew>
             <advbase>1</advbase>
-            <password>opnsense</password>
+            <password>reticen8</password>
         </vip>
         <vip>
             <type>single</type>
@@ -52,7 +52,7 @@
             <vhid>9</vhid>
             <advskew>0</advskew>
             <advbase>1</advbase>
-            <password>opnsense</password>
+            <password>reticen8</password>
         </vip>
     </virtualip>
-</opnsense>
+</reticen8>

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (c) 2015-2023 Franco Fichtner <franco@opnsense.org>
+ * Copyright (c) 2015-2023 Franco Fichtner <franco@reticen8.org>
  * Copyright (c) 2015-2018 Deciso B.V.
  * All rights reserved.
  *
@@ -27,21 +27,21 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Core\Api;
+namespace Reticen8\Core\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
-use OPNsense\Core\Firmware;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
+use Reticen8\Core\Firmware;
 
 /**
  * Class FirmwareController
- * @package OPNsense\Core
+ * @package Reticen8\Core
  */
 class FirmwareController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'firmware';
-    protected static $internalModelClass = 'OPNsense\Core\Firmware';
+    protected static $internalModelClass = 'Reticen8\Core\Firmware';
 
     /**
      * return bytes in human-readable form
@@ -357,7 +357,7 @@ class FirmwareController extends ApiMutableModelControllerBase
 
         $this->sessionClose(); // long running action, close session
 
-        $filter = new \OPNsense\Phalcon\Filter\Filter([
+        $filter = new \Reticen8\Phalcon\Filter\Filter([
             'version' => function ($value) {
                 return preg_replace('/[^0-9a-zA-Z\.]/', '', $value);
             }
@@ -411,7 +411,7 @@ class FirmwareController extends ApiMutableModelControllerBase
 
         if ($this->request->isPost()) {
             // sanitize package name
-            $filter = new \OPNsense\Phalcon\Filter\Filter([
+            $filter = new \Reticen8\Phalcon\Filter\Filter([
                 'scrub' => function ($value) {
                     return preg_replace('/[^0-9a-zA-Z._-]/', '', $value);
                 }
@@ -590,7 +590,7 @@ class FirmwareController extends ApiMutableModelControllerBase
             );
             $response['status'] = 'ok';
             // sanitize package name
-            $filter = new \OPNsense\Phalcon\Filter\Filter([
+            $filter = new \Reticen8\Phalcon\Filter\Filter([
                 'pkgname' => function ($value) {
                     return preg_replace('/[^0-9a-zA-Z._-]/', '', $value);
                 }
@@ -664,7 +664,7 @@ class FirmwareController extends ApiMutableModelControllerBase
             );
             $response['status'] = 'ok';
             // sanitize package name
-            $filter = new \OPNsense\Phalcon\Filter\Filter([
+            $filter = new \Reticen8\Phalcon\Filter\Filter([
                 'pkgname' => function ($value) {
                     return preg_replace('/[^0-9a-zA-Z._-]/', '', $value);
                 }
@@ -697,7 +697,7 @@ class FirmwareController extends ApiMutableModelControllerBase
             );
             $response['status'] = 'ok';
             // sanitize package name
-            $filter = new \OPNsense\Phalcon\Filter\Filter([
+            $filter = new \Reticen8\Phalcon\Filter\Filter([
                 'pkgname' => function ($value) {
                     return preg_replace('/[^0-9a-zA-Z._-]/', '', $value);
                 }
@@ -728,7 +728,7 @@ class FirmwareController extends ApiMutableModelControllerBase
             $this->getLogger('audit')->notice(
                 sprintf("[Firmware] User %s locked package %s", $this->getUserName(), $pkg_name)
             );
-            $filter = new \OPNsense\Phalcon\Filter\Filter([
+            $filter = new \Reticen8\Phalcon\Filter\Filter([
                 'pkgname' => function ($value) {
                     return preg_replace('/[^0-9a-zA-Z._-]/', '', $value);
                 }
@@ -764,7 +764,7 @@ class FirmwareController extends ApiMutableModelControllerBase
             $this->getLogger('audit')->notice(
                 sprintf("[Firmware] User %s unlocked package %s", $this->getUserName(), $pkg_name)
             );
-            $filter = new \OPNsense\Phalcon\Filter\Filter([
+            $filter = new \Reticen8\Phalcon\Filter\Filter([
                 'pkgname' => function ($value) {
                     return preg_replace('/[^0-9a-zA-Z._-]/', '', $value);
                 }
@@ -835,7 +835,7 @@ class FirmwareController extends ApiMutableModelControllerBase
 
         if ($this->request->isPost()) {
             // sanitize package name
-            $filter = new \OPNsense\Phalcon\Filter\Filter([
+            $filter = new \Reticen8\Phalcon\Filter\Filter([
                 'scrub' => function ($value) {
                     return preg_replace('/[^0-9a-zA-Z._-]/', '', $value);
                 }
@@ -868,7 +868,7 @@ class FirmwareController extends ApiMutableModelControllerBase
         $backend = new Backend();
         $response = array();
 
-        $version = explode(' ', trim(shell_exec('opnsense-version -nv') ?? ''));
+        $version = explode(' ', trim(shell_exec('reticen8-version -nv') ?? ''));
         foreach (array('product_id' => 0, 'product_version' => 1) as $result => $index) {
             $response[$result] = !empty($version[$index]) ? $version[$index] : 'unknown';
         }

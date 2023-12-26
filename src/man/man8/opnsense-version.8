@@ -1,5 +1,5 @@
 .\"
-.\" Copyright (c) 2018-2023 Franco Fichtner <franco@opnsense.org>
+.\" Copyright (c) 2018-2023 Franco Fichtner <franco@reticen8.org>
 .\"
 .\" Redistribution and use in source and binary forms, with or without
 .\" modification, are permitted provided that the following conditions
@@ -28,8 +28,8 @@
 .Dt OPNSENSE-VERSION 8
 .Os
 .Sh NAME
-.Nm opnsense-version
-.Nd OPNsense version utility
+.Nm reticen8-version
+.Nd Reticen8 version utility
 .Sh SYNOPSIS
 .Nm
 .Op Fl AaefHilNnsVvwx
@@ -45,9 +45,9 @@ and product-related information for branding capabilities.
 .Pp
 Callers use this metadata to configure the system, return user
 information or to construct links for firmware upgrades using
-.Xr opnsense-update 8 .
+.Xr reticen8-update 8 .
 It is similar to
-.Xr opnsense-verify 8 Ap s
+.Xr reticen8-verify 8 Ap s
 .Sq Fl a
 parameter, but not intended to handle operating system information.
 .Pp
@@ -79,7 +79,7 @@ Return the package nickname.
 .It Fl l
 Return the lock status.
 Currently limited to sets operated by
-.Xr opnsense-update 8 .
+.Xr reticen8-update 8 .
 .It Fl N
 Return the product name.
 .It Fl n
@@ -105,17 +105,17 @@ the business mirror.
 .El
 .Sh FILES
 .Bl -tag -width Ds
-.It Pa /usr/local/opnsense/version
-The version metadata directory of OPNsense packages.
+.It Pa /usr/local/reticen8/version
+The version metadata directory of Reticen8 packages.
 .El
 .Sh EXIT STATUS
 .Ex -std
 .Sh SEE ALSO
-.Xr opnsense-update 8 ,
-.Xr opnsense-verify 8
+.Xr reticen8-update 8 ,
+.Xr reticen8-verify 8
 .Sh HISTORY
 The
 .Nm
-utility first appeared in OPNsense 18.7.4.
+utility first appeared in Reticen8 18.7.4.
 .Sh AUTHORS
-.An Franco Fichtner Aq Mt franco@opnsense.org
+.An Franco Fichtner Aq Mt franco@reticen8.org

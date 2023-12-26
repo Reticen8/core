@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<opnsense>
+<reticen8>
     <interfaces>
         <wan>
             <if>if001</if>
@@ -43,4 +43,4 @@
             <vlanif>if006_vlan4</vlanif>
         </vlan>
     </vlans>
-</opnsense>
+</reticen8>

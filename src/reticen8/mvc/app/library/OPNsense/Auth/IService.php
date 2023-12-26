@@ -26,11 +26,11 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Auth;
+namespace Reticen8\Auth;
 
 /**
  * interface service, binds authenticator methods to consumers of those methods
- * @package OPNsense\Auth
+ * @package Reticen8\Auth
  */
 interface IService
 {

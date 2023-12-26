@@ -26,18 +26,18 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\OpenVPN;
+namespace Reticen8\OpenVPN;
 
 use Phalcon\Messages\Message;
-use OPNsense\Base\BaseModel;
-use OPNsense\Trust\Store;
-use OPNsense\Core\Config;
-use OPNsense\Core\File;
-use OPNsense\Firewall\Util;
+use Reticen8\Base\BaseModel;
+use Reticen8\Trust\Store;
+use Reticen8\Core\Config;
+use Reticen8\Core\File;
+use Reticen8\Firewall\Util;
 
 /**
  * Class OpenVPN
- * @package OPNsense\OpenVPN
+ * @package Reticen8\OpenVPN
  */
 class OpenVPN extends BaseModel
 {
@@ -458,7 +458,7 @@ class OpenVPN extends BaseModel
                     //$options['user'] = 'openvpn';
                     //$options['group'] = 'openvpn';
                 } else {
-                    $event_script = '/usr/local/opnsense/scripts/openvpn/ovpn_event.py';
+                    $event_script = '/usr/local/reticen8/scripts/openvpn/ovpn_event.py';
                     $options['dev'] = "ovpns{$node->vpnid}";
                     $options['ping-timer-rem'] = null;
                     $options['topology'] = (string)$node->topology;

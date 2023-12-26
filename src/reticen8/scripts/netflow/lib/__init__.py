@@ -1,5 +1,5 @@
 """
-    Copyright (c) 2018 Ad Schellevis <ad@opnsense.org>
+    Copyright (c) 2018 Ad Schellevis <ad@reticen8.org>
     All rights reserved.
 
     Redistribution and use in source and binary forms, with or without
@@ -46,7 +46,7 @@ def load_config(config_yaml=None):
 class Config(object):
     """ Simple configuration wrapper for our netflow scripts, containing our defaults
     """
-    library_path = '/usr/local/opnsense/site-python'
+    library_path = '/usr/local/reticen8/site-python'
     pid_filename = '/var/run/flowd_aggregate.pid'
     flowd_source = '/var/log/flowd.log'
     database_dir = '/var/netflow'

@@ -34,7 +34,7 @@ require_once("interfaces.inc");
 require_once("util.inc");
 require_once("plugins.inc.d/openssh.inc");
 
-$version = shell_safe('opnsense-version');
+$version = shell_safe('reticen8-version');
 
 echo "\n*** {$config['system']['hostname']}.{$config['system']['domain']}: {$version} ***\n";
 

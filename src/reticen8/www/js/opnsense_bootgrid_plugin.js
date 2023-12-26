@@ -325,7 +325,7 @@ $.fn.UIBootgrid = function (params) {
         if (editDlg !== undefined) {
             let saveDlg = $("#btn_"+editDlg+"_save").unbind('click');
             this_grid.show_edit_dialog(event, params['get']).done(function(){
-                $('#'+editDlg).trigger('opnsense_bootgrid_mapped', ['add']);
+                $('#'+editDlg).trigger('reticen8_bootgrid_mapped', ['add']);
                 saveDlg.click(function(){
                     saveFormToEndpoint(params['add'], 'frm_' + editDlg, function(){
                             if ($('#'+editDlg).hasClass('modal')) {
@@ -378,7 +378,7 @@ $.fn.UIBootgrid = function (params) {
                             this_grid.showSaveAlert(event);
                         }, true);
                 });
-                $('#'+editDlg).trigger('opnsense_bootgrid_mapped', ['edit']);
+                $('#'+editDlg).trigger('reticen8_bootgrid_mapped', ['edit']);
             });
         } else {
             console.log("[grid] action get or data-editDialog missing")
@@ -457,7 +457,7 @@ $.fn.UIBootgrid = function (params) {
                             this_grid.showSaveAlert(event);
                         }, true);
                 });
-                $('#'+editDlg).trigger('opnsense_bootgrid_mapped', ['copy']);
+                $('#'+editDlg).trigger('reticen8_bootgrid_mapped', ['copy']);
             });
         } else {
             console.log("[grid] action get or data-editDialog missing")

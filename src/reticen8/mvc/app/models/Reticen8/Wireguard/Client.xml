@@ -1,5 +1,5 @@
 <model>
-    <mount>//OPNsense/wireguard/client</mount>
+    <mount>//Reticen8/wireguard/client</mount>
     <description>WireGuard peer configuration</description>
     <version>0.0.7</version>
     <items>

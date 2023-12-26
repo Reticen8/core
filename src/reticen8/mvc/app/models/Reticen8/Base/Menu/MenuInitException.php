@@ -28,11 +28,11 @@
  *
  */
 
-namespace OPNsense\Base\Menu;
+namespace Reticen8\Base\Menu;
 
 /**
  * Class MenuInitException
- * @package OPNsense\Base\Menu
+ * @package Reticen8\Base\Menu
  */
 class MenuInitException extends \Exception
 {

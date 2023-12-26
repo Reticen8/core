@@ -28,20 +28,20 @@
  *
  */
 
-namespace OPNsense\Monit\Api;
+namespace Reticen8\Monit\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Config;
-use OPNsense\Base\UIModelGrid;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Config;
+use Reticen8\Base\UIModelGrid;
 
 /**
  * Class SettingsController
- * @package OPNsense\Monit
+ * @package Reticen8\Monit
  */
 class SettingsController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'monit';
-    protected static $internalModelClass = 'OPNsense\Monit\Monit';
+    protected static $internalModelClass = 'Reticen8\Monit\Monit';
 
     /**
      * check if changes to the monit settings were made

@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\Syslog;
+namespace Reticen8\Syslog;
 
 /**
  * Class IndexController
- * @package OPNsense\IDS
+ * @package Reticen8\IDS
  */
-class IndexController extends \OPNsense\Base\IndexController
+class IndexController extends \Reticen8\Base\IndexController
 {
     /**
      * default syslog index page
@@ -45,6 +45,6 @@ class IndexController extends \OPNsense\Base\IndexController
         // link destination dialog
         $this->view->formDialogDestination = $this->getForm("dialogDestination");
         // choose template
-        $this->view->pick('OPNsense/Syslog/index');
+        $this->view->pick('Reticen8/Syslog/index');
     }
 }

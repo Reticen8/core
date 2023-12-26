@@ -26,17 +26,17 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\IPsec;
+namespace Reticen8\IPsec;
 
 /**
  * Class KeyPairsController
- * @package OPNsense\IPsec
+ * @package Reticen8\IPsec
  */
-class KeyPairsController extends \OPNsense\Base\IndexController
+class KeyPairsController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
         $this->view->formDialogKeyPair = $this->getForm('dialogKeyPair');
-        $this->view->pick('OPNsense/IPsec/key_pairs');
+        $this->view->pick('Reticen8/IPsec/key_pairs');
     }
 }

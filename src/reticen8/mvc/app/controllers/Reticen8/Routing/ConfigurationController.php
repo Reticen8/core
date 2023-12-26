@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Routing;
+namespace Reticen8\Routing;
 
-class ConfigurationController extends \OPNsense\Base\IndexController
+class ConfigurationController extends \Reticen8\Base\IndexController
 {
     public function indexAction()
     {
         // include dialog form definitions
         $this->view->formDialogEditGateway = $this->getForm("dialogEditGateway");
-        $this->view->pick('OPNsense/Routing/configuration');
+        $this->view->pick('Reticen8/Routing/configuration');
     }
 }

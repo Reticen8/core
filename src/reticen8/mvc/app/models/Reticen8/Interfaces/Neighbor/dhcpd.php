@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Interfaces\Neighbor;
+namespace Reticen8\Interfaces\Neighbor;
 
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 class dhcpd
 {

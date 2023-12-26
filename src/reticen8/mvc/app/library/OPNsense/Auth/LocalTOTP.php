@@ -28,11 +28,11 @@
  *
  */
 
-namespace OPNsense\Auth;
+namespace Reticen8\Auth;
 
 /**
  * RFC 6238 TOTP: Time-Based One-Time Password Authenticator
- * @package OPNsense\Auth
+ * @package Reticen8\Auth
  */
 class LocalTOTP extends Local
 {

@@ -54,20 +54,20 @@ if [ ! -f /var/unbound/unbound_control.key ]; then
 	chroot -u unbound -g unbound / /usr/local/sbin/unbound-control-setup -d /var/unbound
 fi
 
-for FILE in $(find /usr/local/etc/unbound.opnsense.d -depth 1 -name '*.conf'); do
+for FILE in $(find /usr/local/etc/unbound.reticen8.d -depth 1 -name '*.conf'); do
 	cp ${FILE} /var/unbound/etc/
 done
 
 chown -R unbound:unbound /var/unbound
 
 /usr/local/sbin/unbound -c /var/unbound/unbound.conf
-/usr/local/opnsense/scripts/unbound/cache.sh load
+/usr/local/reticen8/scripts/unbound/cache.sh load
 
 if [ -n "${DOMAIN}" ]; then
-	/usr/local/opnsense/scripts/dhcp/unbound_watcher.py --domain ${DOMAIN}
+	/usr/local/reticen8/scripts/dhcp/unbound_watcher.py --domain ${DOMAIN}
 fi
 
 if [ -f /var/unbound/data/stats ]; then
     /usr/sbin/daemon -p /var/run/unbound_logger.pid -f -S -m 2 -s err -l local4 \
-        -T unbound /usr/local/opnsense/scripts/unbound/logger.py
+        -T unbound /usr/local/reticen8/scripts/unbound/logger.py
 fi

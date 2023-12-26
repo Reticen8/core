@@ -26,9 +26,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Kea;
+namespace Reticen8\Kea;
 
-class DhcpController extends \OPNsense\Base\IndexController
+class DhcpController extends \Reticen8\Base\IndexController
 {
     /**
      * {@inheritdoc}
@@ -42,13 +42,13 @@ class DhcpController extends \OPNsense\Base\IndexController
 
     public function ctrlAgentAction()
     {
-        $this->view->pick('OPNsense/Kea/ctrl_agent');
+        $this->view->pick('Reticen8/Kea/ctrl_agent');
         $this->view->formGeneralSettings = $this->getForm("agentSettings");
     }
 
     public function v4Action()
     {
-        $this->view->pick('OPNsense/Kea/dhcpv4');
+        $this->view->pick('Reticen8/Kea/dhcpv4');
         $this->view->formGeneralSettings = $this->getForm("generalSettings4");
         $this->view->formDialogSubnet = $this->getForm("dialogSubnet4");
         $this->view->formDialogReservation = $this->getForm("dialogReservation4");
@@ -57,6 +57,6 @@ class DhcpController extends \OPNsense\Base\IndexController
 
     public function leases4Action()
     {
-        $this->view->pick('OPNsense/Kea/leases4');
+        $this->view->pick('Reticen8/Kea/leases4');
     }
 }

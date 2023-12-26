@@ -27,13 +27,13 @@
  *  POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Routes\Api;
+namespace Reticen8\Routes\Api;
 
-use OPNsense\Base\ApiControllerBase;
-use OPNsense\Core\Backend;
+use Reticen8\Base\ApiControllerBase;
+use Reticen8\Core\Backend;
 
 /**
- * @package OPNsense\Routes
+ * @package Reticen8\Routes
  */
 class GatewayController extends ApiControllerBase
 {

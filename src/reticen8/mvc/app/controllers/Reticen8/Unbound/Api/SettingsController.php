@@ -27,15 +27,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Unbound\Api;
+namespace Reticen8\Unbound\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
 
 class SettingsController extends ApiMutableModelControllerBase
 {
-    protected static $internalModelClass = '\OPNsense\Unbound\Unbound';
+    protected static $internalModelClass = '\Reticen8\Unbound\Unbound';
     protected static $internalModelName = 'unbound';
 
     private $type = 'forward';
@@ -85,7 +85,7 @@ class SettingsController extends ApiMutableModelControllerBase
                 $mdl->serializeToConfig();
                 Config::getInstance()->save();
 
-                $service = new \OPNsense\Unbound\Api\ServiceController();
+                $service = new \Reticen8\Unbound\Api\ServiceController();
                 $result = $service->dnsblAction();
             }
         }

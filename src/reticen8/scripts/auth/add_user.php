@@ -40,8 +40,8 @@ if (isset($opts['h']) || empty($opts['u'])) {
     echo "\t-o origin (default=automation)";
     exit(-1);
 } else {
-    OPNsense\Core\Config::getInstance()->lock();
-    $config = OPNsense\Core\Config::getInstance()->toArray(listtags());
+    Reticen8\Core\Config::getInstance()->lock();
+    $config = Reticen8\Core\Config::getInstance()->toArray(listtags());
     $a_user = &config_read_array('system', 'user');
     $input_errors = [];
     if (preg_match("/[^a-zA-Z0-9\.\-_]/", $opts['u'])) {

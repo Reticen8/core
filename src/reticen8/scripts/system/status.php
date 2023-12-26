@@ -29,7 +29,7 @@
 
 require_once('script/load_phalcon.php');
 
-$status = new \OPNsense\System\SystemStatus();
+$status = new \Reticen8\System\SystemStatus();
 
 if (isset($argv[1])) {
     /* dismiss action */

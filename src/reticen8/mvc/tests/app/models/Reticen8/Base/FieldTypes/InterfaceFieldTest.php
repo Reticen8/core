@@ -28,15 +28,15 @@
  *
  */
 
-namespace tests\OPNsense\Base\FieldTypes;
+namespace tests\Reticen8\Base\FieldTypes;
 
 // @CodingStandardsIgnoreStart
 require_once 'Field_Framework_TestCase.php';
 // @CodingStandardsIgnoreEnd
 
-use OPNsense\Base\FieldTypes\InterfaceField;
+use Reticen8\Base\FieldTypes\InterfaceField;
 use Phalcon\Di\FactoryDefault;
-use OPNsense\Core\Config;
+use Reticen8\Core\Config;
 
 class InterfaceFieldTest extends Field_Framework_TestCase
 {
@@ -45,7 +45,7 @@ class InterfaceFieldTest extends Field_Framework_TestCase
      */
     public function testCanBeCreated()
     {
-        $this->assertInstanceOf('\OPNsense\Base\FieldTypes\InterfaceField', new InterfaceField());
+        $this->assertInstanceOf('\Reticen8\Base\FieldTypes\InterfaceField', new InterfaceField());
         // switch config to test set for this type
         FactoryDefault::getDefault()->get('config')->globals->config_path = __DIR__ . '/InterfaceFieldTest/';
         Config::getInstance()->forceReload();
@@ -70,7 +70,7 @@ class InterfaceFieldTest extends Field_Framework_TestCase
      */
     public function testSelectHasNoParents()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("InclusionIn");
         // init field
         $field = new InterfaceField();
@@ -111,7 +111,7 @@ class InterfaceFieldTest extends Field_Framework_TestCase
      */
     public function testSelectSetWithUnknownValue()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("CsvListValidator");
         // init field
         $field = new InterfaceField();
@@ -140,7 +140,7 @@ class InterfaceFieldTest extends Field_Framework_TestCase
      */
     public function testSelectSetOnSingleValue()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("InclusionIn");
         // init field
         $field = new InterfaceField();

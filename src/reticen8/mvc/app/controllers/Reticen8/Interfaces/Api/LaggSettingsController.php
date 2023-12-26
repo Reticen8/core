@@ -28,20 +28,20 @@
  *
  */
 
-namespace OPNsense\Interfaces\Api;
+namespace Reticen8\Interfaces\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Base\UserException;
-use OPNsense\Core\Backend;
-use OPNsense\Core\Config;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Base\UserException;
+use Reticen8\Core\Backend;
+use Reticen8\Core\Config;
 
 /**
- * @package OPNsense\Interfaces
+ * @package Reticen8\Interfaces
  */
 class LaggSettingsController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'lagg';
-    protected static $internalModelClass = 'OPNsense\Interfaces\Lagg';
+    protected static $internalModelClass = 'Reticen8\Interfaces\Lagg';
 
 
     /**
@@ -149,7 +149,7 @@ class LaggSettingsController extends ApiMutableModelControllerBase
                 $message .= htmlspecialchars(sprintf("\n[%s] %s", $key, $value), ENT_NOQUOTES | ENT_HTML401);
             }
             $message = sprintf(gettext("Cannot delete lagg. Currently in use by %s"), $message);
-            throw new \OPNsense\Base\UserException($message, gettext("Lagg in use"));
+            throw new \Reticen8\Base\UserException($message, gettext("Lagg in use"));
         }
         $result = $this->delBase("lagg", $uuid);
         if ($result['result'] != 'failed' && !empty($laggif)) {

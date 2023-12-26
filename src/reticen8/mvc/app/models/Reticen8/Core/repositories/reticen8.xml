@@ -5,91 +5,91 @@
             <description>(default)</description>
         </mirror>
         <mirror>
-            <url>https://mirrors.dotsrc.org/opnsense</url>
+            <url>https://mirrors.dotsrc.org/reticen8</url>
             <description>Aalborg University (HTTPS, Aalborg, DK)</description>
         </mirror>
         <mirror>
-            <url>https://opnsense.aivian.org</url>
+            <url>https://reticen8.aivian.org</url>
             <description>Aivian (HTTPS, Shaoxing, CN)</description>
         </mirror>
         <mirror has_subscription="true">
-            <url>https://opnsense-update.deciso.com</url>
+            <url>https://reticen8-update.deciso.com</url>
             <description>Deciso (HTTPS, NL, Commercial)</description>
         </mirror>
         <mirror>
-            <url>https://mirror.dns-root.de/opnsense</url>
+            <url>https://mirror.dns-root.de/reticen8</url>
             <description>dns-root.de (HTTPS, Cloudflare CDN)</description>
         </mirror>
         <mirror>
-            <url>https://opnsense.c0urier.net</url>
+            <url>https://reticen8.c0urier.net</url>
             <description>c0urier.net (HTTPS, Horsens, DK)</description>
         </mirror>
         <mirror>
-            <url>https://mirror.cloudfence.com.br/opnsense</url>
+            <url>https://mirror.cloudfence.com.br/reticen8</url>
             <description>Cloudfence (HTTPS, Sao Paulo, Brazil)</description>
         </mirror>
         <mirror>
-            <url>https://fourdots.com/mirror/OPNSense</url>
+            <url>https://fourdots.com/mirror/REticen8</url>
             <description>FourDots (HTTPS, Belgrade, RS)</description>
         </mirror>
         <mirror>
-            <url>https://opnsense-mirror.hiho.ch</url>
+            <url>https://reticen8-mirror.hiho.ch</url>
             <description>HiHo (HTTPS, Zurich, CH)</description>
         </mirror>
         <mirror>
-            <url>https://mirror-opnsense.serverbase.ch</url>
+            <url>https://mirror-reticen8.serverbase.ch</url>
             <description>ServerBase AG (HTTPS, Zurich, CH)</description>
         </mirror>
         <mirror>
-            <url>https://mirror.ams1.nl.leaseweb.net/opnsense</url>
+            <url>https://mirror.ams1.nl.leaseweb.net/reticen8</url>
             <description>LeaseWeb (HTTPS, Amsterdam, NL)</description>
         </mirror>
         <mirror>
-            <url>https://mirror.fra10.de.leaseweb.net/opnsense</url>
+            <url>https://mirror.fra10.de.leaseweb.net/reticen8</url>
             <description>LeaseWeb (HTTPS, Frankfurt, DE)</description>
         </mirror>
         <mirror>
-            <url>https://mirror.sfo12.us.leaseweb.net/opnsense</url>
+            <url>https://mirror.sfo12.us.leaseweb.net/reticen8</url>
             <description>LeaseWeb (HTTPS, San Francisco, US)</description>
         </mirror>
         <mirror>
-            <url>https://mirror.wdc1.us.leaseweb.net/opnsense</url>
+            <url>https://mirror.wdc1.us.leaseweb.net/reticen8</url>
             <description>LeaseWeb (HTTPS, Washington, D.C., US)</description>
         </mirror>
         <mirror>
-           <url>http://quantum-mirror.hu/mirrors/pub/opnsense</url>
+           <url>http://quantum-mirror.hu/mirrors/pub/reticen8</url>
            <description>Quantum Mirror (HTTP, Hungary, HU)</description>
         </mirror>
         <mirror>
-            <url>http://mirror.marwan.ma/opnsense/</url>
+            <url>http://mirror.marwan.ma/reticen8/</url>
             <description>MARWAN (HTTP, Rabat, MA)</description>
         </mirror>
         <mirror>
-            <url>https://mirrors.nycbug.org/pub/opnsense</url>
+            <url>https://mirrors.nycbug.org/pub/reticen8</url>
             <description>NYC*BUG (HTTPS, New York, US)</description>
         </mirror>
         <mirror>
-            <url>https://pkg.opnsense.org</url>
-            <description>OPNsense (HTTPS, Amsterdam, NL)</description>
+            <url>https://pkg.reticen8.org</url>
+            <description>Reticen8 (HTTPS, Amsterdam, NL)</description>
         </mirror>
         <mirror>
-            <url>http://mirror.terrahost.no/opnsense</url>
+            <url>http://mirror.terrahost.no/reticen8</url>
             <description>TerraHost (HTTP, Sandefjord, Norway)</description>
         </mirror>
         <mirror>
-            <url>http://mirror.upb.edu.co/opnsense</url>
+            <url>http://mirror.upb.edu.co/reticen8</url>
             <description>Universidad Pontificia Bolivariana (HTTP, Medellin, CO)</description>
         </mirror>
         <mirror>
-            <url>https://www.mirrorservice.org/sites/opnsense.org</url>
+            <url>https://www.mirrorservice.org/sites/reticen8.org</url>
             <description>University of Kent (HTTPS, Kent, GB)</description>
         </mirror>
         <mirror>
-            <url>http://mirror.venturasystems.tech/opnsense</url>
+            <url>http://mirror.venturasystems.tech/reticen8</url>
             <description>Ventura Systems (HTTP, Medellin, CO)</description>
         </mirror>
         <mirror>
-            <url>http://mirror.wjcomms.co.uk/opnsense</url>
+            <url>http://mirror.wjcomms.co.uk/reticen8</url>
             <description>WJComms (HTTP, London, GB)</description>
         </mirror>
     </mirrors>

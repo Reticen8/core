@@ -26,14 +26,14 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Base\FieldTypes;
+namespace Reticen8\Base\FieldTypes;
 
-use OPNsense\Phalcon\Filter\Validation\Validator\Regex;
-use OPNsense\Phalcon\Filter\Validation\Validator\PresenceOf;
+use Reticen8\Phalcon\Filter\Validation\Validator\Regex;
+use Reticen8\Phalcon\Filter\Validation\Validator\PresenceOf;
 
 /**
  * Class TextField
- * @package OPNsense\Base\FieldTypes
+ * @package Reticen8\Base\FieldTypes
  */
 class TextField extends BaseField
 {

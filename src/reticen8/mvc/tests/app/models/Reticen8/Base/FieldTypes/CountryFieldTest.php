@@ -28,13 +28,13 @@
  *
  */
 
-namespace tests\OPNsense\Base\FieldTypes;
+namespace tests\Reticen8\Base\FieldTypes;
 
 // @CodingStandardsIgnoreStart
 require_once 'Field_Framework_TestCase.php';
 // @CodingStandardsIgnoreEnd
 
-use OPNsense\Base\FieldTypes\CountryField;
+use Reticen8\Base\FieldTypes\CountryField;
 
 class CountryFieldTest extends Field_Framework_TestCase
 {
@@ -43,14 +43,14 @@ class CountryFieldTest extends Field_Framework_TestCase
      */
     public function testCanBeCreated()
     {
-        $this->assertInstanceOf('\OPNsense\Base\FieldTypes\CountryField', new CountryField());
+        $this->assertInstanceOf('\Reticen8\Base\FieldTypes\CountryField', new CountryField());
     }
 
     /**
      */
     public function testRequiredEmpty()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("PresenceOf");
         $field = new CountryField();
         $field->eventPostLoading();
@@ -101,7 +101,7 @@ class CountryFieldTest extends Field_Framework_TestCase
      */
     public function testSelectSetWithUnknownValue()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("CsvListValidator");
         // init field
         $field = new CountryField();
@@ -144,7 +144,7 @@ class CountryFieldTest extends Field_Framework_TestCase
      */
     public function testSelectSetOnSingleValue()
     {
-        $this->expectException(\OPNsense\Phalcon\Filter\Validation\Exception::class);
+        $this->expectException(\Reticen8\Phalcon\Filter\Validation\Exception::class);
         $this->expectExceptionMessage("InclusionIn");
         // init field
         $field = new CountryField();

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (c) 2018-2023 Franco Fichtner <franco@opnsense.org>
+# Copyright (c) 2018-2023 Franco Fichtner <franco@reticen8.org>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -24,7 +24,7 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 DEFAULTS="\${product_name} \${product_version}"
-VERSIONDIR="/usr/local/opnsense/version"
+VERSIONDIR="/usr/local/reticen8/version"
 PLUGINCTL="/usr/local/sbin/pluginctl"
 PKG="/usr/local/sbin/pkg-static"
 TARGET="core"

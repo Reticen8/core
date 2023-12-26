@@ -28,13 +28,13 @@
  *
  */
 
-namespace OPNsense\Cron;
+namespace Reticen8\Cron;
 
-use OPNsense\Base\BaseModel;
+use Reticen8\Base\BaseModel;
 
 /**
  * Class Cron
- * @package OPNsense\Cron
+ * @package Reticen8\Cron
  */
 class Cron extends BaseModel
 {

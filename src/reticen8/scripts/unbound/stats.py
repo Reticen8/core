@@ -35,7 +35,7 @@ import pandas
 import numpy as np
 from time import time
 from operator import itemgetter
-sys.path.insert(0, "/usr/local/opnsense/site-python")
+sys.path.insert(0, "/usr/local/reticen8/site-python")
 from duckdb_helper import DbConnection
 
 def percent(val, total):

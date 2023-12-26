@@ -27,15 +27,15 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-namespace OPNsense\Wireguard\Api;
+namespace Reticen8\Wireguard\Api;
 
-use OPNsense\Base\ApiMutableModelControllerBase;
-use OPNsense\Core\Backend;
+use Reticen8\Base\ApiMutableModelControllerBase;
+use Reticen8\Core\Backend;
 
 class ServerController extends ApiMutableModelControllerBase
 {
     protected static $internalModelName = 'server';
-    protected static $internalModelClass = '\OPNsense\Wireguard\Server';
+    protected static $internalModelClass = '\Reticen8\Wireguard\Server';
 
     public function keyPairAction()
     {

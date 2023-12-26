@@ -1,6 +1,6 @@
 <?php
 
-namespace OPNsense\Phalcon\Filter\Validation\Validator;
+namespace Reticen8\Phalcon\Filter\Validation\Validator;
 
 use Phalcon\Filter\Validation\Validator\Url as PhalconUrl;
 use Phalcon\Validation\Validator\Url as PhalconUrl4;
